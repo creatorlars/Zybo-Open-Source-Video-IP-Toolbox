@@ -1,0 +1,41 @@
+Vivado Simulator 2015.4
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2015.4/bin/unwrapped/win64.o/xelab.exe -wto d29107d37c844073b21ba346e626dce9 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot vga_sync_func_impl xil_defaultlib.vga_sync -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package unisim.vcomponents
+Compiling package std.textio
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package ieee.numeric_std
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF("DONT_CARE",12,"DEFAULT","...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6("1010101010101010111111111...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2("1110")(0,3)\]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE('0','0','0','0')\]
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF("DONT_CARE","0",true,"AUTO...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6("1111111111111111111111111...]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2("0001")(0,3)\]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1("0001")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2("1000")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2("0010")(0,3)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3("00000010")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3("00000100")(0,7)\]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3("00000001")(0,7)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2("0111")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2("1011")(0,3)\]
+Compiling architecture carry4_v of entity unisim.CARRY4 [carry4_default]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5("1111100010001000100010001...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6("0000000000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6("0000000000000000000000000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6("1111111111111111111111111...]
+Compiling architecture fdse_v of entity unisim.FDSE [\FDSE('1','0','0','0')\]
+Compiling architecture structure of entity xil_defaultlib.vga_sync
+Built simulation snapshot vga_sync_func_impl

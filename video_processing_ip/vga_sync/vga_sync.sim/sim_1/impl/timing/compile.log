@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_sync/vga_sync.sim/sim_1/impl/timing/vga_sync_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_sync
+INFO: [VRFC 10-311] analyzing module glbl

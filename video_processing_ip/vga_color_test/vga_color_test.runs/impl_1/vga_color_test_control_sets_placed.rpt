@@ -1,0 +1,55 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
+| Date         : Tue Mar 08 23:44:21 2016
+| Host         : GilaMonster running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file vga_color_test_control_sets_placed.rpt
+| Design       : vga_color_test
+| Device       : xc7z010
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |     2 |
+| Minimum Number of register sites lost to control set restrictions |     6 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               4 |            1 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------+---------------+------------------+------------------+----------------+
+|    Clock Signal   | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-------------------+---------------+------------------+------------------+----------------+
+|  clk_25_IBUF_BUFG |               | rgb[7]_i_1_n_0   |                1 |              4 |
+|  clk_25_IBUF_BUFG |               |                  |                3 |              6 |
++-------------------+---------------+------------------+------------------+----------------+
+
+
