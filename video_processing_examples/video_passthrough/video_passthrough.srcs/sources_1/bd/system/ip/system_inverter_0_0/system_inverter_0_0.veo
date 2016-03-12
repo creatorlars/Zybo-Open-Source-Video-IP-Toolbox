@@ -46,7 +46,7 @@
 // 
 // DO NOT MODIFY THIS FILE.
 
-// IP VLNV: xilinx.com:ip:xlconstant:1.1
+// IP VLNV: user.org:user:inverter:1.0
 // IP Revision: 2
 
 // The following must be inserted into your Verilog file for this
@@ -54,12 +54,9 @@
 // (in parentheses) to your own signal names.
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
-system_xlconstant_0_0 your_instance_name (
-  .dout(dout)  // output wire [0 : 0] dout
+system_inverter_0_0 your_instance_name (
+  .x(x),          // input wire x
+  .x_not(x_not)  // output wire x_not
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
-
-// You must compile the wrapper file system_xlconstant_0_0.v when simulating
-// the core, system_xlconstant_0_0. When compiling the wrapper file, be sure to
-// reference the Verilog simulation library.
 

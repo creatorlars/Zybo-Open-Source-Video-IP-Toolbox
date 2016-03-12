@@ -1,8 +1,8 @@
 --Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
---Date        : Wed Mar 09 15:57:51 2016
---Host        : GilaMonster running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+--Date        : Thu Mar 10 14:13:03 2016
+--Host        : minmi running 64-bit elementary OS Freya
 --Command     : generate_target system.bd
 --Design      : system
 --Purpose     : IP block netlist
@@ -41,7 +41,7 @@ entity system is
     tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -143,11 +143,6 @@ architecture STRUCTURE of system is
     locked : out STD_LOGIC
   );
   end component system_clk_wiz_0_0;
-  component system_xlconstant_0_0 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component system_xlconstant_0_0;
   component system_vga_sync_0_0 is
   port (
     clk_25 : in STD_LOGIC;
@@ -167,10 +162,16 @@ architecture STRUCTURE of system is
     rgb : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component system_vga_color_test_0_0;
-  signal GND_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  component system_inverter_0_0 is
+  port (
+    x : in STD_LOGIC;
+    x_not : out STD_LOGIC
+  );
+  end component system_inverter_0_0;
   signal Net : STD_LOGIC;
   signal hdmi_cec_1 : STD_LOGIC;
   signal hdmi_hpd_1 : STD_LOGIC;
+  signal inverter_0_x_not : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -242,16 +243,17 @@ begin
   hdmi_out_en <= zybo_hdmi_0_hdmi_out_en;
   tmds(3 downto 0) <= zybo_hdmi_0_tmds(3 downto 0);
   tmdsb(3 downto 0) <= zybo_hdmi_0_tmdsb(3 downto 0);
-GND: component system_xlconstant_0_0
-     port map (
-      dout(0) => GND_dout(0)
-    );
 clk_wiz_0: component system_clk_wiz_0_0
      port map (
       clk_in1 => processing_system7_0_FCLK_CLK0,
       clk_out1 => Net,
       locked => NLW_clk_wiz_0_locked_UNCONNECTED,
       resetn => processing_system7_0_FCLK_RESET0_N
+    );
+inverter_0: component system_inverter_0_0
+     port map (
+      x => processing_system7_0_FCLK_RESET0_N,
+      x_not => inverter_0_x_not
     );
 processing_system7_0: component system_processing_system7_0_0
      port map (
@@ -337,7 +339,7 @@ vga_sync_0: component system_vga_sync_0_0
       active => vga_sync_0_active,
       clk_25 => Net,
       hsync => vga_sync_0_hsync,
-      rst => GND_dout(0),
+      rst => inverter_0_x_not,
       vsync => vga_sync_0_vsync,
       xaddr(9 downto 0) => vga_sync_0_xaddr(9 downto 0),
       yaddr(9 downto 0) => vga_sync_0_yaddr(9 downto 0)

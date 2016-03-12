@@ -174,6 +174,24 @@
             <spirit:direction>in</spirit:direction>
           </spirit:wire>
         </spirit:port>
+        <spirit:port>
+          <spirit:name>sw0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>sw1</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>sw2</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
       </spirit:ports>
     </spirit:model>
   </spirit:component>
@@ -189,27 +207,6 @@
         <spirit:componentRef spirit:library="user" spirit:name="vga_color_test" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_color_test_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>vga_gaussian_blur_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="vga_gaussian_blur" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_gaussian_blur_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>vga_gaussian_blur_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="vga_gaussian_blur" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_gaussian_blur_1_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>vga_gaussian_blur_2</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="vga_gaussian_blur" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_gaussian_blur_2_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -385,6 +382,27 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_MIO_53_SLEW">slow</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>vga_gaussian_blur_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="vga_gaussian_blur" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_gaussian_blur_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>vga_gaussian_blur_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="vga_gaussian_blur" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_gaussian_blur_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>vga_gaussian_blur_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="vga_gaussian_blur" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">system_vga_gaussian_blur_2_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections/>
     <spirit:adHocConnections>
@@ -451,12 +469,12 @@
       <spirit:adHocConnection>
         <spirit:name>Net</spirit:name>
         <spirit:internalPortReference spirit:componentRef="clk_wiz_0" spirit:portRef="clk_out1"/>
-        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_1" spirit:portRef="clk_25"/>
-        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="clk_25"/>
-        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_2" spirit:portRef="clk_25"/>
         <spirit:internalPortReference spirit:componentRef="vga_color_test_0" spirit:portRef="clk_25"/>
         <spirit:internalPortReference spirit:componentRef="vga_sync_0" spirit:portRef="clk_25"/>
         <spirit:internalPortReference spirit:componentRef="zybo_hdmi_0" spirit:portRef="clk_25"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="clk_25"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_1" spirit:portRef="clk_25"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_2" spirit:portRef="clk_25"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>vga_gaussian_blur_2_hsync_out</spirit:name>
@@ -501,14 +519,14 @@
       <spirit:adHocConnection>
         <spirit:name>vga_sync_0_xaddr</spirit:name>
         <spirit:internalPortReference spirit:componentRef="vga_sync_0" spirit:portRef="xaddr"/>
-        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="xaddr_in"/>
         <spirit:internalPortReference spirit:componentRef="vga_color_test_0" spirit:portRef="xaddr"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="xaddr_in"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>vga_sync_0_yaddr</spirit:name>
         <spirit:internalPortReference spirit:componentRef="vga_sync_0" spirit:portRef="yaddr"/>
-        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="yaddr_in"/>
         <spirit:internalPortReference spirit:componentRef="vga_color_test_0" spirit:portRef="yaddr"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="yaddr_in"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>vga_color_test_0_rgb</spirit:name>
@@ -551,6 +569,21 @@
         <spirit:name>hdmi_hpd_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="hdmi_hpd"/>
         <spirit:internalPortReference spirit:componentRef="zybo_hdmi_0" spirit:portRef="hdmi_hpd"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>en_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="sw0"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_0" spirit:portRef="en"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>en_2</spirit:name>
+        <spirit:externalPortReference spirit:portRef="sw1"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_1" spirit:portRef="en"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>en_1_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="sw2"/>
+        <spirit:internalPortReference spirit:componentRef="vga_gaussian_blur_2" spirit:portRef="en"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

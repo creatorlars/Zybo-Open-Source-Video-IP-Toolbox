@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:vga_gaussian_blur:1.0
--- IP Revision: 4
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -55,6 +55,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY system_vga_gaussian_blur_2_0 IS
   PORT (
+    en : IN STD_LOGIC;
     clk_25 : IN STD_LOGIC;
     active_in : IN STD_LOGIC;
     hsync_in : IN STD_LOGIC;
@@ -82,6 +83,7 @@ ARCHITECTURE system_vga_gaussian_blur_2_0_arch OF system_vga_gaussian_blur_2_0 I
       KERNEL : INTEGER
     );
     PORT (
+      en : IN STD_LOGIC;
       clk_25 : IN STD_LOGIC;
       active_in : IN STD_LOGIC;
       hsync_in : IN STD_LOGIC;
@@ -102,7 +104,7 @@ ARCHITECTURE system_vga_gaussian_blur_2_0_arch OF system_vga_gaussian_blur_2_0 I
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF system_vga_gaussian_blur_2_0_arch : ARCHITECTURE IS "system_vga_gaussian_blur_2_0,vga_gaussian_blur,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF system_vga_gaussian_blur_2_0_arch: ARCHITECTURE IS "system_vga_gaussian_blur_2_0,vga_gaussian_blur,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=vga_gaussian_blur,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,H_SIZE=640,H_DELAY=160,KERNEL=3}";
+  ATTRIBUTE CORE_GENERATION_INFO OF system_vga_gaussian_blur_2_0_arch: ARCHITECTURE IS "system_vga_gaussian_blur_2_0,vga_gaussian_blur,{x_ipProduct=Vivado 2015.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=vga_gaussian_blur,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,H_SIZE=640,H_DELAY=160,KERNEL=3}";
 BEGIN
   U0 : vga_gaussian_blur
     GENERIC MAP (
@@ -111,6 +113,7 @@ BEGIN
       KERNEL => 3
     )
     PORT MAP (
+      en => en,
       clk_25 => clk_25,
       active_in => active_in,
       hsync_in => hsync_in,

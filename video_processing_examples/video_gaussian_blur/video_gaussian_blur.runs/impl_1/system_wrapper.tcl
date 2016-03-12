@@ -48,8 +48,9 @@ set_msg_config -id {HDL 9-1654} -limit 100000
 start_step write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_param xicom.use_bs_reader 1
   open_checkpoint system_wrapper_routed.dcp
-  set_property webtalk.parent_dir D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_gaussian_blur/video_gaussian_blur.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_gaussian_blur/video_gaussian_blur.cache/wt [current_project]
   catch { write_mem_info -force system_wrapper.mmi }
   write_bitstream -force system_wrapper.bit 
   catch { write_sysdef -hwdef system_wrapper.hwdef -bitfile system_wrapper.bit -meminfo system_wrapper.mmi -file system_wrapper.sysdef }

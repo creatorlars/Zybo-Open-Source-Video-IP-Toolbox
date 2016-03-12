@@ -151,6 +151,9 @@ proc create_root_design { parentCell } {
   set hdmi_cec [ create_bd_port -dir I hdmi_cec ]
   set hdmi_hpd [ create_bd_port -dir I hdmi_hpd ]
   set hdmi_out_en [ create_bd_port -dir O hdmi_out_en ]
+  set sw0 [ create_bd_port -dir I sw0 ]
+  set sw1 [ create_bd_port -dir I sw1 ]
+  set sw2 [ create_bd_port -dir I sw2 ]
   set tmds [ create_bd_port -dir O -from 3 -to 0 tmds ]
   set tmdsb [ create_bd_port -dir O -from 3 -to 0 tmdsb ]
 
@@ -334,6 +337,9 @@ CONFIG.PCW_USB0_RESET_IO {MIO 46} \
   # Create port connections
   connect_bd_net -net GND_dout [get_bd_pins GND/dout] [get_bd_pins vga_sync_0/rst]
   connect_bd_net -net Net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins vga_color_test_0/clk_25] [get_bd_pins vga_gaussian_blur_0/clk_25] [get_bd_pins vga_gaussian_blur_1/clk_25] [get_bd_pins vga_gaussian_blur_2/clk_25] [get_bd_pins vga_sync_0/clk_25] [get_bd_pins zybo_hdmi_0/clk_25]
+  connect_bd_net -net en_1 [get_bd_ports sw0] [get_bd_pins vga_gaussian_blur_0/en]
+  connect_bd_net -net en_1_1 [get_bd_ports sw2] [get_bd_pins vga_gaussian_blur_2/en]
+  connect_bd_net -net en_2 [get_bd_ports sw1] [get_bd_pins vga_gaussian_blur_1/en]
   connect_bd_net -net hdmi_cec_1 [get_bd_ports hdmi_cec] [get_bd_pins zybo_hdmi_0/hdmi_cec]
   connect_bd_net -net hdmi_hpd_1 [get_bd_ports hdmi_hpd] [get_bd_pins zybo_hdmi_0/hdmi_hpd]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins zybo_hdmi_0/clk_125]
@@ -368,58 +374,64 @@ CONFIG.PCW_USB0_RESET_IO {MIO 46} \
 
   # Perform GUI Layout
   regenerate_bd_layout -layout_string {
-   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.8
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 40 -defaultsOSRD
-preplace port hdmi_hpd -pg 1 -y 420 -defaultsOSRD
-preplace port hdmi_out_en -pg 1 -y 440 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 60 -defaultsOSRD
-preplace port hdmi_cec -pg 1 -y 400 -defaultsOSRD
-preplace portBus tmdsb -pg 1 -y 420 -defaultsOSRD
-preplace portBus tmds -pg 1 -y 400 -defaultsOSRD
-preplace inst vga_gaussian_blur_0 -pg 1 -lvl 4 -y 400 -defaultsOSRD
-preplace inst vga_gaussian_blur_1 -pg 1 -lvl 5 -y 400 -defaultsOSRD
-preplace inst vga_gaussian_blur_2 -pg 1 -lvl 6 -y 400 -defaultsOSRD
-preplace inst GND -pg 1 -lvl 1 -y 520 -defaultsOSRD
-preplace inst vga_color_test_0 -pg 1 -lvl 3 -y 530 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 220 -defaultsOSRD
-preplace inst vga_sync_0 -pg 1 -lvl 2 -y 510 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 7 -y 130 -defaultsOSRD
-preplace inst zybo_hdmi_0 -pg 1 -lvl 7 -y 420 -defaultsOSRD
+preplace port DDR -pg 1 -y 50 -defaultsOSRD
+preplace port hdmi_hpd -pg 1 -y 590 -defaultsOSRD
+preplace port hdmi_out_en -pg 1 -y 490 -defaultsOSRD
+preplace port sw0 -pg 1 -y 510 -defaultsOSRD
+preplace port sw1 -pg 1 -y 530 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
+preplace port sw2 -pg 1 -y 550 -defaultsOSRD
+preplace port hdmi_cec -pg 1 -y 570 -defaultsOSRD
+preplace portBus tmdsb -pg 1 -y 470 -defaultsOSRD
+preplace portBus tmds -pg 1 -y 450 -defaultsOSRD
+preplace inst vga_gaussian_blur_0 -pg 1 -lvl 4 -y 420 -defaultsOSRD
+preplace inst vga_gaussian_blur_1 -pg 1 -lvl 5 -y 430 -defaultsOSRD
+preplace inst vga_gaussian_blur_2 -pg 1 -lvl 6 -y 450 -defaultsOSRD
+preplace inst GND -pg 1 -lvl 1 -y 390 -defaultsOSRD
+preplace inst vga_color_test_0 -pg 1 -lvl 3 -y 420 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 230 -defaultsOSRD
+preplace inst vga_sync_0 -pg 1 -lvl 2 -y 380 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 7 -y 140 -defaultsOSRD
+preplace inst zybo_hdmi_0 -pg 1 -lvl 7 -y 470 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 7 1 NJ
-preplace netloc vga_gaussian_blur_0_rgb_out 1 4 1 850
-preplace netloc hdmi_hpd_1 1 0 7 NJ 420 NJ 420 NJ 460 NJ 520 NJ 520 NJ 520 NJ
-preplace netloc hdmi_cec_1 1 0 7 NJ 400 NJ 400 NJ 450 NJ 510 NJ 510 NJ 510 NJ
+preplace netloc vga_gaussian_blur_0_rgb_out 1 4 1 890
+preplace netloc en_1_1 1 0 6 NJ 550 NJ 550 NJ 550 NJ 550 NJ 550 NJ
+preplace netloc hdmi_hpd_1 1 0 7 NJ 590 NJ 590 NJ 590 NJ 590 NJ 590 NJ 590 NJ
+preplace netloc en_1 1 0 4 NJ 510 NJ 510 NJ 510 NJ
+preplace netloc hdmi_cec_1 1 0 7 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ
 preplace netloc zybo_hdmi_0_tmds 1 7 1 NJ
-preplace netloc vga_gaussian_blur_2_active_out 1 6 1 1340
-preplace netloc vga_gaussian_blur_2_vsync_out 1 6 1 1330
-preplace netloc vga_gaussian_blur_1_active_out 1 5 1 1090
-preplace netloc vga_gaussian_blur_0_active_out 1 4 1 850
+preplace netloc vga_gaussian_blur_2_active_out 1 6 1 1520
+preplace netloc vga_gaussian_blur_2_vsync_out 1 6 1 1510
+preplace netloc vga_gaussian_blur_1_active_out 1 5 1 1240
+preplace netloc vga_gaussian_blur_0_active_out 1 4 1 950
+preplace netloc en_2 1 0 5 NJ 530 NJ 530 NJ 530 NJ 540 NJ
 preplace netloc vga_color_test_0_rgb 1 3 1 600
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 8 20 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 1750
-preplace netloc vga_sync_0_yaddr 1 2 2 410 440 NJ
-preplace netloc vga_gaussian_blur_2_hsync_out 1 6 1 1350
-preplace netloc vga_gaussian_blur_0_hsync_out 1 4 1 850
-preplace netloc vga_sync_0_hsync 1 2 2 360 380 NJ
-preplace netloc vga_gaussian_blur_1_yaddr_out 1 5 1 1090
-preplace netloc vga_gaussian_blur_1_vsync_out 1 5 1 1090
-preplace netloc vga_gaussian_blur_0_vsync_out 1 4 1 850
-preplace netloc vga_sync_0_xaddr 1 2 2 400 420 NJ
-preplace netloc vga_gaussian_blur_0_xaddr_out 1 4 1 850
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 8 20 290 NJ 290 NJ 290 NJ 290 NJ 290 NJ 290 NJ 290 1950
+preplace netloc vga_sync_0_yaddr 1 2 2 360 500 NJ
+preplace netloc vga_gaussian_blur_2_hsync_out 1 6 1 1530
+preplace netloc vga_gaussian_blur_0_hsync_out 1 4 1 940
+preplace netloc vga_sync_0_hsync 1 2 2 370 340 NJ
+preplace netloc vga_gaussian_blur_1_yaddr_out 1 5 1 1210
+preplace netloc vga_gaussian_blur_1_vsync_out 1 5 1 1230
+preplace netloc vga_gaussian_blur_0_vsync_out 1 4 1 920
+preplace netloc vga_sync_0_xaddr 1 2 2 370 490 NJ
+preplace netloc vga_gaussian_blur_0_xaddr_out 1 4 1 910
 preplace netloc processing_system7_0_FIXED_IO 1 7 1 NJ
-preplace netloc vga_gaussian_blur_1_hsync_out 1 5 1 1090
-preplace netloc vga_sync_0_active 1 2 2 340 360 NJ
+preplace netloc vga_gaussian_blur_1_hsync_out 1 5 1 1260
+preplace netloc vga_sync_0_active 1 2 2 360 330 NJ
 preplace netloc zybo_hdmi_0_hdmi_out_en 1 7 1 NJ
 preplace netloc zybo_hdmi_0_tmdsb 1 7 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 8 20 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 1370 270 1760
-preplace netloc vga_sync_0_vsync 1 2 2 370 400 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 8 20 170 NJ 170 NJ 170 NJ 170 NJ 170 NJ 170 1550 280 1960
+preplace netloc vga_sync_0_vsync 1 2 2 390 350 NJ
 preplace netloc vga_gaussian_blur_2_rgb_out 1 6 1 N
-preplace netloc Net 1 1 6 180 270 390 340 610 290 850 290 1090 290 1360
+preplace netloc Net 1 1 6 180 280 380 300 650 300 960 310 1270 330 1540
 preplace netloc GND_dout 1 1 1 NJ
-preplace netloc vga_gaussian_blur_1_rgb_out 1 5 1 1090
-preplace netloc vga_gaussian_blur_1_xaddr_out 1 5 1 1090
-preplace netloc vga_gaussian_blur_0_yaddr_out 1 4 1 850
-levelinfo -pg 1 0 100 260 500 730 970 1210 1560 1780 -top 0 -bot 600
+preplace netloc vga_gaussian_blur_1_rgb_out 1 5 1 1200
+preplace netloc vga_gaussian_blur_1_xaddr_out 1 5 1 1220
+preplace netloc vga_gaussian_blur_0_yaddr_out 1 4 1 900
+levelinfo -pg 1 0 100 270 490 770 1080 1390 1750 1980 -top 0 -bot 610
 ",
 }
 

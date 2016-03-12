@@ -1,8 +1,8 @@
 --Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
---Date        : Thu Mar 10 09:30:55 2016
---Host        : GilaMonster running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+--Date        : Thu Mar 10 15:45:23 2016
+--Host        : minmi running 64-bit elementary OS Freya
 --Command     : generate_target system.bd
 --Design      : system
 --Purpose     : IP block netlist
@@ -37,6 +37,9 @@ entity system is
     hdmi_cec : in STD_LOGIC;
     hdmi_hpd : in STD_LOGIC;
     hdmi_out_en : out STD_LOGIC;
+    sw0 : in STD_LOGIC;
+    sw1 : in STD_LOGIC;
+    sw2 : in STD_LOGIC;
     tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
     tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
@@ -55,57 +58,6 @@ architecture STRUCTURE of system is
     rgb : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component system_vga_color_test_0_0;
-  component system_vga_gaussian_blur_0_0 is
-  port (
-    clk_25 : in STD_LOGIC;
-    active_in : in STD_LOGIC;
-    hsync_in : in STD_LOGIC;
-    vsync_in : in STD_LOGIC;
-    xaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    active_out : out STD_LOGIC;
-    hsync_out : out STD_LOGIC;
-    vsync_out : out STD_LOGIC;
-    xaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
-  );
-  end component system_vga_gaussian_blur_0_0;
-  component system_vga_gaussian_blur_1_0 is
-  port (
-    clk_25 : in STD_LOGIC;
-    active_in : in STD_LOGIC;
-    hsync_in : in STD_LOGIC;
-    vsync_in : in STD_LOGIC;
-    xaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    active_out : out STD_LOGIC;
-    hsync_out : out STD_LOGIC;
-    vsync_out : out STD_LOGIC;
-    xaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
-  );
-  end component system_vga_gaussian_blur_1_0;
-  component system_vga_gaussian_blur_2_0 is
-  port (
-    clk_25 : in STD_LOGIC;
-    active_in : in STD_LOGIC;
-    hsync_in : in STD_LOGIC;
-    vsync_in : in STD_LOGIC;
-    xaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    active_out : out STD_LOGIC;
-    hsync_out : out STD_LOGIC;
-    vsync_out : out STD_LOGIC;
-    xaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
-  );
-  end component system_vga_gaussian_blur_2_0;
   component system_vga_sync_0_0 is
   port (
     clk_25 : in STD_LOGIC;
@@ -218,8 +170,65 @@ architecture STRUCTURE of system is
     PS_PORB : inout STD_LOGIC
   );
   end component system_processing_system7_0_0;
+  component system_vga_gaussian_blur_0_0 is
+  port (
+    en : in STD_LOGIC;
+    clk_25 : in STD_LOGIC;
+    active_in : in STD_LOGIC;
+    hsync_in : in STD_LOGIC;
+    vsync_in : in STD_LOGIC;
+    xaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    rgb_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    active_out : out STD_LOGIC;
+    hsync_out : out STD_LOGIC;
+    vsync_out : out STD_LOGIC;
+    xaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
+  );
+  end component system_vga_gaussian_blur_0_0;
+  component system_vga_gaussian_blur_1_0 is
+  port (
+    en : in STD_LOGIC;
+    clk_25 : in STD_LOGIC;
+    active_in : in STD_LOGIC;
+    hsync_in : in STD_LOGIC;
+    vsync_in : in STD_LOGIC;
+    xaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    rgb_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    active_out : out STD_LOGIC;
+    hsync_out : out STD_LOGIC;
+    vsync_out : out STD_LOGIC;
+    xaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
+  );
+  end component system_vga_gaussian_blur_1_0;
+  component system_vga_gaussian_blur_2_0 is
+  port (
+    en : in STD_LOGIC;
+    clk_25 : in STD_LOGIC;
+    active_in : in STD_LOGIC;
+    hsync_in : in STD_LOGIC;
+    vsync_in : in STD_LOGIC;
+    xaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    rgb_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    active_out : out STD_LOGIC;
+    hsync_out : out STD_LOGIC;
+    vsync_out : out STD_LOGIC;
+    xaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
+  );
+  end component system_vga_gaussian_blur_2_0;
   signal GND_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Net : STD_LOGIC;
+  signal en_1 : STD_LOGIC;
+  signal en_1_1 : STD_LOGIC;
+  signal en_2 : STD_LOGIC;
   signal hdmi_cec_1 : STD_LOGIC;
   signal hdmi_hpd_1 : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -306,6 +315,9 @@ architecture STRUCTURE of system is
   signal NLW_vga_gaussian_blur_2_xaddr_out_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal NLW_vga_gaussian_blur_2_yaddr_out_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
 begin
+  en_1 <= sw0;
+  en_1_1 <= sw2;
+  en_2 <= sw1;
   hdmi_cec_1 <= hdmi_cec;
   hdmi_hpd_1 <= hdmi_hpd;
   hdmi_out_en <= zybo_hdmi_0_hdmi_out_en;
@@ -406,6 +418,7 @@ vga_gaussian_blur_0: component system_vga_gaussian_blur_0_0
       active_in => vga_sync_0_active,
       active_out => vga_gaussian_blur_0_active_out,
       clk_25 => Net,
+      en => en_1,
       hsync_in => vga_sync_0_hsync,
       hsync_out => vga_gaussian_blur_0_hsync_out,
       rgb_in(23 downto 0) => vga_color_test_0_rgb(23 downto 0),
@@ -422,6 +435,7 @@ vga_gaussian_blur_1: component system_vga_gaussian_blur_1_0
       active_in => vga_gaussian_blur_0_active_out,
       active_out => vga_gaussian_blur_1_active_out,
       clk_25 => Net,
+      en => en_2,
       hsync_in => vga_gaussian_blur_0_hsync_out,
       hsync_out => vga_gaussian_blur_1_hsync_out,
       rgb_in(23 downto 0) => vga_gaussian_blur_0_rgb_out(23 downto 0),
@@ -438,6 +452,7 @@ vga_gaussian_blur_2: component system_vga_gaussian_blur_2_0
       active_in => vga_gaussian_blur_1_active_out,
       active_out => vga_gaussian_blur_2_active_out,
       clk_25 => Net,
+      en => en_1_1,
       hsync_in => vga_gaussian_blur_1_hsync_out,
       hsync_out => vga_gaussian_blur_2_hsync_out,
       rgb_in(23 downto 0) => vga_gaussian_blur_1_rgb_out(23 downto 0),

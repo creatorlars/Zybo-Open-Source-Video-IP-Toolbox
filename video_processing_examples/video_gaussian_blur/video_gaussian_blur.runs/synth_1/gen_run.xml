@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1457620279">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1457642724">
+  <File Type="VDS-TIMING-PB" Name="system_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="system_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="system_wrapper.dcp"/>
-  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <File Type="RDS-UTIL-PB" Name="system_wrapper_utilization_synth.pb"/>
-  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+  <File Type="RDS-UTIL" Name="system_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-PROPCONSTRS" Name="system_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="system_wrapper.vds"/>
   <File Type="PA-TCL" Name="system_wrapper.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
-  <File Type="RDS-RDS" Name="system_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="system_wrapper_utilization_synth.rpt"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="system_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="system_wrapper_timing_summary_synth.pb"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/system/system.bd">
@@ -30,6 +30,7 @@
     <File Path="$PSRCDIR/sources_1/bd/system/ip/system_vga_gaussian_blur_2_0/system_vga_gaussian_blur_2_0.upgrade_log"/>
     <File Path="$PSRCDIR/sources_1/bd/system/ip/system_vga_gaussian_blur_3_0/system_vga_gaussian_blur_3_0.upgrade_log"/>
     <File Path="$PSRCDIR/sources_1/bd/system/ip/system_vga_gaussian_blur_4_0/system_vga_gaussian_blur_4_0.upgrade_log"/>
+    <File Path="$PSRCDIR/sources_1/bd/system/ip/system_vga_gaussian_blur_1_0/system_vga_gaussian_blur_1_0.upgrade_log"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="system_wrapper"/>

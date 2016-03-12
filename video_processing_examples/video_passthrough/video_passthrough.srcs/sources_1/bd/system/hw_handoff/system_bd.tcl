@@ -154,12 +154,6 @@ proc create_root_design { parentCell } {
   set tmds [ create_bd_port -dir O -from 3 -to 0 tmds ]
   set tmdsb [ create_bd_port -dir O -from 3 -to 0 tmdsb ]
 
-  # Create instance: GND, and set properties
-  set GND [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 GND ]
-  set_property -dict [ list \
-CONFIG.CONST_VAL {0} \
- ] $GND
-
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.2 clk_wiz_0 ]
   set_property -dict [ list \
@@ -172,6 +166,9 @@ CONFIG.MMCM_DIVCLK_DIVIDE {5} \
 CONFIG.RESET_PORT {resetn} \
 CONFIG.RESET_TYPE {ACTIVE_LOW} \
  ] $clk_wiz_0
+
+  # Create instance: inverter_0, and set properties
+  set inverter_0 [ create_bd_cell -type ip -vlnv user.org:user:inverter:1.0 inverter_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -323,12 +320,12 @@ CONFIG.PCW_USB0_RESET_IO {MIO 46} \
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net GND_dout [get_bd_pins GND/dout] [get_bd_pins vga_sync_0/rst]
   connect_bd_net -net Net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins vga_color_test_0/clk_25] [get_bd_pins vga_sync_0/clk_25] [get_bd_pins zybo_hdmi_0/clk_25]
   connect_bd_net -net hdmi_cec_1 [get_bd_ports hdmi_cec] [get_bd_pins zybo_hdmi_0/hdmi_cec]
   connect_bd_net -net hdmi_hpd_1 [get_bd_ports hdmi_hpd] [get_bd_pins zybo_hdmi_0/hdmi_hpd]
+  connect_bd_net -net inverter_0_x_not [get_bd_pins inverter_0/x_not] [get_bd_pins vga_sync_0/rst]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins zybo_hdmi_0/clk_125]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins inverter_0/x] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
   connect_bd_net -net vga_color_test_0_rgb [get_bd_pins vga_color_test_0/rgb] [get_bd_pins zybo_hdmi_0/rgb]
   connect_bd_net -net vga_sync_0_active [get_bd_pins vga_sync_0/active] [get_bd_pins zybo_hdmi_0/active]
   connect_bd_net -net vga_sync_0_hsync [get_bd_pins vga_sync_0/hsync] [get_bd_pins zybo_hdmi_0/hsync]
@@ -343,39 +340,39 @@ CONFIG.PCW_USB0_RESET_IO {MIO 46} \
 
   # Perform GUI Layout
   regenerate_bd_layout -layout_string {
-   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.8
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 40 -defaultsOSRD
-preplace port hdmi_hpd -pg 1 -y 390 -defaultsOSRD
+preplace port DDR -pg 1 -y 50 -defaultsOSRD
+preplace port hdmi_hpd -pg 1 -y 470 -defaultsOSRD
 preplace port hdmi_out_en -pg 1 -y 420 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 60 -defaultsOSRD
-preplace port hdmi_cec -pg 1 -y 370 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
+preplace port hdmi_cec -pg 1 -y 450 -defaultsOSRD
 preplace portBus tmdsb -pg 1 -y 400 -defaultsOSRD
 preplace portBus tmds -pg 1 -y 380 -defaultsOSRD
-preplace inst GND -pg 1 -lvl 1 -y 490 -defaultsOSRD
-preplace inst vga_color_test_0 -pg 1 -lvl 3 -y 500 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 220 -defaultsOSRD
-preplace inst vga_sync_0 -pg 1 -lvl 2 -y 480 -defaultsOSRD
+preplace inst inverter_0 -pg 1 -lvl 1 -y 230 -defaultsOSRD
+preplace inst vga_color_test_0 -pg 1 -lvl 3 -y 320 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 330 -defaultsOSRD
+preplace inst vga_sync_0 -pg 1 -lvl 2 -y 300 -defaultsOSRD
 preplace inst zybo_hdmi_0 -pg 1 -lvl 4 -y 400 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 4 -y 130 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -y 140 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 4 1 NJ
-preplace netloc hdmi_hpd_1 1 0 4 NJ 390 NJ 390 NJ 390 NJ
-preplace netloc hdmi_cec_1 1 0 4 NJ 370 NJ 370 NJ 370 NJ
+preplace netloc hdmi_hpd_1 1 0 4 NJ 470 NJ 470 NJ 470 NJ
+preplace netloc hdmi_cec_1 1 0 4 NJ 450 NJ 450 NJ 450 NJ
 preplace netloc zybo_hdmi_0_tmds 1 4 1 NJ
-preplace netloc vga_color_test_0_rgb 1 3 1 610
+preplace netloc vga_color_test_0_rgb 1 3 1 620
 preplace netloc vga_sync_0_yaddr 1 2 1 N
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 20 280 NJ 280 NJ 280 NJ 280 990
-preplace netloc vga_sync_0_hsync 1 2 2 350 380 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 20 520 NJ 520 NJ 520 NJ 520 1060
+preplace netloc inverter_0_x_not 1 1 1 190
+preplace netloc vga_sync_0_hsync 1 2 2 NJ 410 640
 preplace netloc vga_sync_0_xaddr 1 2 1 N
 preplace netloc processing_system7_0_FIXED_IO 1 4 1 NJ
-preplace netloc vga_sync_0_active 1 2 2 370 410 NJ
+preplace netloc vga_sync_0_active 1 2 2 380 250 NJ
 preplace netloc zybo_hdmi_0_hdmi_out_en 1 4 1 NJ
 preplace netloc zybo_hdmi_0_tmdsb 1 4 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 160 NJ 160 NJ 160 590 270 1000
-preplace netloc Net 1 1 3 180 350 380 350 NJ
-preplace netloc vga_sync_0_vsync 1 2 2 360 430 NJ
-preplace netloc GND_dout 1 1 1 NJ
-levelinfo -pg 1 0 100 270 490 800 1020 -top 0 -bot 570
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 30 420 NJ 420 NJ 420 630 280 1070
+preplace netloc Net 1 1 3 200 390 400 390 610
+preplace netloc vga_sync_0_vsync 1 2 2 380 400 NJ
+levelinfo -pg 1 0 110 290 510 860 1090 -top 0 -bot 530
 ",
 }
 

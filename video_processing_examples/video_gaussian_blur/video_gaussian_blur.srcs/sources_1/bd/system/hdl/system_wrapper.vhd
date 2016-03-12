@@ -1,8 +1,8 @@
 --Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
---Date        : Thu Mar 10 09:30:55 2016
---Host        : GilaMonster running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+--Date        : Thu Mar 10 15:45:23 2016
+--Host        : minmi running 64-bit elementary OS Freya
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
 --Purpose     : IP block netlist
@@ -37,6 +37,9 @@ entity system_wrapper is
     hdmi_cec : in STD_LOGIC;
     hdmi_hpd : in STD_LOGIC;
     hdmi_out_en : out STD_LOGIC;
+    sw0 : in STD_LOGIC;
+    sw1 : in STD_LOGIC;
+    sw2 : in STD_LOGIC;
     tmds : out STD_LOGIC_VECTOR ( 3 downto 0 );
     tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
@@ -70,7 +73,10 @@ architecture STRUCTURE of system_wrapper is
     tmdsb : out STD_LOGIC_VECTOR ( 3 downto 0 );
     hdmi_out_en : out STD_LOGIC;
     hdmi_cec : in STD_LOGIC;
-    hdmi_hpd : in STD_LOGIC
+    hdmi_hpd : in STD_LOGIC;
+    sw0 : in STD_LOGIC;
+    sw1 : in STD_LOGIC;
+    sw2 : in STD_LOGIC
   );
   end component system;
 begin
@@ -100,6 +106,9 @@ system_i: component system
       hdmi_cec => hdmi_cec,
       hdmi_hpd => hdmi_hpd,
       hdmi_out_en => hdmi_out_en,
+      sw0 => sw0,
+      sw1 => sw1,
+      sw2 => sw2,
       tmds(3 downto 0) => tmds(3 downto 0),
       tmdsb(3 downto 0) => tmdsb(3 downto 0)
     );

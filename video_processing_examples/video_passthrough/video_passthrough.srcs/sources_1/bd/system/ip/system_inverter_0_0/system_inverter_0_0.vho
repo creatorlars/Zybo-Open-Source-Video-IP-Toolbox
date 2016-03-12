@@ -46,15 +46,16 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:ip:xlconstant:1.1
+-- IP VLNV: user.org:user:inverter:1.0
 -- IP Revision: 2
 
 -- The following code must appear in the VHDL architecture header.
 
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
-COMPONENT system_xlconstant_0_0
+COMPONENT system_inverter_0_0
   PORT (
-    dout : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    x : IN STD_LOGIC;
+    x_not : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -63,13 +64,10 @@ END COMPONENT;
 -- body. Substitute your own instance name and net names.
 
 ------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
-your_instance_name : system_xlconstant_0_0
+your_instance_name : system_inverter_0_0
   PORT MAP (
-    dout => dout
+    x => x,
+    x_not => x_not
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
-
--- You must compile the wrapper file system_xlconstant_0_0.vhd when simulating
--- the core, system_xlconstant_0_0. When compiling the wrapper file, be sure to
--- reference the VHDL simulation library.
 

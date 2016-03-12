@@ -47,13 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:vga_gaussian_blur:1.0
--- IP Revision: 4
+-- IP Revision: 5
 
 -- The following code must appear in the VHDL architecture header.
 
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT system_vga_gaussian_blur_1_0
   PORT (
+    en : IN STD_LOGIC;
     clk_25 : IN STD_LOGIC;
     active_in : IN STD_LOGIC;
     hsync_in : IN STD_LOGIC;
@@ -77,6 +78,7 @@ END COMPONENT;
 ------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
 your_instance_name : system_vga_gaussian_blur_1_0
   PORT MAP (
+    en => en,
     clk_25 => clk_25,
     active_in => active_in,
     hsync_in => hsync_in,

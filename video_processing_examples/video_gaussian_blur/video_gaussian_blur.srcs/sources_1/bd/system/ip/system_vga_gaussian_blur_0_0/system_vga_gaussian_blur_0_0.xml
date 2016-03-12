@@ -17,7 +17,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>a55a3c0f</spirit:value>
+            <spirit:value>705923c9</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -25,7 +25,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>ca1cc135</spirit:value>
+            <spirit:value>c03bd55f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -33,7 +33,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 10 14:30:55 UTC 2016</spirit:value>
+            <spirit:value>Thu Mar 10 20:25:54 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -51,7 +51,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>a55a3c0f</spirit:value>
+            <spirit:value>705923c9</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -59,7 +59,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>ca1cc135</spirit:value>
+            <spirit:value>c03bd55f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -67,7 +67,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 10 14:30:55 UTC 2016</spirit:value>
+            <spirit:value>Thu Mar 10 20:25:54 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -86,7 +86,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>a55a3c0f</spirit:value>
+            <spirit:value>705923c9</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -94,7 +94,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>ca1cc135</spirit:value>
+            <spirit:value>c03bd55f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -102,7 +102,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 10 14:30:55 UTC 2016</spirit:value>
+            <spirit:value>Thu Mar 10 20:25:54 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -120,7 +120,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>915b0f63</spirit:value>
+            <spirit:value>33a15982</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -128,7 +128,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>ca1cc135</spirit:value>
+            <spirit:value>c03bd55f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -136,7 +136,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 10 14:30:55 UTC 2016</spirit:value>
+            <spirit:value>Thu Mar 10 20:25:54 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -155,7 +155,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>915b0f63</spirit:value>
+            <spirit:value>33a15982</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -163,7 +163,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>ca1cc135</spirit:value>
+            <spirit:value>c03bd55f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -171,7 +171,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 10 14:30:55 UTC 2016</spirit:value>
+            <spirit:value>Thu Mar 10 20:25:54 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -181,6 +181,19 @@
       </spirit:view>
     </spirit:views>
     <spirit:ports>
+      <spirit:port>
+        <spirit:name>en</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
       <spirit:port>
         <spirit:name>clk_25</spirit:name>
         <spirit:wire>
@@ -462,15 +475,15 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>vga_gaussian_blur_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="xilinx.com:user:vga_gaussian_blur:1.0_ARCHIVE_LOCATION">D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="xilinx.com:user:vga_gaussian_blur:1.0_ARCHIVE_LOCATION">/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2015.4</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="25150b94"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="a40207ff"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d39bfb05"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="5dcbd91a"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="29406de9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="4402bc76"/>
     </xilinx:packagingInfo>

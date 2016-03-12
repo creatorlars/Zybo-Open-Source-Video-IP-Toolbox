@@ -18,11 +18,11 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_zybo_hdm
 # IP: bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_clk_wiz_0_0 || ORIG_REF_NAME==system_clk_wiz_0_0}]
 
-# IP: bd/system/ip/system_xlconstant_0_0/system_xlconstant_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_xlconstant_0_0 || ORIG_REF_NAME==system_xlconstant_0_0}]
-
 # IP: bd/system/ip/system_vga_color_test_0_0/system_vga_color_test_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_vga_color_test_0_0 || ORIG_REF_NAME==system_vga_color_test_0_0}]
+
+# IP: bd/system/ip/system_inverter_0_0/system_inverter_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_inverter_0_0 || ORIG_REF_NAME==system_inverter_0_0}]
 
 # XDC: bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_processing_system7_0_0 || ORIG_REF_NAME==system_processing_system7_0_0}] {/inst }]/inst ]]

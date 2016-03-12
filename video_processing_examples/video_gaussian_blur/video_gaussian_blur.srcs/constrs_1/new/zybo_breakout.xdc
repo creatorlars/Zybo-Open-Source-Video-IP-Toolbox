@@ -41,3 +41,16 @@ set_property IOSTANDARD LVCMOS33 [get_ports hdmi_hpd]
 ##IO_L6N_T0_VREF_35
 set_property PACKAGE_PIN F17 [get_ports hdmi_out_en]
 set_property IOSTANDARD LVCMOS33 [get_ports hdmi_out_en]
+
+##Switches
+##IO_L19N_T3_VREF_35
+set_property PACKAGE_PIN G15 [get_ports sw0]
+set_property IOSTANDARD LVCMOS33 [get_ports sw0]
+
+##IO_L24P_T3_34
+set_property PACKAGE_PIN P15 [get_ports sw1]
+set_property IOSTANDARD LVCMOS33 [get_ports sw1]
+
+##IO_L4N_T0_34
+set_property PACKAGE_PIN W13 [get_ports sw2]
+set_property IOSTANDARD LVCMOS33 [get_ports sw2]

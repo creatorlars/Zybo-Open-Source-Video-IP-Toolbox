@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date             : Thu Mar 10 09:36:46 2016
-| Host             : GilaMonster running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date             : Thu Mar 10 15:51:43 2016
+| Host             : minmi running 64-bit elementary OS Freya
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb
 | Design           : system_wrapper
 | Device           : xc7z010clg400-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.026 |
-| Dynamic (W)              | 1.887 |
+| Total On-Chip Power (W)  | 2.025 |
+| Dynamic (W)              | 1.886 |
 | Device Static (W)        | 0.139 |
 | Total Off-Chip Power (W) | 0.008 |
 | Effective TJA (C/W)      | 11.5  |
@@ -51,19 +51,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.008 |        6 |       --- |             --- |
-| Slice Logic             |     0.009 |     6536 |       --- |             --- |
-|   LUT as Shift Register |     0.005 |     3834 |      6000 |           63.90 |
-|   LUT as Logic          |     0.004 |     1061 |     17600 |            6.03 |
+| Slice Logic             |     0.008 |     6614 |       --- |             --- |
+|   LUT as Shift Register |     0.004 |     3834 |      6000 |           63.90 |
+|   LUT as Logic          |     0.004 |     1104 |     17600 |            6.27 |
 |   CARRY4                |    <0.001 |      201 |      4400 |            4.57 |
 |   Register              |    <0.001 |     1010 |     35200 |            2.87 |
 |   F7/F8 Muxes           |    <0.001 |        1 |     17600 |           <0.01 |
 |   Others                |     0.000 |      162 |       --- |             --- |
-| Signals                 |     0.005 |     3208 |       --- |             --- |
+| Signals                 |     0.005 |     3282 |       --- |             --- |
 | MMCM                    |     0.116 |        1 |         2 |           50.00 |
-| I/O                     |     0.184 |       11 |       100 |           11.00 |
+| I/O                     |     0.184 |       14 |       100 |           14.00 |
 | PS7                     |     1.556 |        1 |       --- |             --- |
 | Static Power            |     0.139 |          |           |                 |
-| Total                   |     2.018 |          |           |                 |
+| Total                   |     2.016 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.031 |       0.023 |      0.008 |
+| Vccint    |       1.000 |     0.030 |       0.022 |      0.008 |
 | Vccaux    |       1.800 |     0.077 |       0.065 |      0.012 |
 | Vcco33    |       3.300 |     0.059 |       0.058 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -152,28 +152,28 @@ Table of Contents
 +-----------------------------------------+-----------+
 | Name                                    | Power (W) |
 +-----------------------------------------+-----------+
-| system_wrapper                          |     1.879 |
-|   system_i                              |     1.879 |
+| system_wrapper                          |     1.877 |
+|   system_i                              |     1.877 |
 |     GND                                 |     0.000 |
 |     clk_wiz_0                           |     0.116 |
 |       inst                              |     0.116 |
-|     processing_system7_0                |     1.556 |
-|       inst                              |     1.556 |
+|     processing_system7_0                |     1.557 |
+|       inst                              |     1.557 |
 |         xlnx_axi_wrshim_unwrap_inst_gp0 |     0.000 |
 |         xlnx_axi_wrshim_unwrap_inst_gp1 |     0.000 |
 |     vga_color_test_0                    |    <0.001 |
 |       U0                                |    <0.001 |
 |     vga_gaussian_blur_0                 |     0.004 |
 |       U0                                |     0.004 |
-|     vga_gaussian_blur_1                 |     0.007 |
-|       U0                                |     0.007 |
+|     vga_gaussian_blur_1                 |     0.006 |
+|       U0                                |     0.006 |
 |     vga_gaussian_blur_2                 |     0.007 |
-|       U0                                |     0.007 |
+|       U0                                |     0.006 |
 |     vga_sync_0                          |    <0.001 |
 |       U0                                |    <0.001 |
 |     zybo_hdmi_0                         |     0.187 |
 |       U0                                |     0.187 |
-|         DVID                            |     0.003 |
+|         DVID                            |     0.004 |
 |           TMDS_encoder_BLUE             |    <0.001 |
 |           TMDS_encoder_GREEN            |    <0.001 |
 |           TMDS_encoder_RED              |    <0.001 |

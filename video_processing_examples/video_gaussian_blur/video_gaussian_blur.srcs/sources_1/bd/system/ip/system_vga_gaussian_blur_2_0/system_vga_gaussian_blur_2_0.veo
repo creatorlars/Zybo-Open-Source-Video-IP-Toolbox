@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:user:vga_gaussian_blur:1.0
-// IP Revision: 4
+// IP Revision: 5
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections
@@ -55,6 +55,7 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 system_vga_gaussian_blur_2_0 your_instance_name (
+  .en(en),                  // input wire en
   .clk_25(clk_25),          // input wire clk_25
   .active_in(active_in),    // input wire active_in
   .hsync_in(hsync_in),      // input wire hsync_in

@@ -1,51 +1,42 @@
 #-----------------------------------------------------------
 # Vivado v2015.4 (64-bit)
-# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Mar 09 15:57:53 2016
-# Process ID: 6476
-# Current directory: D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1
-# Command line: vivado.exe -log system_wrapper.vds -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
-# Log file: D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/system_wrapper.vds
-# Journal file: D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1\vivado.jou
+# Start of session at: Thu Mar 10 14:13:04 2016
+# Process ID: 15183
+# Current directory: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1
+# Command line: vivado -log system_wrapper.vds -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
+# Log file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/system_wrapper.vds
+# Journal file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source system_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_ip'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.4/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/general_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
 Command: synth_design -top system_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
-WARNING: [Synth 8-992] S_AXI_GP0_ACLK_temp is already implicitly declared earlier [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2701]
-WARNING: [Synth 8-992] S_AXI_GP1_ACLK_temp is already implicitly declared earlier [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2702]
+WARNING: [Synth 8-992] S_AXI_GP0_ACLK_temp is already implicitly declared earlier [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2701]
+WARNING: [Synth 8-992] S_AXI_GP1_ACLK_temp is already implicitly declared earlier [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2702]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 335.289 ; gain = 164.059
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1063.102 ; gain = 220.594 ; free physical = 140 ; free virtual = 11178
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'system_wrapper' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:45]
-INFO: [Synth 8-3491] module 'system' declared at 'D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:14' bound to instance 'system_i' of component 'system' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:77]
-INFO: [Synth 8-638] synthesizing module 'system' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:49]
-INFO: [Synth 8-3491] module 'system_xlconstant_0_0' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.vhd:29' bound to instance 'GND' of component 'system_xlconstant_0_0' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:245]
-INFO: [Synth 8-638] synthesizing module 'system_xlconstant_0_0' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.vhd:35]
-	Parameter CONST_VAL bound to: 1'b0 
-	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'xlconstant' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.vhd:27' bound to instance 'U0' of component 'xlconstant' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.vhd:49]
-INFO: [Synth 8-638] synthesizing module 'xlconstant' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.vhd:36]
-	Parameter CONST_VAL bound to: 1'b0 
-	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'xlconstant' (1#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'system_xlconstant_0_0' (2#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.vhd:35]
-INFO: [Synth 8-3491] module 'system_clk_wiz_0_0' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v:69' bound to instance 'clk_wiz_0' of component 'system_clk_wiz_0_0' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:249]
-INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v:69]
-INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0_clk_wiz' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v:67]
-INFO: [Synth 8-638] synthesizing module 'IBUF' [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:14145]
+INFO: [Synth 8-638] synthesizing module 'system_wrapper' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:45]
+INFO: [Synth 8-3491] module 'system' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:14' bound to instance 'system_i' of component 'system' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:77]
+INFO: [Synth 8-638] synthesizing module 'system' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:49]
+INFO: [Synth 8-3491] module 'system_clk_wiz_0_0' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v:69' bound to instance 'clk_wiz_0' of component 'system_clk_wiz_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:246]
+INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v:69]
+INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0_clk_wiz' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v:67]
+INFO: [Synth 8-638] synthesizing module 'IBUF' [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:14145]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-256] done synthesizing module 'IBUF' (3#1) [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:14145]
-INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:20396]
+INFO: [Synth 8-256] done synthesizing module 'IBUF' (1#1) [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:14145]
+INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:20396]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 36.500000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
@@ -94,14 +85,20 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [D:/Xilinx/Vivado/2015.4/sc
 	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
 	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (4#1) [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:20396]
-INFO: [Synth 8-638] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'BUFG' (5#1) [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'system_clk_wiz_0_0_clk_wiz' (6#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v:67]
-INFO: [Synth 8-256] done synthesizing module 'system_clk_wiz_0_0' (7#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v:69]
-INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:57' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:256]
-INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:57]
-INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_system7' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (2#1) [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:20396]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'system_clk_wiz_0_0_clk_wiz' (4#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v:67]
+INFO: [Synth 8-256] done synthesizing module 'system_clk_wiz_0_0' (5#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v:69]
+INFO: [Synth 8-3491] module 'system_inverter_0_0' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_inverter_0_0/synth/system_inverter_0_0.vhd:56' bound to instance 'inverter_0' of component 'system_inverter_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:253]
+INFO: [Synth 8-638] synthesizing module 'system_inverter_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_inverter_0_0/synth/system_inverter_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'inverter' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/user.org/inverter_v1_0/inverter.vhd:13' bound to instance 'U0' of component 'inverter' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_inverter_0_0/synth/system_inverter_0_0.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'inverter' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/user.org/inverter_v1_0/inverter.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'inverter' (6#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/user.org/inverter_v1_0/inverter.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'system_inverter_0_0' (7#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_inverter_0_0/synth/system_inverter_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:57' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:258]
+INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
 	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
 	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
@@ -156,43 +153,33 @@ INFO: [Synth 8-638] synthesizing module 'processing_system7_v5_5_processing_syst
 	Parameter C_USE_S_AXI_GP0 bound to: 0 - type: integer 
 	Parameter C_USE_S_AXI_GP1 bound to: 0 - type: integer 
 	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1328]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1329]
-INFO: [Synth 8-638] synthesizing module 'BIBUF' [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:268]
-INFO: [Synth 8-256] done synthesizing module 'BIBUF' (8#1) [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:268]
-INFO: [Synth 8-638] synthesizing module 'PS7' [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:33163]
-INFO: [Synth 8-256] done synthesizing module 'PS7' (9#1) [D:/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:33163]
-INFO: [Synth 8-638] synthesizing module 'xlnx_axi_wrshim_unwrap' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:4213]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1328]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1329]
+INFO: [Synth 8-638] synthesizing module 'BIBUF' [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:268]
+INFO: [Synth 8-256] done synthesizing module 'BIBUF' (8#1) [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:268]
+INFO: [Synth 8-638] synthesizing module 'PS7' [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:33163]
+INFO: [Synth 8-256] done synthesizing module 'PS7' (9#1) [/opt/Xilinx/Vivado/2015.4/scripts/rt/data/unisim_comp.v:33163]
+INFO: [Synth 8-638] synthesizing module 'xlnx_axi_wrshim_unwrap' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:4213]
 	Parameter ID_WIDTH bound to: 6 - type: integer 
 	Parameter AD_WIDTH bound to: 32 - type: integer 
 	Parameter D_WIDTH bound to: 32 - type: integer 
 	Parameter AXI_WRSHIM_APB_SYNC_LEVELS bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'xlnx_axi_wrshim_unwrap' (10#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:4213]
-INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (11#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
-WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:319]
-INFO: [Synth 8-256] done synthesizing module 'system_processing_system7_0_0' (12#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:57]
-INFO: [Synth 8-3491] module 'system_vga_color_test_0_0' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:56' bound to instance 'vga_color_test_0' of component 'system_vga_color_test_0_0' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:328]
-INFO: [Synth 8-638] synthesizing module 'system_vga_color_test_0_0' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:65]
+INFO: [Synth 8-256] done synthesizing module 'xlnx_axi_wrshim_unwrap' (10#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:4213]
+INFO: [Synth 8-256] done synthesizing module 'processing_system7_v5_5_processing_system7' (11#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:156]
+WARNING: [Synth 8-350] instance 'inst' of module 'processing_system7_v5_5_processing_system7' requires 685 connections, but only 672 given [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:319]
+INFO: [Synth 8-256] done synthesizing module 'system_processing_system7_0_0' (12#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/synth/system_processing_system7_0_0.v:57]
+INFO: [Synth 8-3491] module 'system_vga_color_test_0_0' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:56' bound to instance 'vga_color_test_0' of component 'system_vga_color_test_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:330]
+INFO: [Synth 8-638] synthesizing module 'system_vga_color_test_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:65]
 	Parameter H_SIZE bound to: 640 - type: integer 
 	Parameter V_SIZE bound to: 480 - type: integer 
-INFO: [Synth 8-3491] module 'vga_color_test' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_color_test_v1_0/vga_color_test.vhd:14' bound to instance 'U0' of component 'vga_color_test' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:88]
-INFO: [Synth 8-638] synthesizing module 'vga_color_test' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_color_test_v1_0/vga_color_test.vhd:27]
+INFO: [Synth 8-3491] module 'vga_color_test' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_color_test_v1_0/vga_color_test.vhd:14' bound to instance 'U0' of component 'vga_color_test' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'vga_color_test' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_color_test_v1_0/vga_color_test.vhd:27]
 	Parameter H_SIZE bound to: 640 - type: integer 
 	Parameter V_SIZE bound to: 480 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'vga_color_test' (13#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_color_test_v1_0/vga_color_test.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'system_vga_color_test_0_0' (14#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:65]
-INFO: [Synth 8-3491] module 'system_vga_sync_0_0' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:56' bound to instance 'vga_sync_0' of component 'system_vga_sync_0_0' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:335]
-INFO: [Synth 8-638] synthesizing module 'system_vga_sync_0_0' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:68]
-	Parameter H_SIZE bound to: 640 - type: integer 
-	Parameter H_FRONT_DELAY bound to: 16 - type: integer 
-	Parameter H_BACK_DELAY bound to: 48 - type: integer 
-	Parameter H_RETRACE_DELAY bound to: 96 - type: integer 
-	Parameter V_SIZE bound to: 480 - type: integer 
-	Parameter V_FRONT_DELAY bound to: 10 - type: integer 
-	Parameter V_BACK_DELAY bound to: 33 - type: integer 
-	Parameter V_RETRACE_DELAY bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'vga_sync' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_sync_v1_0/vga_sync.vhd:14' bound to instance 'U0' of component 'vga_sync' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:102]
-INFO: [Synth 8-638] synthesizing module 'vga_sync' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_sync_v1_0/vga_sync.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'vga_color_test' (13#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_color_test_v1_0/vga_color_test.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'system_vga_color_test_0_0' (14#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_color_test_0_0/synth/system_vga_color_test_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'system_vga_sync_0_0' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:56' bound to instance 'vga_sync_0' of component 'system_vga_sync_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:337]
+INFO: [Synth 8-638] synthesizing module 'system_vga_sync_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:68]
 	Parameter H_SIZE bound to: 640 - type: integer 
 	Parameter H_FRONT_DELAY bound to: 16 - type: integer 
 	Parameter H_BACK_DELAY bound to: 48 - type: integer 
@@ -201,54 +188,64 @@ INFO: [Synth 8-638] synthesizing module 'vga_sync' [d:/Users/Rob/Documents/Class
 	Parameter V_FRONT_DELAY bound to: 10 - type: integer 
 	Parameter V_BACK_DELAY bound to: 33 - type: integer 
 	Parameter V_RETRACE_DELAY bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'vga_sync' (15#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_sync_v1_0/vga_sync.vhd:37]
-INFO: [Synth 8-256] done synthesizing module 'system_vga_sync_0_0' (16#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:68]
-INFO: [Synth 8-3491] module 'system_zybo_hdmi_0_0' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:56' bound to instance 'zybo_hdmi_0' of component 'system_zybo_hdmi_0_0' [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:345]
-INFO: [Synth 8-638] synthesizing module 'system_zybo_hdmi_0_0' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:72]
-INFO: [Synth 8-3491] module 'zybo_hdmi' declared at 'd:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:16' bound to instance 'U0' of component 'zybo_hdmi' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:98]
-INFO: [Synth 8-638] synthesizing module 'zybo_hdmi' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:32]
-INFO: [Synth 8-638] synthesizing module 'dvid' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:34]
-INFO: [Synth 8-638] synthesizing module 'TMDS_encoder' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/tmds_encoder.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'TMDS_encoder' (17#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/tmds_encoder.vhd:24]
+INFO: [Synth 8-3491] module 'vga_sync' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_sync_v1_0/vga_sync.vhd:14' bound to instance 'U0' of component 'vga_sync' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'vga_sync' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_sync_v1_0/vga_sync.vhd:37]
+	Parameter H_SIZE bound to: 640 - type: integer 
+	Parameter H_FRONT_DELAY bound to: 16 - type: integer 
+	Parameter H_BACK_DELAY bound to: 48 - type: integer 
+	Parameter H_RETRACE_DELAY bound to: 96 - type: integer 
+	Parameter V_SIZE bound to: 480 - type: integer 
+	Parameter V_FRONT_DELAY bound to: 10 - type: integer 
+	Parameter V_BACK_DELAY bound to: 33 - type: integer 
+	Parameter V_RETRACE_DELAY bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'vga_sync' (15#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/vga_sync_v1_0/vga_sync.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'system_vga_sync_0_0' (16#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_vga_sync_0_0/synth/system_vga_sync_0_0.vhd:68]
+INFO: [Synth 8-3491] module 'system_zybo_hdmi_0_0' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:56' bound to instance 'zybo_hdmi_0' of component 'system_zybo_hdmi_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:347]
+INFO: [Synth 8-638] synthesizing module 'system_zybo_hdmi_0_0' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:72]
+INFO: [Synth 8-3491] module 'zybo_hdmi' declared at '/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:16' bound to instance 'U0' of component 'zybo_hdmi' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'zybo_hdmi' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'dvid' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'TMDS_encoder' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/tmds_encoder.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'TMDS_encoder' (17#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/tmds_encoder.vhd:24]
 	Parameter DDR_ALIGNMENT bound to: C0 - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter SRTYPE bound to: ASYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'ODDR2_RED' to cell 'ODDR2' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:53]
+INFO: [Synth 8-113] binding component instance 'ODDR2_RED' to cell 'ODDR2' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:53]
 	Parameter DDR_ALIGNMENT bound to: C0 - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter SRTYPE bound to: ASYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'ODDR2_GREEN' to cell 'ODDR2' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:55]
+INFO: [Synth 8-113] binding component instance 'ODDR2_GREEN' to cell 'ODDR2' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:55]
 	Parameter DDR_ALIGNMENT bound to: C0 - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter SRTYPE bound to: ASYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'ODDR2_BLUE' to cell 'ODDR2' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:57]
+INFO: [Synth 8-113] binding component instance 'ODDR2_BLUE' to cell 'ODDR2' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:57]
 	Parameter DDR_ALIGNMENT bound to: C0 - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter SRTYPE bound to: ASYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'ODDR2_CLK' to cell 'ODDR2' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:59]
-INFO: [Synth 8-256] done synthesizing module 'dvid' (18#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:34]
+INFO: [Synth 8-113] binding component instance 'ODDR2_CLK' to cell 'ODDR2' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'dvid' (18#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/dvid.vhd:34]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDS_blue' to cell 'OBUFDS' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:73]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_blue' to cell 'OBUFDS' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:73]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDS_red' to cell 'OBUFDS' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:74]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_red' to cell 'OBUFDS' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:74]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDS_green' to cell 'OBUFDS' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:75]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_green' to cell 'OBUFDS' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:75]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDS_clock' to cell 'OBUFDS' [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:76]
-INFO: [Synth 8-256] done synthesizing module 'zybo_hdmi' (19#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:32]
-INFO: [Synth 8-256] done synthesizing module 'system_zybo_hdmi_0_0' (20#1) [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'system' (21#1) [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:49]
-INFO: [Synth 8-256] done synthesizing module 'system_wrapper' (22#1) [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:45]
+INFO: [Synth 8-113] binding component instance 'OBUFDS_clock' to cell 'OBUFDS' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'zybo_hdmi' (19#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ipshared/xilinx.com/zybo_hdmi_v1_0/zybo_hdmi.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'system_zybo_hdmi_0_0' (20#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_zybo_hdmi_0_0/synth/system_zybo_hdmi_0_0.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'system' (21#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'system_wrapper' (22#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:45]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 361.004 ; gain = 189.773
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1094.359 ; gain = 251.852 ; free physical = 142 ; free virtual = 11142
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -258,7 +255,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 361.004 ; gain = 189.773
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1094.359 ; gain = 251.852 ; free physical = 141 ; free virtual = 11141
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'system_i/zybo_hdmi_0/U0/DVID/ODDR2_RED' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_n' that is connected to this pin will not be connected to the replacement instance.
@@ -268,29 +265,29 @@ WARNING: [Netlist 29-151] Pin 'C1' on instance 'system_i/zybo_hdmi_0/U0/DVID/ODD
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Constraints 18-549] Could not create 'IBUF_LOW_PWR' constraint because cell 'system_i/clk_wiz_0/inst/clkin1_ibufg' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved inside the database. [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v:79]
+WARNING: [Constraints 18-549] Could not create 'IBUF_LOW_PWR' constraint because cell 'system_i/clk_wiz_0/inst/clkin1_ibufg' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved inside the database. [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v:79]
 Resolution: It is recommended to apply the I/O constraint directly to the top level port instead of applying the constraint to the cell connected to the port.
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
-Finished Parsing XDC File [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/clk_wiz_0/inst'
-Finished Parsing XDC File [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/clk_wiz_0/inst'
-Parsing XDC File [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/clk_wiz_0/inst'
-Finished Parsing XDC File [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/clk_wiz_0/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/clk_wiz_0/inst'
+Finished Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_board.xdc] for cell 'system_i/clk_wiz_0/inst'
+Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/clk_wiz_0/inst'
+Finished Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc] for cell 'system_i/clk_wiz_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/sources_1/bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Parsing XDC File [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/constrs_1/new/zybo_breakout.xdc]
-Finished Parsing XDC File [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/constrs_1/new/zybo_breakout.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.srcs/constrs_1/new/zybo_breakout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/constrs_1/new/zybo_breakout.xdc]
+Finished Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/constrs_1/new/zybo_breakout.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.srcs/constrs_1/new/zybo_breakout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
@@ -299,38 +296,40 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   OBUFDS => OBUFDS: 4 instances
   ODDR2 => ODDR: 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 605.918 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1340.859 ; gain = 0.000 ; free physical = 154 ; free virtual = 10921
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15845 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1340.863 ; gain = 498.355 ; free physical = 159 ; free virtual = 10917
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1340.863 ; gain = 498.355 ; free physical = 159 ; free virtual = 10917
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for system_i/processing_system7_0/inst. (constraint file  D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc, line 28).
-Applied set_property DONT_TOUCH = true for system_i/clk_wiz_0/inst. (constraint file  D:/Users/Rob/Documents/Class/ECEC662/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc, line 31).
+Applied set_property DONT_TOUCH = true for system_i/processing_system7_0/inst. (constraint file  /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc, line 28).
+Applied set_property DONT_TOUCH = true for system_i/clk_wiz_0/inst. (constraint file  /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_examples/video_passthrough/video_passthrough.runs/synth_1/dont_touch.xdc, line 31).
 Applied set_property DONT_TOUCH = true for system_i. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for system_i/GND. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_i/inverter_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/processing_system7_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/vga_color_test_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/vga_sync_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for system_i/zybo_hdmi_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1340.863 ; gain = 498.355 ; free physical = 159 ; free virtual = 10917
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "address_offset" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "rgb" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "rgb" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "rgb" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1340.863 ; gain = 498.355 ; free physical = 143 ; free virtual = 10902
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -439,14 +438,14 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 605.918 ; gain = 434.688
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1340.867 ; gain = 498.359 ; free physical = 142 ; free virtual = 10902
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1340.867 ; gain = 498.359 ; free physical = 145 ; free virtual = 10905
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished Parallel Reinference  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1340.867 ; gain = 498.359 ; free physical = 145 ; free virtual = 10905
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -457,9 +456,9 @@ Report RTL Partitions:
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1356.875 ; gain = 514.367 ; free physical = 138 ; free virtual = 10875
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 605.918 ; gain = 434.688
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1356.875 ; gain = 514.367 ; free physical = 138 ; free virtual = 10875
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -475,10 +474,10 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'system_i/clk_wiz_0/inst/clk_in1' to pin 'system_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O'
 INFO: Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 824.652 ; gain = 653.422
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 1561.867 ; gain = 719.359 ; free physical = 154 ; free virtual = 10627
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 846.246 ; gain = 675.016
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 1583.883 ; gain = 741.375 ; free physical = 140 ; free virtual = 10607
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -490,16 +489,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 129 ; free virtual = 10585
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 129 ; free virtual = 10585
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 129 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -516,7 +515,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -529,7 +528,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -541,25 +540,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -577,7 +576,7 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BIBUF      |   130|
 |2     |BUFG       |     3|
-|3     |LUT1       |   116|
+|3     |LUT1       |   117|
 |4     |LUT2       |    36|
 |5     |LUT3       |    74|
 |6     |LUT4       |    57|
@@ -600,11 +599,11 @@ Report Instance Areas:
 +------+----------------------------------------+-------------------------------------------+------+
 |      |Instance                                |Module                                     |Cells |
 +------+----------------------------------------+-------------------------------------------+------+
-|1     |top                                     |                                           |   832|
-|2     |  system_i                              |system                                     |   829|
-|3     |    GND                                 |system_xlconstant_0_0                      |     0|
-|4     |    clk_wiz_0                           |system_clk_wiz_0_0                         |     5|
-|5     |      inst                              |system_clk_wiz_0_0_clk_wiz                 |     5|
+|1     |top                                     |                                           |   833|
+|2     |  system_i                              |system                                     |   830|
+|3     |    clk_wiz_0                           |system_clk_wiz_0_0                         |     5|
+|4     |      inst                              |system_clk_wiz_0_0_clk_wiz                 |     5|
+|5     |    inverter_0                          |system_inverter_0_0                        |     1|
 |6     |    processing_system7_0                |system_processing_system7_0_0              |   290|
 |7     |      inst                              |processing_system7_v5_5_processing_system7 |   290|
 |8     |        xlnx_axi_wrshim_unwrap_inst_gp0 |xlnx_axi_wrshim_unwrap                     |    18|
@@ -621,11 +620,11 @@ Report Instance Areas:
 |19    |          TMDS_encoder_RED              |TMDS_encoder_1                             |   111|
 +------+----------------------------------------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 869.945 ; gain = 374.805
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 869.945 ; gain = 698.715
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1607.922 ; gain = 376.441 ; free physical = 127 ; free virtual = 10585
+Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:04 . Memory (MB): peak = 1607.922 ; gain = 765.414 ; free physical = 127 ; free virtual = 10585
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
 WARNING: [Netlist 29-151] Pin 'C1' on instance 'system_i/zybo_hdmi_0/U0/DVID/ODDR2_RED' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'clk_dvin' that is connected to this pin will not be connected to the replacement instance.
@@ -643,8 +642,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   ODDR2 => ODDR: 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-91 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+92 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 869.945 ; gain = 622.039
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 869.945 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 09 15:58:40 2016...
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1607.926 ; gain = 673.434 ; free physical = 121 ; free virtual = 10584
+report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.24 . Memory (MB): peak = 1639.941 ; gain = 0.000 ; free physical = 143 ; free virtual = 10570
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 10 14:14:18 2016...

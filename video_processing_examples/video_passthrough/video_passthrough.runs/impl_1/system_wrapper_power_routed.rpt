@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date             : Wed Mar 09 15:59:33 2016
-| Host             : GilaMonster running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date             : Thu Mar 10 14:15:28 2016
+| Host             : minmi running 64-bit elementary OS Freya
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb
 | Design           : system_wrapper
 | Device           : xc7z010clg400-1
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        6 |       --- |             --- |
 | Slice Logic    |    <0.001 |      674 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      303 |     17600 |            1.72 |
+|   LUT as Logic |    <0.001 |      304 |     17600 |            1.73 |
 |   Register     |    <0.001 |      128 |     35200 |            0.36 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     17600 |           <0.01 |
-|   Others       |     0.000 |      150 |       --- |             --- |
-| Signals        |    <0.001 |      418 |       --- |             --- |
+|   Others       |     0.000 |      149 |       --- |             --- |
+| Signals        |    <0.001 |      419 |       --- |             --- |
 | MMCM           |     0.115 |        1 |         2 |           50.00 |
 | I/O            |     0.182 |       11 |       100 |           11.00 |
 | PS7            |     1.557 |        1 |       --- |             --- |
 | Static Power   |     0.139 |          |           |                 |
-| Total          |     1.996 |          |           |                 |
+| Total          |     1.997 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -152,9 +152,9 @@ Table of Contents
 +-----------------------------------------+-----------+
 | system_wrapper                          |     1.858 |
 |   system_i                              |     1.858 |
-|     GND                                 |     0.000 |
 |     clk_wiz_0                           |     0.115 |
 |       inst                              |     0.115 |
+|     inverter_0                          |    <0.001 |
 |     processing_system7_0                |     1.557 |
 |       inst                              |     1.557 |
 |         xlnx_axi_wrshim_unwrap_inst_gp0 |     0.000 |
