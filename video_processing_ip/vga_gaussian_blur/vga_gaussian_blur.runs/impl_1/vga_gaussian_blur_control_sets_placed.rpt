@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date         : Thu Mar 10 09:19:00 2016
-| Host         : GilaMonster running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Thu Mar 10 15:17:55 2016
+| Host         : minmi running 64-bit elementary OS Freya
 | Command      : report_control_sets -verbose -file vga_gaussian_blur_control_sets_placed.rpt
 | Design       : vga_gaussian_blur
 | Device       : xc7z010
@@ -22,7 +22,7 @@ Table of Contents
 +-------------------------------------------------------------------+-------+
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
-| Number of unique control sets                                     |     1 |
+| Number of unique control sets                                     |     2 |
 | Minimum Number of register sites lost to control set restrictions |     2 |
 +-------------------------------------------------------------------+-------+
 
@@ -33,10 +33,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             310 |          139 |
+| No           | No                    | No                     |              47 |           21 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             263 |          109 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -48,7 +48,8 @@ Table of Contents
 +-------------------+---------------+------------------+------------------+----------------+
 |    Clock Signal   | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +-------------------+---------------+------------------+------------------+----------------+
-|  clk_25_IBUF_BUFG |               |                  |              604 |           2108 |
+|  clk_25_IBUF_BUFG |               |                  |               21 |             47 |
+|  clk_25_IBUF_BUFG | en_IBUF       |                  |              579 |           2061 |
 +-------------------+---------------+------------------+------------------+----------------+
 
 

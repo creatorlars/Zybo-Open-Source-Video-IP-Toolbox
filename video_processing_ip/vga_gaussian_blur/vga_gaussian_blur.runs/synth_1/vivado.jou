@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
 # Vivado v2015.4 (64-bit)
-# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Mar 09 18:47:48 2016
-# Process ID: 10840
-# Current directory: D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1
-# Command line: vivado.exe -log vga_gaussian_blur.vds -mode batch -messageDb vivado.pb -notrace -source vga_gaussian_blur.tcl
-# Log file: D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vga_gaussian_blur.vds
-# Journal file: D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1\vivado.jou
+# Start of session at: Thu Mar 10 15:13:57 2016
+# Process ID: 2958
+# Current directory: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1
+# Command line: vivado -log vga_gaussian_blur.vds -mode batch -messageDb vivado.pb -notrace -source vga_gaussian_blur.tcl
+# Log file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vga_gaussian_blur.vds
+# Journal file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source vga_gaussian_blur.tcl -notrace

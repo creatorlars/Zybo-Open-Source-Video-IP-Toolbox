@@ -51,14 +51,14 @@ set rc [catch {
   create_project -in_memory -part xc7z010clg400-1
   set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.cache/wt [current_project]
-  set_property parent.project_path D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.xpr [current_project]
+  set_property webtalk.parent_dir /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.cache/wt [current_project]
+  set_property parent.project_path /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.xpr [current_project]
   set_property ip_repo_paths {
-  d:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.cache/ip
-  D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new
+  /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.cache/ip
+  /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new
 } [current_project]
-  set_property ip_output_repo d:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.cache/ip [current_project]
-  add_files -quiet D:/Users/Rob/Documents/Class/ECEC662/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vga_gaussian_blur.dcp
+  set_property ip_output_repo /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.cache/ip [current_project]
+  add_files -quiet /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vga_gaussian_blur.dcp
   link_design -top vga_gaussian_blur -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]

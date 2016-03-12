@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date             : Thu Mar 10 09:19:17 2016
-| Host             : GilaMonster running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date             : Thu Mar 10 15:18:16 2016
+| Host             : minmi running 64-bit elementary OS Freya
 | Command          : 
 | Design           : vga_gaussian_blur
 | Device           : xc7z010clg400-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 39.404 (Junction temp exceeded!) |
-| Dynamic (W)              | 38.657                           |
+| Total On-Chip Power (W)  | 37.541 (Junction temp exceeded!) |
+| Dynamic (W)              | 36.794                           |
 | Device Static (W)        | 0.748                            |
 | Effective TJA (C/W)      | 11.5                             |
 | Max Ambient (C)          | 0.0                              |
@@ -49,17 +49,17 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     6.424 |     2497 |       --- |             --- |
-|   LUT as Shift Register |     3.573 |     1798 |      6000 |           29.97 |
-|   LUT as Logic          |     2.334 |      258 |     17600 |            1.47 |
-|   CARRY4                |     0.404 |       67 |      4400 |            1.52 |
-|   Register              |     0.107 |      310 |     35200 |            0.88 |
+| Slice Logic             |     5.767 |     2543 |       --- |             --- |
+|   LUT as Shift Register |     2.858 |     1798 |      6000 |           29.97 |
+|   LUT as Logic          |     2.426 |      282 |     17600 |            1.60 |
+|   CARRY4                |     0.388 |       67 |      4400 |            1.52 |
+|   Register              |     0.089 |      310 |     35200 |            0.88 |
 |   BUFG                  |     0.006 |        1 |        32 |            3.13 |
 |   Others                |     0.000 |        2 |       --- |             --- |
-| Signals                 |     3.778 |     1122 |       --- |             --- |
-| I/O                     |    28.454 |       95 |       100 |           95.00 |
+| Signals                 |     3.731 |     1146 |       --- |             --- |
+| I/O                     |    27.295 |       96 |       100 |           96.00 |
 | Static Power            |     0.748 |          |           |                 |
-| Total                   |    39.404 |          |           |                 |
+| Total                   |    37.541 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,11 +69,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    10.524 |      10.395 |      0.129 |
-| Vccaux    |       1.800 |     2.354 |       2.314 |      0.040 |
+| Vccint    |       1.000 |     9.820 |       9.691 |      0.129 |
+| Vccaux    |       1.800 |     2.259 |       2.219 |      0.040 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |    13.388 |      13.387 |      0.001 |
+| Vcco18    |       1.800 |    12.840 |      12.839 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -143,7 +143,7 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| vga_gaussian_blur |    38.657 |
+| vga_gaussian_blur |    36.794 |
 +-------------------+-----------+
 
 
