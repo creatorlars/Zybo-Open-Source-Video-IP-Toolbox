@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Thu Mar 10 14:10:07 2016
+# Process ID: 11811
+# Current directory: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/general_ip/inverter/inverter.runs/impl_1
+# Command line: vivado -log inverter.vdi -applog -messageDb vivado.pb -mode batch -source inverter.tcl -notrace
+# Log file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/general_ip/inverter/inverter.runs/impl_1/inverter.vdi
+# Journal file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/general_ip/inverter/inverter.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source inverter.tcl -notrace
