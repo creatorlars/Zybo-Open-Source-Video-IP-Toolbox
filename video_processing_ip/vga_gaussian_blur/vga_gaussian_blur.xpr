@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="10" Path="/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.xpr">
+<Project Version="7" Minor="10" Path="D:/Users/Rob/Documents/Class/ECEC662/zybo-toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="ca3b5695c8ac41658af6bfa645bb7905"/>
@@ -80,6 +80,9 @@
     </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
+    </Simulator>
+    <Simulator Name="ActiveHDL">
+      <Option Name="Description" Val="Active-HDL Simulator"/>
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">

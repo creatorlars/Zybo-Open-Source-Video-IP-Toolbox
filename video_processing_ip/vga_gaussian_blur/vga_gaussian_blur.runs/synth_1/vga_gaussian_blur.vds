@@ -1,54 +1,53 @@
 #-----------------------------------------------------------
 # Vivado v2015.4 (64-bit)
-# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Thu Mar 10 15:13:57 2016
-# Process ID: 2958
-# Current directory: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1
-# Command line: vivado -log vga_gaussian_blur.vds -mode batch -messageDb vivado.pb -notrace -source vga_gaussian_blur.tcl
-# Log file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vga_gaussian_blur.vds
-# Journal file: /home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vivado.jou
+# Start of session at: Sat Mar 12 17:24:07 2016
+# Process ID: 4456
+# Current directory: D:/Users/Rob/Documents/Class/ECEC662/zybo-toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1
+# Command line: vivado.exe -log vga_gaussian_blur.vds -mode batch -messageDb vivado.pb -notrace -source vga_gaussian_blur.tcl
+# Log file: D:/Users/Rob/Documents/Class/ECEC662/zybo-toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1/vga_gaussian_blur.vds
+# Journal file: D:/Users/Rob/Documents/Class/ECEC662/zybo-toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source vga_gaussian_blur.tcl -notrace
 Command: synth_design -top vga_gaussian_blur -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
-INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3553 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1028.328 ; gain = 185.820 ; free physical = 1415 ; free virtual = 14469
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 291.496 ; gain = 119.898
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'vga_gaussian_blur' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'vga_gaussian_blur' [D:/Users/Rob/Documents/Class/ECEC662/zybo-toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:40]
 	Parameter H_SIZE bound to: 640 - type: integer 
 	Parameter H_DELAY bound to: 160 - type: integer 
 	Parameter KERNEL bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'vga_gaussian_blur' (1#1) [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'vga_gaussian_blur' (1#1) [D:/Users/Rob/Documents/Class/ECEC662/zybo-toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:40]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1133.711 ; gain = 291.203 ; free physical = 1305 ; free virtual = 14360
+Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 392.734 ; gain = 221.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1133.711 ; gain = 291.203 ; free physical = 1305 ; free virtual = 14360
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 392.734 ; gain = 221.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1141.711 ; gain = 299.203 ; free physical = 1305 ; free virtual = 14360
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 392.734 ; gain = 221.137
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:56 ; elapsed = 00:01:51 . Memory (MB): peak = 1234.727 ; gain = 392.219 ; free physical = 298 ; free virtual = 13673
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:11 ; elapsed = 00:01:08 . Memory (MB): peak = 512.340 ; gain = 340.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-----------------------+------------+----------+
 |      |RTL Partition          |Replication |Instances |
 +------+-----------------------+------------+----------+
-|1     |vga_gaussian_blur__GB0 |           1|     20006|
-|2     |vga_gaussian_blur__GB1 |           1|     19176|
-|3     |vga_gaussian_blur__GB2 |           1|     18538|
+|1     |vga_gaussian_blur__GB0 |           1|     21087|
+|2     |vga_gaussian_blur__GB1 |           1|     19152|
+|3     |vga_gaussian_blur__GB2 |           1|      8030|
+|4     |vga_gaussian_blur__GB3 |           1|     10439|
 +------+-----------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -56,19 +55,19 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     31 Bit       Adders := 1     
-	   2 Input     24 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
 +---Registers : 
-	               25 Bit    Registers := 5     
-	               24 Bit    Registers := 1604  
+	               24 Bit    Registers := 1602  
+	               18 Bit    Registers := 6     
 	               10 Bit    Registers := 1606  
+	                9 Bit    Registers := 15    
 	                3 Bit    Registers := 802   
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     31 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 2     
-	   2 Input     10 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -79,19 +78,19 @@ Hierarchical RTL Component report
 Module vga_gaussian_blur 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     31 Bit       Adders := 1     
-	   2 Input     24 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
 +---Registers : 
-	               25 Bit    Registers := 5     
-	               24 Bit    Registers := 1604  
+	               24 Bit    Registers := 1602  
+	               18 Bit    Registers := 6     
 	               10 Bit    Registers := 1606  
+	                9 Bit    Registers := 15    
 	                3 Bit    Registers := 802   
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     31 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 2     
-	   2 Input     10 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -104,180 +103,270 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:01:58 ; elapsed = 00:01:53 . Memory (MB): peak = 1264.363 ; gain = 421.855 ; free physical = 268 ; free virtual = 13641
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:01:13 ; elapsed = 00:01:10 . Memory (MB): peak = 532.703 ; gain = 361.105
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'rgb_buffer_1_reg[1][23:0]' into 'rgb_buffer_1_reg[1][23:0]' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:66]
-INFO: [Synth 8-4471] merging register 'rgb_buffer_1_reg[2][23:0]' into 'rgb_buffer_1_reg[2][23:0]' [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:66]
-WARNING: [Synth 8-3936] Found unconnected internal register 'rgb_buffer_1_reg[1602]' and it is trimmed from '24' to '18' bits. [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:66]
-WARNING: [Synth 8-3936] Found unconnected internal register 'rgb_buffer_1_reg[1601]' and it is trimmed from '24' to '18' bits. [/home/rob/Documents/Class/ECEC662/Zybo-Open-Source-Video-IP-Toolbox/video_processing_ip/vga_gaussian_blur/vga_gaussian_blur.srcs/sources_1/new/vga_gaussian_blur.vhd:66]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:02:51 ; elapsed = 00:02:46 . Memory (MB): peak = 1274.371 ; gain = 431.863 ; free physical = 339 ; free virtual = 13721
+Finished Cross Boundary Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:01:47 . Memory (MB): peak = 534.309 ; gain = 362.711
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:02:51 ; elapsed = 00:02:46 . Memory (MB): peak = 1274.371 ; gain = 431.863 ; free physical = 339 ; free virtual = 13721
+Finished Parallel Reinference  : Time (s): cpu = 00:01:49 ; elapsed = 00:01:47 . Memory (MB): peak = 534.309 ; gain = 362.711
 
 Report RTL Partitions: 
 +------+-----------------------+------------+----------+
 |      |RTL Partition          |Replication |Instances |
 +------+-----------------------+------------+----------+
-|1     |vga_gaussian_blur__GB0 |           1|     21767|
-|2     |vga_gaussian_blur__GB1 |           1|     19176|
-|3     |vga_gaussian_blur__GB2 |           1|     18538|
+|1     |vga_gaussian_blur__GB0 |           1|     23649|
+|2     |vga_gaussian_blur__GB1 |           1|     19152|
+|3     |vga_gaussian_blur__GB2 |           1|      8030|
+|4     |vga_gaussian_blur__GB3 |           1|     10439|
 +------+-----------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][18] ' (FDE) to '\A[0]__11 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][19] ' (FDE) to '\A[1] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][20] ' (FDE) to '\A[2] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][21] ' (FDE) to '\A[3] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][22] ' (FDE) to '\A[4] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][23] ' (FDE) to '\A[5] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][18] ' (FDE) to '\A[0] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][19] ' (FDE) to '\A[1]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][20] ' (FDE) to '\A[2]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][21] ' (FDE) to '\A[3]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][22] ' (FDE) to '\A[4]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][23] ' (FDE) to '\A[5]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][0] ' (FDE) to '\C[0] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][1] ' (FDE) to '\C[1] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][2] ' (FDE) to '\C[2] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][3] ' (FDE) to '\C[3] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][4] ' (FDE) to '\C[4] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][5] ' (FDE) to '\C[5] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][6] ' (FDE) to '\C[6] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][7] ' (FDE) to '\C[7] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][8] ' (FDE) to '\C[8] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][9] ' (FDE) to '\C[9] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][10] ' (FDE) to '\C[10] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][11] ' (FDE) to '\C[11] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][12] ' (FDE) to '\C[12] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][13] ' (FDE) to '\C[13] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][14] ' (FDE) to '\C[14] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][15] ' (FDE) to '\C[15] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][16] ' (FDE) to '\C[16] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][17] ' (FDE) to '\C[17] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][18] ' (FDE) to '\C[18] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][19] ' (FDE) to '\C[19] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][20] ' (FDE) to '\C[20] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][21] ' (FDE) to '\C[21] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][22] ' (FDE) to '\C[22] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][23] ' (FDE) to '\C[23] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][0] ' (FDE) to '\A[0]__2 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][1] ' (FDE) to '\A[1]__3 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][2] ' (FDE) to '\A[2]__3 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][3] ' (FDE) to '\A[3]__3 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][4] ' (FDE) to '\A[4]__3 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][5] ' (FDE) to '\A[5]__3 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][6] ' (FDE) to '\A[6]__1 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][7] ' (FDE) to '\A[7] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][8] ' (FDE) to '\A[8] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][9] ' (FDE) to '\A[9] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][10] ' (FDE) to '\A[10] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][11] ' (FDE) to '\A[11] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][12] ' (FDE) to '\A[12] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][13] ' (FDE) to '\A[13] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][14] ' (FDE) to '\A[14] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][15] ' (FDE) to '\A[15] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][16] ' (FDE) to '\A[16] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][17] ' (FDE) to '\A[17] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][18] ' (FDE) to '\A[18] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][19] ' (FDE) to '\A[19] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][20] ' (FDE) to '\A[20] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][21] ' (FDE) to '\A[21] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][22] ' (FDE) to '\A[22] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][23] ' (FDE) to '\A[23] '
-INFO: [Synth 8-3886] merging instance '\A[21]__3 ' (FDE) to '\rgb_buffer_1_reg[800][21] '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][0] ' (FDE) to '\A[0]__10 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][1] ' (FDE) to '\A[1]__11 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][2] ' (FDE) to '\A[2]__11 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][3] ' (FDE) to '\A[3]__11 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][4] ' (FDE) to '\A[4]__11 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][5] ' (FDE) to '\A[5]__11 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][6] ' (FDE) to '\A[6]__9 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][7] ' (FDE) to '\A[7]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][8] ' (FDE) to '\A[8]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][9] ' (FDE) to '\A[9]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][10] ' (FDE) to '\A[10]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][11] ' (FDE) to '\A[11]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][12] ' (FDE) to '\A[12]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][13] ' (FDE) to '\A[13]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][14] ' (FDE) to '\A[14]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][15] ' (FDE) to '\A[15]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][16] ' (FDE) to '\A[16]__7 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][17] ' (FDE) to '\A[17]__7 '
-INFO: [Synth 8-3886] merging instance '\A[0]__11 ' (FDE) to '\A[18]__7 '
-INFO: [Synth 8-3886] merging instance '\A[1] ' (FDE) to '\A[19]__7 '
-INFO: [Synth 8-3886] merging instance '\A[2] ' (FDE) to '\A[20]__7 '
-INFO: [Synth 8-3886] merging instance '\A[3] ' (FDE) to '\A[21]__7 '
-INFO: [Synth 8-3886] merging instance '\A[4] ' (FDE) to '\A[22]__7 '
-INFO: [Synth 8-3886] merging instance '\A[5] ' (FDE) to '\A[23]__7 '
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[6] )
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][0] ' (FDE) to '\A[0]__3 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][1] ' (FDE) to '\A[1]__4 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][2] ' (FDE) to '\A[2]__4 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][3] ' (FDE) to '\A[3]__4 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][4] ' (FDE) to '\A[4]__4 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][5] ' (FDE) to '\A[5]__4 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][6] ' (FDE) to '\A[6]__2 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][7] ' (FDE) to '\A[7]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][8] ' (FDE) to '\A[8]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][9] ' (FDE) to '\A[9]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][10] ' (FDE) to '\A[10]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][11] ' (FDE) to '\A[11]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][12] ' (FDE) to '\A[12]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][13] ' (FDE) to '\A[13]__0 '
-INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1601][14] ' (FDE) to '\A[14]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][0] ' (FD) to '\B[0]__10 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][1] ' (FD) to '\B[1] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][2] ' (FD) to '\B[2] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][3] ' (FD) to '\B[3] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][4] ' (FD) to '\B[4] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][5] ' (FD) to '\B[5] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][6] ' (FD) to '\B[6] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][7] ' (FD) to '\B[7] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][8] ' (FD) to '\B[0]__2 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][9] ' (FD) to '\B[1]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][10] ' (FD) to '\B[2]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][11] ' (FD) to '\B[3]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][12] ' (FD) to '\B[4]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][13] ' (FD) to '\B[5]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][14] ' (FD) to '\B[6]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][15] ' (FD) to '\B[7]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][16] ' (FD) to '\B[0]__6 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][17] ' (FD) to '\B[1]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][18] ' (FD) to '\B[2]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][19] ' (FD) to '\B[3]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][20] ' (FD) to '\B[4]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][21] ' (FD) to '\B[5]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][22] ' (FD) to '\B[6]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1][23] ' (FD) to '\B[7]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][0] ' (FD) to '\B[0] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][1] ' (FD) to '\B[1]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][2] ' (FD) to '\B[2]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][3] ' (FD) to '\B[3]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][4] ' (FD) to '\B[4]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][5] ' (FD) to '\B[5]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][6] ' (FD) to '\B[6]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][7] ' (FD) to '\B[7]__0 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][8] ' (FD) to '\B[0]__3 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][9] ' (FD) to '\B[1]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][10] ' (FD) to '\B[2]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][11] ' (FD) to '\B[3]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][12] ' (FD) to '\B[4]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][13] ' (FD) to '\B[5]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][14] ' (FD) to '\B[6]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][15] ' (FD) to '\B[7]__4 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][16] ' (FD) to '\B[0]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][17] ' (FD) to '\B[1]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][18] ' (FD) to '\B[2]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][19] ' (FD) to '\B[3]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][20] ' (FD) to '\B[4]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][21] ' (FD) to '\B[5]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][22] ' (FD) to '\B[6]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[2][23] ' (FD) to '\B[7]__8 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][0] ' (FD) to '\A[0]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][1] ' (FD) to '\A[1]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][2] ' (FD) to '\A[2]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][3] ' (FD) to '\A[3]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][4] ' (FD) to '\A[4]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][5] ' (FD) to '\A[5]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][6] ' (FD) to '\A[6]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][7] ' (FD) to '\A[7]__7 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][0] ' (FD) to '\A[0] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][1] ' (FD) to '\A[1] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][2] ' (FD) to '\A[2] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][3] ' (FD) to '\A[3] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][4] ' (FD) to '\A[4] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][5] ' (FD) to '\A[5] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][6] ' (FD) to '\A[6] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][7] ' (FD) to '\A[7] '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][8] ' (FD) to '\A[0]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][9] ' (FD) to '\A[1]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][10] ' (FD) to '\A[2]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][11] ' (FD) to '\A[3]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][12] ' (FD) to '\A[4]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][13] ' (FD) to '\A[5]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][14] ' (FD) to '\A[6]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][15] ' (FD) to '\A[7]__17 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][8] ' (FD) to '\A[0]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][9] ' (FD) to '\A[1]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][10] ' (FD) to '\A[2]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][11] ' (FD) to '\A[3]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][12] ' (FD) to '\A[4]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][13] ' (FD) to '\A[5]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][14] ' (FD) to '\A[6]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][15] ' (FD) to '\A[7]__9 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][16] ' (FD) to '\A[0]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][17] ' (FD) to '\A[1]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][18] ' (FD) to '\A[2]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][19] ' (FD) to '\A[3]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][20] ' (FD) to '\A[4]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][21] ' (FD) to '\A[5]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][22] ' (FD) to '\A[6]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[0][23] ' (FD) to '\A[7]__27 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][16] ' (FD) to '\A[0]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][17] ' (FD) to '\A[1]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][18] ' (FD) to '\A[2]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][19] ' (FD) to '\A[3]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][20] ' (FD) to '\A[4]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][21] ' (FD) to '\A[5]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][22] ' (FD) to '\A[6]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[1600][23] ' (FD) to '\A[7]__19 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[799][0] ' (FD) to '\A[0]__5 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[799][1] ' (FD) to '\A[1]__5 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[799][2] ' (FD) to '\A[2]__5 '
+INFO: [Synth 8-3886] merging instance '\rgb_buffer_1_reg[799][3] ' (FD) to '\A[3]__5 '
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\C[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[6]__0 )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[24]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__1 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__5 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__1 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[9]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[10]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[11]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[12]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[13]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[14]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[15]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[16]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[17]__3 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__5 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__17 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__15 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__13 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__11 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__9 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[9]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[10]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[11]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[12]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[13]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[14]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[15]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[16]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[17]__7 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__9 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__27 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__25 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__23 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__21 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__19 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[9]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[10]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[11]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[12]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[13]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[14]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[15]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[16]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[17]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__2 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__6 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__2 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__0 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[9]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[10]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[11]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[12]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[13]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[14]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[15]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[16]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[17]__4 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__6 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__18 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__16 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__12 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__10 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__14 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[9]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[10]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[11]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[12]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[13]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[14]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[15]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[16]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[17]__8 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\B[8]__10 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__28 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__26 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__22 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__20 )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A[8]__24 )
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:03:04 ; elapsed = 00:02:59 . Memory (MB): peak = 1296.418 ; gain = 453.910 ; free physical = 323 ; free virtual = 13699
+Finished Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:01:54 . Memory (MB): peak = 547.203 ; gain = 375.605
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:03:04 ; elapsed = 00:02:59 . Memory (MB): peak = 1296.418 ; gain = 453.910 ; free physical = 323 ; free virtual = 13699
+Finished Parallel Area Optimization  : Time (s): cpu = 00:01:56 ; elapsed = 00:01:54 . Memory (MB): peak = 547.203 ; gain = 375.605
 
 Report RTL Partitions: 
 +------+-----------------------+------------+----------+
 |      |RTL Partition          |Replication |Instances |
 +------+-----------------------+------------+----------+
-|1     |vga_gaussian_blur__GB0 |           1|     20108|
-|2     |vga_gaussian_blur__GB1 |           1|     19176|
-|3     |vga_gaussian_blur__GB2 |           1|     18538|
+|1     |vga_gaussian_blur__GB0 |           1|     20323|
+|2     |vga_gaussian_blur__GB1 |           1|     19152|
+|3     |vga_gaussian_blur__GB2 |           1|      8030|
+|4     |vga_gaussian_blur__GB3 |           1|     10439|
 +------+-----------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:04 ; elapsed = 00:02:59 . Memory (MB): peak = 1296.418 ; gain = 453.910 ; free physical = 323 ; free virtual = 13699
+Finished Timing Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:01:54 . Memory (MB): peak = 547.203 ; gain = 375.605
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-----------------------+------------+----------+
 |      |RTL Partition          |Replication |Instances |
 +------+-----------------------+------------+----------+
-|1     |vga_gaussian_blur__GB0 |           1|     20108|
-|2     |vga_gaussian_blur__GB1 |           1|     19176|
-|3     |vga_gaussian_blur__GB2 |           1|     18538|
+|1     |vga_gaussian_blur__GB0 |           1|     20323|
+|2     |vga_gaussian_blur__GB1 |           1|     19152|
+|3     |vga_gaussian_blur__GB2 |           1|      8030|
+|4     |vga_gaussian_blur__GB3 |           1|     10439|
 +------+-----------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:08 ; elapsed = 00:03:04 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Technology Mapping : Time (s): cpu = 00:01:59 ; elapsed = 00:01:57 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:03:08 ; elapsed = 00:03:04 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:59 ; elapsed = 00:01:57 . Memory (MB): peak = 555.336 ; gain = 383.738
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:03:08 ; elapsed = 00:03:04 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:59 ; elapsed = 00:01:57 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -294,7 +383,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished IO Insertion : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -307,7 +396,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -319,25 +408,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -347,11 +436,13 @@ Static Shift Register:
 +-----------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name            | RTL Name                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +-----------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|vga_gaussian_blur__GB0 | rgb_buffer_1_reg[800][21]  | 798    | 24    | NO           | NO                 | YES               | 0      | 600     | 
-|vga_gaussian_blur__GB1 | rgb_buffer_1_reg[1599][23] | 799    | 24    | NO           | YES                | YES               | 0      | 600     | 
-|vga_gaussian_blur__GB2 | addr_buffer_y1_reg[801][9] | 802    | 10    | NO           | NO                 | YES               | 0      | 260     | 
-|vga_gaussian_blur__GB2 | addr_buffer_x1_reg[801][9] | 802    | 10    | NO           | NO                 | YES               | 0      | 260     | 
-|vga_gaussian_blur__GB2 | flags_buffer_1_reg[801][2] | 802    | 3     | NO           | NO                 | YES               | 0      | 78      | 
+|vga_gaussian_blur__GB0 | A[0]__6                    | 798    | 24    | NO           | NO                 | YES               | 0      | 600     | 
+|vga_gaussian_blur__GB1 | rgb_buffer_1_reg[1599][23] | 798    | 24    | NO           | YES                | YES               | 0      | 600     | 
+|vga_gaussian_blur__GB2 | yaddr_out_reg[9]           | 803    | 10    | NO           | YES                | YES               | 0      | 260     | 
+|vga_gaussian_blur__GB3 | xaddr_out_reg[9]           | 803    | 10    | NO           | YES                | YES               | 0      | 260     | 
+|vga_gaussian_blur__GB3 | vsync_out_reg              | 803    | 1     | NO           | YES                | YES               | 0      | 26      | 
+|vga_gaussian_blur__GB3 | hsync_out_reg              | 803    | 1     | NO           | YES                | YES               | 0      | 26      | 
+|vga_gaussian_blur__GB3 | active_out_reg             | 803    | 1     | NO           | YES                | YES               | 0      | 26      | 
 +-----------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -372,13 +463,13 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |    67|
-|3     |LUT1    |    56|
-|4     |LUT2    |   138|
-|5     |LUT3    |   117|
-|6     |LUT4    |    50|
-|7     |LUT5    |    24|
-|8     |LUT6    |     1|
+|2     |CARRY4  |   105|
+|3     |LUT1    |   126|
+|4     |LUT2    |   243|
+|5     |LUT3    |    66|
+|6     |LUT4    |    48|
+|7     |LUT5    |    27|
+|8     |LUT6    |    12|
 |9     |SRLC32E |  1798|
 |10    |FDRE    |   310|
 |11    |IBUF    |    49|
@@ -389,16 +480,16 @@ Report Instance Areas:
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |  2658|
+|1     |top      |       |  2832|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:06 ; elapsed = 00:03:01 . Memory (MB): peak = 1325.965 ; gain = 361.637 ; free physical = 289 ; free virtual = 13665
-Synthesis Optimization Complete : Time (s): cpu = 00:03:09 ; elapsed = 00:03:05 . Memory (MB): peak = 1325.965 ; gain = 483.457 ; free physical = 289 ; free virtual = 13665
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:58 ; elapsed = 00:01:56 . Memory (MB): peak = 555.336 ; gain = 337.746
+Synthesis Optimization Complete : Time (s): cpu = 00:02:00 ; elapsed = 00:01:58 . Memory (MB): peak = 555.336 ; gain = 383.738
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 116 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 154 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'vga_gaussian_blur' is not ideal for floorplanning, since the cellview 'vga_gaussian_blur' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -408,8 +499,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRLC32E => SRL16E: 23 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-119 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+208 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:09 ; elapsed = 00:03:04 . Memory (MB): peak = 1349.977 ; gain = 436.133 ; free physical = 263 ; free virtual = 13663
-report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1381.996 ; gain = 0.000 ; free physical = 262 ; free virtual = 13663
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 10 15:17:12 2016...
+synth_design: Time (s): cpu = 00:02:00 ; elapsed = 00:01:57 . Memory (MB): peak = 555.398 ; gain = 345.684
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.032 . Memory (MB): peak = 555.398 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 12 17:26:07 2016...
