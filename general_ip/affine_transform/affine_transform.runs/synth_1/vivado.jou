@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Wed Feb 08 00:33:53 2017
+# Process ID: 5744
+# Current directory: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/affine_transform/affine_transform.runs/synth_1
+# Command line: vivado.exe -log affine_transform.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source affine_transform.tcl
+# Log file: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/affine_transform/affine_transform.runs/synth_1/affine_transform.vds
+# Journal file: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/affine_transform/affine_transform.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source affine_transform.tcl -notrace
