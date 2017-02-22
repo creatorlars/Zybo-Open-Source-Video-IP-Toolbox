@@ -1,7 +1,0 @@
-Running: xsim.dir/ieee754_fp_adder_subtractor_behav/xsimk.exe -simmode gui -wdb ieee754_fp_adder_subtractor_behav.wdb -simrunnum 0 -socket 57998
-Design successfully loaded
-Design Loading Memory Usage: 8372 KB (Peak: 8372 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 9116 KB (Peak: 9116 KB)
-Simulation CPU Usage: 30 ms

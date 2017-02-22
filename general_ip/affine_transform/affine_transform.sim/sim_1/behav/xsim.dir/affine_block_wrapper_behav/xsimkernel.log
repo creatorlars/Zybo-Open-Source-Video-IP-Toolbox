@@ -1,7 +1,0 @@
-Running: xsim.dir/affine_block_wrapper_behav/xsimk.exe -simmode gui -wdb affine_block_wrapper_behav.wdb -simrunnum 0 -socket 63205
-Design successfully loaded
-Design Loading Memory Usage: 9180 KB (Peak: 9180 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 9988 KB (Peak: 9988 KB)
-Simulation CPU Usage: 15 ms

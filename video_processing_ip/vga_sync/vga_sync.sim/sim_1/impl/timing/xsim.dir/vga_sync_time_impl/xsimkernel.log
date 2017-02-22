@@ -1,7 +1,0 @@
-Running: xsim.dir/vga_sync_time_impl/xsimk.exe -simmode gui -wdb vga_sync_time_impl.wdb -simrunnum 0 -socket 61454
-Design successfully loaded
-Design Loading Memory Usage: 28768 KB (Peak: 28768 KB)
-Design Loading CPU Usage: 249 ms
-Simulation completed
-Simulation Memory Usage: 29868 KB (Peak: 29868 KB)
-Simulation CPU Usage: 359 ms
