@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1486532032">
-  <File Type="RDS-PROPCONSTRS" Name="affine_transform_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="affine_transform.tcl"/>
-  <File Type="RDS-RDS" Name="affine_transform.vds"/>
-  <File Type="RDS-UTIL" Name="affine_transform_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="affine_transform_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="affine_transform.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="affine_transform_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="affine_transform_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1487616719">
+  <File Type="PA-TCL" Name="affine_block_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="affine_block_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="affine_block_wrapper.vds"/>
+  <File Type="RDS-UTIL" Name="affine_block_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="affine_block_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="affine_block_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="affine_block_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="affine_block_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/affine_transform.vhd">
+    <File Path="$PSRCDIR/sources_1/bd/affine_block/affine_block.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/affine_block/hdl/affine_block_wrapper.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/component.xml">
-      <FileInfo SFType="IPXACT"/>
+    <File Path="$PSRCDIR/sources_1/new/affine_transform.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="affine_transform"/>
+      <Option Name="TopModule" Val="affine_block_wrapper"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -32,9 +43,17 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_adder_subtractor_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_multiplier_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_to_uint_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_uint_to_ieee754_fp_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_multiplier_1_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_multiplier_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_to_uint_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_uint_to_ieee754_fp_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_multiplier_1_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="affine_block_ieee754_fp_adder_subtractor_0_0"/>
 </GenRun>

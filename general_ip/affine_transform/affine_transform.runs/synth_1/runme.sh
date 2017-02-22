@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/affine_transform/affine_transform.runs/synth_1'
+HD_PWD='C:/ZyboIP/general_ip/affine_transform/affine_transform.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log affine_transform.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source affine_transform.tcl
+EAStep vivado -log affine_block_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source affine_block_wrapper.tcl

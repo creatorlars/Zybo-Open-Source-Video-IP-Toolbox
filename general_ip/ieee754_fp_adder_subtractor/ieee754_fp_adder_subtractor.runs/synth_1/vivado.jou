@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Sun Feb 19 18:27:28 2017
+# Process ID: 14236
+# Current directory: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/ieee754_fp_adder_subtractor/ieee754_fp_adder_subtractor.runs/synth_1
+# Command line: vivado.exe -log ieee754_fp_adder_subtractor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ieee754_fp_adder_subtractor.tcl
+# Log file: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/ieee754_fp_adder_subtractor/ieee754_fp_adder_subtractor.runs/synth_1/ieee754_fp_adder_subtractor.vds
+# Journal file: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/ieee754_fp_adder_subtractor/ieee754_fp_adder_subtractor.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ieee754_fp_adder_subtractor.tcl -notrace

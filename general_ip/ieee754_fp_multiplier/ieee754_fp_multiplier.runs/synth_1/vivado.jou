@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Mon Feb 20 00:04:44 2017
+# Process ID: 12884
+# Current directory: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/ieee754_fp_multiplier/ieee754_fp_multiplier.runs/synth_1
+# Command line: vivado.exe -log ieee754_fp_multiplier.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ieee754_fp_multiplier.tcl
+# Log file: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/ieee754_fp_multiplier/ieee754_fp_multiplier.runs/synth_1/ieee754_fp_multiplier.vds
+# Journal file: C:/Zybo-Open-Source-Video-IP-Toolbox/general_ip/ieee754_fp_multiplier/ieee754_fp_multiplier.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ieee754_fp_multiplier.tcl -notrace

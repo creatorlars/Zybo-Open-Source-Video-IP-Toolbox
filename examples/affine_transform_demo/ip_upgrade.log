@@ -1,0 +1,446 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 14:22:49 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_rotation_generator_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_rotation_generator_0_0 (xilinx.com:user:affine_rotation_generator:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 13:58:20 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_affine_transform_0_1 (xilinx.com:user:affine_transform:1.0) from (Rev. 4) to (Rev. 3)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'system_affine_transform_0_1'.
+
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_affine_transform_0_1'. These changes may impact your design.
+
+
+
+4. Customization warnings
+-------------------------
+
+Parameter 'ADDRESS_WIDTH' is no longer present on the upgraded IP 'system_affine_transform_0_1', and cannot be set to '10'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:affine_transform:1.0 -user_name system_affine_transform_0_1
+set_property -dict "\
+  CONFIG.Component_Name {system_affine_transform_0_1} " [get_ips system_affine_transform_0_1]
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 13:15:43 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_1 (xilinx.com:user:affine_transform:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 13:14:36 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_1 (xilinx.com:user:affine_transform:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 12:34:40 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_1 (xilinx.com:user:affine_transform:1.0) from (Rev. 8) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 10:42:34 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 7) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Mon Feb 20 00:48:10 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 6) to (Rev. 7)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 15 10:43:09 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 15 10:21:30 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 15 10:11:39 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 3) to (Rev. 4)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_affine_transform_0_0'. These changes may impact your design.
+
+
+-Upgraded port 'a00' width 32 differs from original width 33
+
+-Upgraded port 'a01' width 32 differs from original width 33
+
+-Upgraded port 'a10' width 32 differs from original width 33
+
+-Upgraded port 'a11' width 32 differs from original width 33
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 15 10:09:15 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 15 10:06:24 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 5) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_affine_transform_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'a_00'
+
+-Upgrade has removed port 'a_01'
+
+-Upgrade has removed port 'a_02'
+
+-Upgrade has removed port 'a_10'
+
+-Upgrade has removed port 'a_11'
+
+-Upgrade has removed port 'a_12'
+
+-Upgrade has added port 'a00'
+
+-Upgrade has added port 'a01'
+
+-Upgrade has added port 'a10'
+
+-Upgrade has added port 'a11'
+
+-Upgrade has added port 'x_translate'
+
+-Upgrade has added port 'y_translate'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 15 10:06:24 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_rotation_generator_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_affine_rotation_generator_0_0 (xilinx.com:user:affine_rotation_generator:1.0) from (Rev. 3) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_affine_rotation_generator_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'a_00'
+
+-Upgrade has removed port 'a_01'
+
+-Upgrade has removed port 'a_02'
+
+-Upgrade has removed port 'a_10'
+
+-Upgrade has removed port 'a_11'
+
+-Upgrade has removed port 'a_12'
+
+-Upgrade has added port 'a00'
+
+-Upgrade has added port 'a01'
+
+-Upgrade has added port 'a10'
+
+-Upgrade has added port 'a11'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 08 10:36:47 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 08 09:56:24 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
+| Date         : Wed Feb 08 01:14:36 2017
+| Host         : GILAMONSTER running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_affine_transform_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_affine_transform_0_0 (xilinx.com:user:affine_transform:1.0) from (Rev. 2) to (Rev. 3)
+

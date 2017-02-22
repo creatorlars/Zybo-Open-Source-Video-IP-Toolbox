@@ -1,0 +1,504 @@
+
+*** Running vivado
+    with args -log system_affine_transform_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_affine_transform_0_1.tcl
+
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+  **** IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source system_affine_transform_0_1.tcl -notrace
+Command: synth_design -top system_affine_transform_0_1 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17180 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 349.691 ; gain = 140.180
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_affine_transform_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/synth/system_affine_transform_0_1.vhd:69]
+INFO: [Synth 8-3491] module 'affine_block_wrapper' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block_wrapper.vhd:14' bound to instance 'U0' of component 'affine_block_wrapper' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/synth/system_affine_transform_0_1.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'affine_block_wrapper' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block_wrapper.vhd:27]
+INFO: [Synth 8-3491] module 'affine_block' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:14' bound to instance 'affine_block_i' of component 'affine_block' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block_wrapper.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'affine_block' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:31]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_adder_subtractor_0_0' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_0/synth/affine_block_ieee754_fp_adder_subtractor_0_0.vhd:56' bound to instance 'ieee754_fp_adder_subtractor_0' of component 'affine_block_ieee754_fp_adder_subtractor_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:123]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_adder_subtractor_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_0/synth/affine_block_ieee754_fp_adder_subtractor_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'ieee754_fp_adder_subtractor' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/d9f2/ieee754_fp_adder_subtractor.vhd:13' bound to instance 'U0' of component 'ieee754_fp_adder_subtractor' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_0/synth/affine_block_ieee754_fp_adder_subtractor_0_0.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'ieee754_fp_adder_subtractor' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/d9f2/ieee754_fp_adder_subtractor.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'ieee754_fp_adder_subtractor' (1#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/d9f2/ieee754_fp_adder_subtractor.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_adder_subtractor_0_0' (2#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_0/synth/affine_block_ieee754_fp_adder_subtractor_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_adder_subtractor_0_1' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_1/synth/affine_block_ieee754_fp_adder_subtractor_0_1.vhd:56' bound to instance 'ieee754_fp_adder_subtractor_1' of component 'affine_block_ieee754_fp_adder_subtractor_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_adder_subtractor_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_1/synth/affine_block_ieee754_fp_adder_subtractor_0_1.vhd:64]
+INFO: [Synth 8-3491] module 'ieee754_fp_adder_subtractor' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/d9f2/ieee754_fp_adder_subtractor.vhd:13' bound to instance 'U0' of component 'ieee754_fp_adder_subtractor' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_1/synth/affine_block_ieee754_fp_adder_subtractor_0_1.vhd:81]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_adder_subtractor_0_1' (3#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_adder_subtractor_0_1/synth/affine_block_ieee754_fp_adder_subtractor_0_1.vhd:64]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_multiplier_0_0' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_0_0/synth/affine_block_ieee754_fp_multiplier_0_0.vhd:56' bound to instance 'ieee754_fp_multiplier_0' of component 'affine_block_ieee754_fp_multiplier_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:135]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_multiplier_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_0_0/synth/affine_block_ieee754_fp_multiplier_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'ieee754_fp_multiplier' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:13' bound to instance 'U0' of component 'ieee754_fp_multiplier' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_0_0/synth/affine_block_ieee754_fp_multiplier_0_0.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'ieee754_fp_multiplier' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'ieee754_fp_multiplier' (4#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_multiplier_0_0' (5#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_0_0/synth/affine_block_ieee754_fp_multiplier_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_multiplier_1_0' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_0/synth/affine_block_ieee754_fp_multiplier_1_0.vhd:56' bound to instance 'ieee754_fp_multiplier_1' of component 'affine_block_ieee754_fp_multiplier_1_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:141]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_multiplier_1_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_0/synth/affine_block_ieee754_fp_multiplier_1_0.vhd:64]
+INFO: [Synth 8-3491] module 'ieee754_fp_multiplier' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:13' bound to instance 'U0' of component 'ieee754_fp_multiplier' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_0/synth/affine_block_ieee754_fp_multiplier_1_0.vhd:81]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_multiplier_1_0' (6#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_0/synth/affine_block_ieee754_fp_multiplier_1_0.vhd:64]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_multiplier_1_1' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_1/synth/affine_block_ieee754_fp_multiplier_1_1.vhd:56' bound to instance 'ieee754_fp_multiplier_2' of component 'affine_block_ieee754_fp_multiplier_1_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:147]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_multiplier_1_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_1/synth/affine_block_ieee754_fp_multiplier_1_1.vhd:64]
+INFO: [Synth 8-3491] module 'ieee754_fp_multiplier' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:13' bound to instance 'U0' of component 'ieee754_fp_multiplier' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_1/synth/affine_block_ieee754_fp_multiplier_1_1.vhd:81]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_multiplier_1_1' (7#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_1/synth/affine_block_ieee754_fp_multiplier_1_1.vhd:64]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_multiplier_1_2' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_2/synth/affine_block_ieee754_fp_multiplier_1_2.vhd:56' bound to instance 'ieee754_fp_multiplier_3' of component 'affine_block_ieee754_fp_multiplier_1_2' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_multiplier_1_2' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_2/synth/affine_block_ieee754_fp_multiplier_1_2.vhd:64]
+INFO: [Synth 8-3491] module 'ieee754_fp_multiplier' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:13' bound to instance 'U0' of component 'ieee754_fp_multiplier' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_2/synth/affine_block_ieee754_fp_multiplier_1_2.vhd:81]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_multiplier_1_2' (8#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_multiplier_1_2/synth/affine_block_ieee754_fp_multiplier_1_2.vhd:64]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_to_uint_0_0' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_0/synth/affine_block_ieee754_fp_to_uint_0_0.vhd:56' bound to instance 'ieee754_fp_to_uint_0' of component 'affine_block_ieee754_fp_to_uint_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_to_uint_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_0/synth/affine_block_ieee754_fp_to_uint_0_0.vhd:63]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'ieee754_fp_to_uint' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/9e57/ieee754_fp_to_uint.vhd:13' bound to instance 'U0' of component 'ieee754_fp_to_uint' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_0/synth/affine_block_ieee754_fp_to_uint_0_0.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'ieee754_fp_to_uint' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/9e57/ieee754_fp_to_uint.vhd:23]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ieee754_fp_to_uint' (9#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/9e57/ieee754_fp_to_uint.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_to_uint_0_0' (10#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_0/synth/affine_block_ieee754_fp_to_uint_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'affine_block_ieee754_fp_to_uint_0_1' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_1/synth/affine_block_ieee754_fp_to_uint_0_1.vhd:56' bound to instance 'ieee754_fp_to_uint_1' of component 'affine_block_ieee754_fp_to_uint_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'affine_block_ieee754_fp_to_uint_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_1/synth/affine_block_ieee754_fp_to_uint_0_1.vhd:63]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'ieee754_fp_to_uint' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/9e57/ieee754_fp_to_uint.vhd:13' bound to instance 'U0' of component 'ieee754_fp_to_uint' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_1/synth/affine_block_ieee754_fp_to_uint_0_1.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_ieee754_fp_to_uint_0_1' (11#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_ieee754_fp_to_uint_0_1/synth/affine_block_ieee754_fp_to_uint_0_1.vhd:63]
+INFO: [Synth 8-3491] module 'affine_block_uint_to_ieee754_fp_0_0' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_0/synth/affine_block_uint_to_ieee754_fp_0_0.vhd:56' bound to instance 'uint_to_ieee754_fp_0' of component 'affine_block_uint_to_ieee754_fp_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'affine_block_uint_to_ieee754_fp_0_0' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_0/synth/affine_block_uint_to_ieee754_fp_0_0.vhd:63]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'uint_to_ieee754_fp' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/c36b/uint_to_ieee754_fp.vhd:13' bound to instance 'U0' of component 'uint_to_ieee754_fp' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_0/synth/affine_block_uint_to_ieee754_fp_0_0.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'uint_to_ieee754_fp' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/c36b/uint_to_ieee754_fp.vhd:23]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'uint_to_ieee754_fp' (12#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/c36b/uint_to_ieee754_fp.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_uint_to_ieee754_fp_0_0' (13#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_0/synth/affine_block_uint_to_ieee754_fp_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'affine_block_uint_to_ieee754_fp_0_1' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_1/synth/affine_block_uint_to_ieee754_fp_0_1.vhd:56' bound to instance 'uint_to_ieee754_fp_1' of component 'affine_block_uint_to_ieee754_fp_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:174]
+INFO: [Synth 8-638] synthesizing module 'affine_block_uint_to_ieee754_fp_0_1' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_1/synth/affine_block_uint_to_ieee754_fp_0_1.vhd:63]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'uint_to_ieee754_fp' declared at 'c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/c36b/uint_to_ieee754_fp.vhd:13' bound to instance 'U0' of component 'uint_to_ieee754_fp' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_1/synth/affine_block_uint_to_ieee754_fp_0_1.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_uint_to_ieee754_fp_0_1' (14#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ip/affine_block_uint_to_ieee754_fp_0_1/synth/affine_block_uint_to_ieee754_fp_0_1.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'affine_block' (15#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'affine_block_wrapper' (16#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ipshared/dbde/hdl/affine_block_wrapper.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'system_affine_transform_0_1' (17#1) [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/synth/system_affine_transform_0_1.vhd:69]
+WARNING: [Synth 8-3331] design ieee754_fp_to_uint has unconnected port x[31]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 387.063 ; gain = 177.551
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 387.063 ; gain = 177.551
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/affine_block_ooc.xdc] for cell 'U0/affine_block_i'
+Finished Parsing XDC File [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/affine_block_ooc.xdc] for cell 'U0/affine_block_i'
+Parsing XDC File [C:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.runs/system_affine_transform_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.runs/system_affine_transform_0_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 684.895 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:43 . Memory (MB): peak = 684.895 ; gain = 475.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:43 . Memory (MB): peak = 684.895 ; gain = 475.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0/affine_block_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_adder_subtractor_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_adder_subtractor_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_multiplier_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_multiplier_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_multiplier_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_multiplier_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_to_uint_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/ieee754_fp_to_uint_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/uint_to_ieee754_fp_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U0/affine_block_i/uint_to_ieee754_fp_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:43 . Memory (MB): peak = 684.895 ; gain = 475.383
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/d9f2/ieee754_fp_adder_subtractor.vhd:64]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/0995/ieee754_fp_multiplier.vhd:55]
+INFO: [Synth 8-5544] ROM "mantissa" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'mantissa_reg' [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/ipshared/c36b/uint_to_ieee754_fp.vhd:29]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:44 . Memory (MB): peak = 684.895 ; gain = 475.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 16    
+	   2 Input     31 Bit       Adders := 12    
+	   3 Input     25 Bit       Adders := 2     
+	   2 Input     23 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 2     
+	   3 Input      8 Bit       Adders := 2     
+	   4 Input      8 Bit       Adders := 8     
++---XORs : 
+	   2 Input      1 Bit         XORs := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	  48 Input     32 Bit        Muxes := 4     
+	   2 Input     31 Bit        Muxes := 12    
+	   2 Input     25 Bit        Muxes := 8     
+	  25 Input     25 Bit        Muxes := 2     
+	   2 Input     23 Bit        Muxes := 14    
+	  11 Input     11 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ieee754_fp_adder_subtractor 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 2     
+	   3 Input     25 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     25 Bit        Muxes := 4     
+	  25 Input     25 Bit        Muxes := 1     
+	   2 Input     23 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module ieee754_fp_multiplier 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     23 Bit       Adders := 1     
+	   4 Input      8 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	  48 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     23 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module ieee754_fp_to_uint 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+Module uint_to_ieee754_fp 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     23 Bit        Muxes := 2     
+	  11 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP U0/msb1, operation Mode is: A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: Generating DSP U0/msb1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP U0/msb1, operation Mode is: A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: Generating DSP U0/msb1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP U0/msb1, operation Mode is: A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: Generating DSP U0/msb1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP U0/msb1, operation Mode is: A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: Generating DSP U0/msb1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+DSP Report: operator U0/msb1 is absorbed into DSP U0/msb1.
+WARNING: [Synth 8-3331] design affine_block_ieee754_fp_to_uint_0_1 has unconnected port x[31]
+WARNING: [Synth 8-3331] design affine_block_ieee754_fp_to_uint_0_0 has unconnected port x[31]
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[0]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[1]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[2]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[3]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[4]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[5]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[6]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[7]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[8]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[9]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[10]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[11]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_0/U0/mantissa_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/affine_block_i /uint_to_ieee754_fp_0/\U0/mantissa_reg[12] )
+INFO: [Synth 8-3332] Sequential element (U0/mantissa_reg[12]) is unused and will be removed from module affine_block_uint_to_ieee754_fp_0_0.
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[0]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[1]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[2]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[3]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[4]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[5]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[6]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[7]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[8]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[9]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[10]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[11]' (LD) to 'U0/affine_block_i/uint_to_ieee754_fp_1/U0/mantissa_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/affine_block_i /uint_to_ieee754_fp_1/\U0/mantissa_reg[12] )
+INFO: [Synth 8-3332] Sequential element (U0/mantissa_reg[12]) is unused and will be removed from module affine_block_uint_to_ieee754_fp_0_1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:55 . Memory (MB): peak = 684.895 ; gain = 475.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++----------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name           | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ieee754_fp_multiplier | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | A*B            | 25     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ieee754_fp_multiplier | (PCIN>>17)+A*B | 25     | 8      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:08 . Memory (MB): peak = 729.891 ; gain = 520.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:08 . Memory (MB): peak = 729.914 ; gain = 520.402
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:01:10 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   190|
+|2     |DSP48E1 |     8|
+|3     |LUT1    |   210|
+|4     |LUT2    |   568|
+|5     |LUT3    |   272|
+|6     |LUT4    |   492|
+|7     |LUT5    |   634|
+|8     |LUT6    |  1424|
++------+--------+------+
+
+Report Instance Areas: 
++------+------------------------------------+---------------------------------------------+------+
+|      |Instance                            |Module                                       |Cells |
++------+------------------------------------+---------------------------------------------+------+
+|1     |top                                 |                                             |  3798|
+|2     |  U0                                |affine_block_wrapper                         |  3798|
+|3     |    affine_block_i                  |affine_block                                 |  3798|
+|4     |      ieee754_fp_adder_subtractor_0 |affine_block_ieee754_fp_adder_subtractor_0_0 |   700|
+|5     |        U0                          |ieee754_fp_adder_subtractor_5                |   700|
+|6     |      ieee754_fp_adder_subtractor_1 |affine_block_ieee754_fp_adder_subtractor_0_1 |   700|
+|7     |        U0                          |ieee754_fp_adder_subtractor                  |   700|
+|8     |      ieee754_fp_multiplier_0       |affine_block_ieee754_fp_multiplier_0_0       |   475|
+|9     |        U0                          |ieee754_fp_multiplier_4                      |   428|
+|10    |      ieee754_fp_multiplier_1       |affine_block_ieee754_fp_multiplier_1_0       |   475|
+|11    |        U0                          |ieee754_fp_multiplier_3                      |   428|
+|12    |      ieee754_fp_multiplier_2       |affine_block_ieee754_fp_multiplier_1_1       |   475|
+|13    |        U0                          |ieee754_fp_multiplier_2                      |   428|
+|14    |      ieee754_fp_multiplier_3       |affine_block_ieee754_fp_multiplier_1_2       |   475|
+|15    |        U0                          |ieee754_fp_multiplier                        |   428|
+|16    |      ieee754_fp_to_uint_0          |affine_block_ieee754_fp_to_uint_0_0          |   147|
+|17    |        U0                          |ieee754_fp_to_uint_1                         |    66|
+|18    |      ieee754_fp_to_uint_1          |affine_block_ieee754_fp_to_uint_0_1          |   147|
+|19    |        U0                          |ieee754_fp_to_uint                           |    66|
+|20    |      uint_to_ieee754_fp_0          |affine_block_uint_to_ieee754_fp_0_0          |   102|
+|21    |        U0                          |uint_to_ieee754_fp_0                         |    53|
+|22    |      uint_to_ieee754_fp_1          |affine_block_uint_to_ieee754_fp_0_1          |   102|
+|23    |        U0                          |uint_to_ieee754_fp                           |    53|
++------+------------------------------------+---------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 746.281 ; gain = 175.051
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:01:11 . Memory (MB): peak = 746.281 ; gain = 536.770
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 198 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/affine_block_ooc.xdc] for cell 'U0/affine_block_i'
+Finished Parsing XDC File [c:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.srcs/sources_1/bd/system/ip/system_affine_transform_0_1/affine_block_ooc.xdc] for cell 'U0/affine_block_i'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+102 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:01:07 . Memory (MB): peak = 753.711 ; gain = 480.313
+INFO: [Common 17-1381] The checkpoint 'C:/ZyboIP/examples/affine_transform_demo/affine_transform_demo.runs/system_affine_transform_0_1_synth_1/system_affine_transform_0_1.dcp' has been generated.

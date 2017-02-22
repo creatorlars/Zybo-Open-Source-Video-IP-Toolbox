@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log affine_transform.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source affine_transform.tcl" );
+         "-log affine_block_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source affine_block_wrapper.tcl" );
 
 
 
