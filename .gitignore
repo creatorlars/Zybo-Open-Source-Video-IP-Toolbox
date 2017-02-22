@@ -3,3 +3,6 @@
 **/*.ip_user_files
 **/*.runs
 **/*.sims
+**/*.jou
+**/*.log
+**/*.tmp
