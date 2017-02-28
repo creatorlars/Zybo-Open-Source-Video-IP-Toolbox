@@ -6,11 +6,11 @@ This repository contains IP cores meant to be used in Vivado. The VHDL source fi
 ## General IP
 The [general_ip](general_ip) folder contains IP blocks that are not directly for video processing. This folder contains useful utility blocks.
 
-## Video Processing IP
-The [video_processing_ip](video_processing_ip) folder contains IP blocks for video processing. Most of these are designed as VGA stream blocks. That is, they take in an clocked pixel input and produce some transformed output.
+## Video IP
+The [video_ip](video_ip) folder contains IP blocks for video processing. Most of these are designed as VGA stream blocks. That is, they take in an clocked pixel input and produce some transformed output.
 
 ## Examples
-The [examples](folder) folder contains full top-level Vivado projects that can be run through Synthesis, Layout and Bitstream generation and then programmed onto the Zybo. They demonstrate the utility of the IP cores included in this repository.
+The [examples](examples) folder contains full top-level Vivado projects that can be run through Synthesis, Layout and Bitstream generation and then programmed onto the Zybo. They demonstrate the utility of the IP cores included in this repository.
 
 ## Development Information
 ### Vivado Version
