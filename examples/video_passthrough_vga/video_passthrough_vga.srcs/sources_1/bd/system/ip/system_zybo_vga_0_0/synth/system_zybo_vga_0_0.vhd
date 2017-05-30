@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:zybo_vga:1.0
--- IP Revision: 2
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -55,11 +55,9 @@ USE ieee.numeric_std.ALL;
 
 ENTITY system_zybo_vga_0_0 IS
   PORT (
-    hsync : IN STD_LOGIC;
-    vsync : IN STD_LOGIC;
+    clk : IN STD_LOGIC;
+    active : IN STD_LOGIC;
     rgb : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    vga_hs : OUT STD_LOGIC;
-    vga_vs : OUT STD_LOGIC;
     vga_r : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
     vga_g : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
     vga_b : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
@@ -71,11 +69,9 @@ ARCHITECTURE system_zybo_vga_0_0_arch OF system_zybo_vga_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF system_zybo_vga_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT zybo_vga IS
     PORT (
-      hsync : IN STD_LOGIC;
-      vsync : IN STD_LOGIC;
+      clk : IN STD_LOGIC;
+      active : IN STD_LOGIC;
       rgb : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-      vga_hs : OUT STD_LOGIC;
-      vga_vs : OUT STD_LOGIC;
       vga_r : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
       vga_g : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
       vga_b : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
@@ -86,15 +82,15 @@ ARCHITECTURE system_zybo_vga_0_0_arch OF system_zybo_vga_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF system_zybo_vga_0_0_arch : ARCHITECTURE IS "system_zybo_vga_0_0,zybo_vga,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF system_zybo_vga_0_0_arch: ARCHITECTURE IS "system_zybo_vga_0_0,zybo_vga,{x_ipProduct=Vivado 2016.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=zybo_vga,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF system_zybo_vga_0_0_arch: ARCHITECTURE IS "system_zybo_vga_0_0,zybo_vga,{x_ipProduct=Vivado 2016.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=zybo_vga,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
 BEGIN
   U0 : zybo_vga
     PORT MAP (
-      hsync => hsync,
-      vsync => vsync,
+      clk => clk,
+      active => active,
       rgb => rgb,
-      vga_hs => vga_hs,
-      vga_vs => vga_vs,
       vga_r => vga_r,
       vga_g => vga_g,
       vga_b => vga_b

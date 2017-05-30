@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
---Date        : Mon Jan 16 23:57:59 2017
+--Date        : Tue May 09 00:09:42 2017
 --Host        : GILAMONSTER running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -34,11 +34,11 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    hsync : out STD_LOGIC;
     vga_b : out STD_LOGIC_VECTOR ( 4 downto 0 );
     vga_g : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    vga_hs : out STD_LOGIC;
     vga_r : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    vga_vs : out STD_LOGIC
+    vsync : out STD_LOGIC
   );
 end system_wrapper;
 
@@ -66,11 +66,11 @@ architecture STRUCTURE of system_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    vga_hs : out STD_LOGIC;
-    vga_vs : out STD_LOGIC;
     vga_r : out STD_LOGIC_VECTOR ( 4 downto 0 );
     vga_g : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    vga_b : out STD_LOGIC_VECTOR ( 4 downto 0 )
+    vga_b : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    hsync : out STD_LOGIC;
+    vsync : out STD_LOGIC
   );
   end component system;
 begin
@@ -97,10 +97,10 @@ system_i: component system
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      hsync => hsync,
       vga_b(4 downto 0) => vga_b(4 downto 0),
       vga_g(5 downto 0) => vga_g(5 downto 0),
-      vga_hs => vga_hs,
       vga_r(4 downto 0) => vga_r(4 downto 0),
-      vga_vs => vga_vs
+      vsync => vsync
     );
 end STRUCTURE;

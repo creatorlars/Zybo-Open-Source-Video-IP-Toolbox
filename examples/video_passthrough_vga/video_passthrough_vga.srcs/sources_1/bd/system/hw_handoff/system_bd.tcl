@@ -158,11 +158,11 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
+  set hsync [ create_bd_port -dir O hsync ]
   set vga_b [ create_bd_port -dir O -from 4 -to 0 vga_b ]
   set vga_g [ create_bd_port -dir O -from 5 -to 0 vga_g ]
-  set vga_hs [ create_bd_port -dir O vga_hs ]
   set vga_r [ create_bd_port -dir O -from 4 -to 0 vga_r ]
-  set vga_vs [ create_bd_port -dir O vga_vs ]
+  set vsync [ create_bd_port -dir O vsync ]
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.3 clk_wiz_0 ]
@@ -186,9 +186,6 @@ CONFIG.MMCM_CLKIN1_PERIOD.VALUE_SRC {DEFAULT} \
 CONFIG.MMCM_CLKIN2_PERIOD.VALUE_SRC {DEFAULT} \
 CONFIG.MMCM_COMPENSATION.VALUE_SRC {DEFAULT} \
  ] $clk_wiz_0
-
-  # Create instance: inverter_0, and set properties
-  set inverter_0 [ create_bd_cell -type ip -vlnv user.org:user:inverter:1.0 inverter_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1387,21 +1384,19 @@ CONFIG.PCW_WDT_WDT_IO.VALUE_SRC {DEFAULT} \
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins vga_color_test_0/clk_25] [get_bd_pins vga_sync_0/clk_25]
-  connect_bd_net -net inverter_0_x_not [get_bd_pins inverter_0/x_not] [get_bd_pins vga_sync_0/rst]
+  connect_bd_net -net Net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins vga_color_test_0/clk_25] [get_bd_pins vga_sync_0/clk] [get_bd_pins zybo_vga_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins inverter_0/x] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins vga_sync_0/rst]
   connect_bd_net -net rgb888_to_rgb565_0_rgb_565 [get_bd_pins rgb888_to_rgb565_0/rgb_565] [get_bd_pins zybo_vga_0/rgb]
   connect_bd_net -net vga_color_test_0_rgb [get_bd_pins rgb888_to_rgb565_0/rgb_888] [get_bd_pins vga_color_test_0/rgb]
-  connect_bd_net -net vga_sync_0_hsync [get_bd_pins vga_sync_0/hsync] [get_bd_pins zybo_vga_0/hsync]
-  connect_bd_net -net vga_sync_0_vsync [get_bd_pins vga_sync_0/vsync] [get_bd_pins zybo_vga_0/vsync]
+  connect_bd_net -net vga_sync_0_active [get_bd_pins vga_sync_0/active] [get_bd_pins zybo_vga_0/active]
+  connect_bd_net -net vga_sync_0_hsync [get_bd_ports hsync] [get_bd_pins vga_sync_0/hsync]
+  connect_bd_net -net vga_sync_0_vsync [get_bd_ports vsync] [get_bd_pins vga_sync_0/vsync]
   connect_bd_net -net vga_sync_0_xaddr [get_bd_pins vga_color_test_0/xaddr] [get_bd_pins vga_sync_0/xaddr]
   connect_bd_net -net vga_sync_0_yaddr [get_bd_pins vga_color_test_0/yaddr] [get_bd_pins vga_sync_0/yaddr]
   connect_bd_net -net zybo_vga_0_vga_b [get_bd_ports vga_b] [get_bd_pins zybo_vga_0/vga_b]
   connect_bd_net -net zybo_vga_0_vga_g [get_bd_ports vga_g] [get_bd_pins zybo_vga_0/vga_g]
-  connect_bd_net -net zybo_vga_0_vga_hs [get_bd_ports vga_hs] [get_bd_pins zybo_vga_0/vga_hs]
   connect_bd_net -net zybo_vga_0_vga_r [get_bd_ports vga_r] [get_bd_pins zybo_vga_0/vga_r]
-  connect_bd_net -net zybo_vga_0_vga_vs [get_bd_ports vga_vs] [get_bd_pins zybo_vga_0/vga_vs]
 
   # Create address segments
 
@@ -1409,38 +1404,35 @@ CONFIG.PCW_WDT_WDT_IO.VALUE_SRC {DEFAULT} \
   regenerate_bd_layout -layout_string {
    guistr: "# # String gsaved with Nlview 6.6.5b  2016-09-06 bk=1.3687 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
+preplace port vsync -pg 1 -y 450 -defaultsOSRD
 preplace port DDR -pg 1 -y 40 -defaultsOSRD
-preplace port vga_hs -pg 1 -y 330 -defaultsOSRD
+preplace port hsync -pg 1 -y 420 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 60 -defaultsOSRD
-preplace port vga_vs -pg 1 -y 350 -defaultsOSRD
-preplace portBus vga_b -pg 1 -y 410 -defaultsOSRD
-preplace portBus vga_r -pg 1 -y 370 -defaultsOSRD
-preplace portBus vga_g -pg 1 -y 390 -defaultsOSRD
-preplace inst inverter_0 -pg 1 -lvl 1 -y 190 -defaultsOSRD
-preplace inst vga_color_test_0 -pg 1 -lvl 3 -y 200 -defaultsOSRD
-preplace inst rgb888_to_rgb565_0 -pg 1 -lvl 4 -y 390 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 100 -defaultsOSRD
-preplace inst zybo_vga_0 -pg 1 -lvl 5 -y 370 -defaultsOSRD
-preplace inst vga_sync_0 -pg 1 -lvl 2 -y 180 -defaultsOSRD
+preplace portBus vga_b -pg 1 -y 370 -defaultsOSRD
+preplace portBus vga_r -pg 1 -y 330 -defaultsOSRD
+preplace portBus vga_g -pg 1 -y 350 -defaultsOSRD
+preplace inst vga_color_test_0 -pg 1 -lvl 3 -y 520 -defaultsOSRD
+preplace inst rgb888_to_rgb565_0 -pg 1 -lvl 4 -y 520 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 330 -defaultsOSRD
+preplace inst zybo_vga_0 -pg 1 -lvl 5 -y 350 -defaultsOSRD
+preplace inst vga_sync_0 -pg 1 -lvl 2 -y 440 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 130 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ
 preplace netloc zybo_vga_0_vga_g 1 5 1 NJ
-preplace netloc zybo_vga_0_vga_vs 1 5 1 NJ
-preplace netloc rgb888_to_rgb565_0_rgb_565 1 4 1 NJ
-preplace netloc vga_color_test_0_rgb 1 3 1 550
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 280 NJ 280 NJ 280 NJ 280 NJ 280 1190
-preplace netloc vga_sync_0_yaddr 1 2 1 N
-preplace netloc inverter_0_x_not 1 1 1 NJ
-preplace netloc vga_sync_0_hsync 1 2 3 350 120 NJ 120 810J
-preplace netloc vga_sync_0_xaddr 1 2 1 N
+preplace netloc rgb888_to_rgb565_0_rgb_565 1 4 1 810
+preplace netloc vga_color_test_0_rgb 1 3 1 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 220 200 220 NJ 220 NJ 220 800J 420 1190
+preplace netloc vga_sync_0_yaddr 1 2 1 340
+preplace netloc vga_sync_0_hsync 1 2 4 340J 430 NJ 430 NJ 430 1200J
+preplace netloc vga_sync_0_xaddr 1 2 1 350
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
 preplace netloc zybo_vga_0_vga_b 1 5 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 270 NJ 270 NJ 270 NJ 270 800 270 1200
-preplace netloc Net 1 1 2 190 90 370
-preplace netloc vga_sync_0_vsync 1 2 3 360 130 NJ 130 790J
+preplace netloc vga_sync_0_active 1 2 3 NJ 400 NJ 400 790
+preplace netloc vga_sync_0_vsync 1 2 4 NJ 440 NJ 440 NJ 440 1190J
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 270 NJ 270 NJ 270 NJ 270 810 270 1200
+preplace netloc Net 1 1 4 190 320 360 320 NJ 320 790
 preplace netloc zybo_vga_0_vga_r 1 5 1 NJ
-preplace netloc zybo_vga_0_vga_hs 1 5 1 NJ
-levelinfo -pg 1 0 110 270 460 670 1000 1220 -top 0 -bot 460
+levelinfo -pg 1 0 110 270 450 670 1000 1220 -top 0 -bot 590
 ",
 }
 

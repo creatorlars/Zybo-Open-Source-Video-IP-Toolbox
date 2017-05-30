@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
---Date        : Mon Jan 16 23:57:59 2017
+--Date        : Tue May 09 00:09:42 2017
 --Host        : GILAMONSTER running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -34,14 +34,14 @@ entity system is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    hsync : out STD_LOGIC;
     vga_b : out STD_LOGIC_VECTOR ( 4 downto 0 );
     vga_g : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    vga_hs : out STD_LOGIC;
     vga_r : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    vga_vs : out STD_LOGIC
+    vsync : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -55,41 +55,12 @@ architecture STRUCTURE of system is
     rgb : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component system_vga_color_test_0_0;
-  component system_vga_sync_0_0 is
-  port (
-    clk_25 : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    active : out STD_LOGIC;
-    hsync : out STD_LOGIC;
-    vsync : out STD_LOGIC;
-    xaddr : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    yaddr : out STD_LOGIC_VECTOR ( 9 downto 0 )
-  );
-  end component system_vga_sync_0_0;
-  component system_zybo_vga_0_0 is
-  port (
-    hsync : in STD_LOGIC;
-    vsync : in STD_LOGIC;
-    rgb : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    vga_hs : out STD_LOGIC;
-    vga_vs : out STD_LOGIC;
-    vga_r : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    vga_g : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    vga_b : out STD_LOGIC_VECTOR ( 4 downto 0 )
-  );
-  end component system_zybo_vga_0_0;
   component system_rgb888_to_rgb565_0_0 is
   port (
     rgb_888 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     rgb_565 : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component system_rgb888_to_rgb565_0_0;
-  component system_inverter_0_0 is
-  port (
-    x : in STD_LOGIC;
-    x_not : out STD_LOGIC
-  );
-  end component system_inverter_0_0;
   component system_clk_wiz_0_0 is
   port (
     resetn : in STD_LOGIC;
@@ -171,8 +142,28 @@ architecture STRUCTURE of system is
     PS_PORB : inout STD_LOGIC
   );
   end component system_processing_system7_0_0;
+  component system_vga_sync_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
+    active : out STD_LOGIC;
+    hsync : out STD_LOGIC;
+    vsync : out STD_LOGIC;
+    xaddr : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    yaddr : out STD_LOGIC_VECTOR ( 9 downto 0 )
+  );
+  end component system_vga_sync_0_0;
+  component system_zybo_vga_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    active : in STD_LOGIC;
+    rgb : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    vga_r : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    vga_g : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    vga_b : out STD_LOGIC_VECTOR ( 4 downto 0 )
+  );
+  end component system_zybo_vga_0_0;
   signal Net : STD_LOGIC;
-  signal inverter_0_x_not : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -198,15 +189,14 @@ architecture STRUCTURE of system is
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
   signal rgb888_to_rgb565_0_rgb_565 : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal vga_color_test_0_rgb : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal vga_sync_0_active : STD_LOGIC;
   signal vga_sync_0_hsync : STD_LOGIC;
   signal vga_sync_0_vsync : STD_LOGIC;
   signal vga_sync_0_xaddr : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal vga_sync_0_yaddr : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal zybo_vga_0_vga_b : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal zybo_vga_0_vga_g : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal zybo_vga_0_vga_hs : STD_LOGIC;
   signal zybo_vga_0_vga_r : STD_LOGIC_VECTOR ( 4 downto 0 );
-  signal zybo_vga_0_vga_vs : STD_LOGIC;
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -240,24 +230,18 @@ architecture STRUCTURE of system is
   signal NLW_processing_system7_0_M_AXI_GP0_WID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_vga_sync_0_active_UNCONNECTED : STD_LOGIC;
 begin
+  hsync <= vga_sync_0_hsync;
   vga_b(4 downto 0) <= zybo_vga_0_vga_b(4 downto 0);
   vga_g(5 downto 0) <= zybo_vga_0_vga_g(5 downto 0);
-  vga_hs <= zybo_vga_0_vga_hs;
   vga_r(4 downto 0) <= zybo_vga_0_vga_r(4 downto 0);
-  vga_vs <= zybo_vga_0_vga_vs;
+  vsync <= vga_sync_0_vsync;
 clk_wiz_0: component system_clk_wiz_0_0
      port map (
       clk_in1 => processing_system7_0_FCLK_CLK0,
       clk_out1 => Net,
       locked => NLW_clk_wiz_0_locked_UNCONNECTED,
       resetn => processing_system7_0_FCLK_RESET0_N
-    );
-inverter_0: component system_inverter_0_0
-     port map (
-      x => processing_system7_0_FCLK_RESET0_N,
-      x_not => inverter_0_x_not
     );
 processing_system7_0: component system_processing_system7_0_0
      port map (
@@ -345,23 +329,21 @@ vga_color_test_0: component system_vga_color_test_0_0
     );
 vga_sync_0: component system_vga_sync_0_0
      port map (
-      active => NLW_vga_sync_0_active_UNCONNECTED,
-      clk_25 => Net,
+      active => vga_sync_0_active,
+      clk => Net,
       hsync => vga_sync_0_hsync,
-      rst => inverter_0_x_not,
+      rst => processing_system7_0_FCLK_RESET0_N,
       vsync => vga_sync_0_vsync,
       xaddr(9 downto 0) => vga_sync_0_xaddr(9 downto 0),
       yaddr(9 downto 0) => vga_sync_0_yaddr(9 downto 0)
     );
 zybo_vga_0: component system_zybo_vga_0_0
      port map (
-      hsync => vga_sync_0_hsync,
+      active => vga_sync_0_active,
+      clk => Net,
       rgb(15 downto 0) => rgb888_to_rgb565_0_rgb_565(15 downto 0),
       vga_b(4 downto 0) => zybo_vga_0_vga_b(4 downto 0),
       vga_g(5 downto 0) => zybo_vga_0_vga_g(5 downto 0),
-      vga_hs => zybo_vga_0_vga_hs,
-      vga_r(4 downto 0) => zybo_vga_0_vga_r(4 downto 0),
-      vga_vs => zybo_vga_0_vga_vs,
-      vsync => vga_sync_0_vsync
+      vga_r(4 downto 0) => zybo_vga_0_vga_r(4 downto 0)
     );
 end STRUCTURE;

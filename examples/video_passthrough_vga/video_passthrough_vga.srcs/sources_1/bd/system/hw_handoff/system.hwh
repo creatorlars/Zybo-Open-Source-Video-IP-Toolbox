@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 16 23:58:19 2017" VIVADOVERSION="2016.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue May 09 00:09:43 2017" VIVADOVERSION="2016.4">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo:part0:1.0" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -25,16 +25,6 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
-    <PORT DIR="O" NAME="vga_hs" SIGIS="undef" SIGNAME="zybo_vga_0_vga_hs">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="zybo_vga_0" PORT="vga_hs"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vga_vs" SIGIS="undef" SIGNAME="zybo_vga_0_vga_vs">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="zybo_vga_0" PORT="vga_vs"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" LEFT="4" NAME="vga_r" RIGHT="0" SIGIS="undef" SIGNAME="zybo_vga_0_vga_r">
       <CONNECTIONS>
         <CONNECTION INSTANCE="zybo_vga_0" PORT="vga_r"/>
@@ -48,6 +38,16 @@
     <PORT DIR="O" LEFT="4" NAME="vga_b" RIGHT="0" SIGIS="undef" SIGNAME="zybo_vga_0_vga_b">
       <CONNECTIONS>
         <CONNECTION INSTANCE="zybo_vga_0" PORT="vga_b"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="hsync" SIGIS="undef" SIGNAME="vga_sync_0_hsync">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="vga_sync_0" PORT="hsync"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vsync" SIGIS="undef" SIGNAME="vga_sync_0_vsync">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="vga_sync_0" PORT="vsync"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -681,30 +681,11 @@
         <PORT CLKFREQUENCY="25000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="vga_color_test_0" PORT="clk_25"/>
-            <CONNECTION INSTANCE="vga_sync_0" PORT="clk_25"/>
+            <CONNECTION INSTANCE="vga_sync_0" PORT="clk"/>
+            <CONNECTION INSTANCE="zybo_vga_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef"/>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE FULLNAME="/inverter_0" HWVERSION="1.0" INSTANCE="inverter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="inverter" VLNV="user.org:user:inverter:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="system_inverter_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="x" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_RESET0_N">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="x_not" SIGIS="undef" SIGNAME="inverter_0_x_not">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_sync_0" PORT="rst"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -1704,8 +1685,8 @@
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="inverter_0" PORT="x"/>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="resetn"/>
+            <CONNECTION INSTANCE="vga_sync_0" PORT="rst"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef"/>
@@ -1928,25 +1909,29 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="clk_25" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
+        <PORT CLKFREQUENCY="25000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="inverter_0_x_not">
+        <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="inverter_0" PORT="x_not"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="active" SIGIS="undef"/>
+        <PORT DIR="O" NAME="active" SIGIS="undef" SIGNAME="vga_sync_0_active">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="zybo_vga_0" PORT="active"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="hsync" SIGIS="undef" SIGNAME="vga_sync_0_hsync">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="zybo_vga_0" PORT="hsync"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="hsync"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="vsync" SIGIS="undef" SIGNAME="vga_sync_0_vsync">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="zybo_vga_0" PORT="vsync"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="vsync"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="9" NAME="xaddr" RIGHT="0" SIGIS="undef" SIGNAME="vga_sync_0_xaddr">
@@ -1969,29 +1954,19 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="hsync" SIGIS="undef" SIGNAME="vga_sync_0_hsync">
+        <PORT CLKFREQUENCY="25000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_sync_0" PORT="hsync"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="vsync" SIGIS="undef" SIGNAME="vga_sync_0_vsync">
+        <PORT DIR="I" NAME="active" SIGIS="undef" SIGNAME="vga_sync_0_active">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_sync_0" PORT="vsync"/>
+            <CONNECTION INSTANCE="vga_sync_0" PORT="active"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="15" NAME="rgb" RIGHT="0" SIGIS="undef" SIGNAME="rgb888_to_rgb565_0_rgb_565">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb888_to_rgb565_0" PORT="rgb_565"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="vga_hs" SIGIS="undef" SIGNAME="zybo_vga_0_vga_hs">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="vga_hs"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="vga_vs" SIGIS="undef" SIGNAME="zybo_vga_0_vga_vs">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="vga_vs"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="4" NAME="vga_r" RIGHT="0" SIGIS="undef" SIGNAME="zybo_vga_0_vga_r">
