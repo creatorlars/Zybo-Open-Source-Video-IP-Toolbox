@@ -16,7 +16,7 @@ entity vga_feature_transform is
     );
 end vga_feature_transform;
 
-architecture Behavioral of vga_feature_transform is
+ architecture Behavioral of vga_feature_transform is
     component feature_buffer_block is
         generic (
             PARITY : std_logic := '0'
