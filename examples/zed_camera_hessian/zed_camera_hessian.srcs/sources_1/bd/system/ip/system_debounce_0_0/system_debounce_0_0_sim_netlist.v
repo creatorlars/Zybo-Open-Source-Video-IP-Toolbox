@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 // Date        : Sun May 28 18:34:35 2017
 // Host        : GILAMONSTER running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_debounce_0_0/system_debounce_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top system_debounce_0_0 -prefix
+//               system_debounce_0_0_ system_debounce_0_0_sim_netlist.v
 // Design      : system_debounce_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,27 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_debounce_0_0,debounce,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "debounce,Vivado 2016.4" *) 
-(* NotValidForBitStream *)
-module system_debounce_0_0
-   (clk,
-    signal_in,
-    signal_out);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) input clk;
-  input signal_in;
-  output signal_out;
-
-  wire clk;
-  wire signal_in;
-  wire signal_out;
-
-  system_debounce_0_0_debounce U0
-       (.clk(clk),
-        .signal_in(signal_in),
-        .signal_out(signal_out));
-endmodule
-
-(* ORIG_REF_NAME = "debounce" *) 
 module system_debounce_0_0_debounce
    (signal_out,
     clk,
@@ -490,6 +469,26 @@ module system_debounce_0_0_debounce
         .D(signal_out_i_1_n_0),
         .Q(signal_out),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "system_debounce_0_0,debounce,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "debounce,Vivado 2016.4" *) 
+(* NotValidForBitStream *)
+module system_debounce_0_0
+   (clk,
+    signal_in,
+    signal_out);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) input clk;
+  input signal_in;
+  output signal_out;
+
+  wire clk;
+  wire signal_in;
+  wire signal_out;
+
+  system_debounce_0_0_debounce U0
+       (.clk(clk),
+        .signal_in(signal_in),
+        .signal_out(signal_out));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 // Date        : Mon May 29 20:15:21 2017
 // Host        : GILAMONSTER running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_buffer_register_0_0/system_buffer_register_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top system_buffer_register_0_0 -prefix
+//               system_buffer_register_0_0_ system_buffer_register_0_0_sim_netlist.v
 // Design      : system_buffer_register_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,27 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_buffer_register_0_0,buffer_register,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "buffer_register,Vivado 2016.4" *) 
-(* NotValidForBitStream *)
-module system_buffer_register_0_0
-   (clk,
-    val_in,
-    val_out);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) input clk;
-  input [31:0]val_in;
-  output [31:0]val_out;
-
-  wire clk;
-  wire [31:0]val_in;
-  wire [31:0]val_out;
-
-  system_buffer_register_0_0_buffer_register U0
-       (.clk(clk),
-        .val_in(val_in),
-        .val_out(val_out));
-endmodule
-
-(* ORIG_REF_NAME = "buffer_register" *) 
 module system_buffer_register_0_0_buffer_register
    (val_out,
     val_in,
@@ -237,6 +216,26 @@ module system_buffer_register_0_0_buffer_register
         .D(val_in[9]),
         .Q(val_out[9]),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "system_buffer_register_0_0,buffer_register,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "buffer_register,Vivado 2016.4" *) 
+(* NotValidForBitStream *)
+module system_buffer_register_0_0
+   (clk,
+    val_in,
+    val_out);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) input clk;
+  input [31:0]val_in;
+  output [31:0]val_out;
+
+  wire clk;
+  wire [31:0]val_in;
+  wire [31:0]val_out;
+
+  system_buffer_register_0_0_buffer_register U0
+       (.clk(clk),
+        .val_in(val_in),
+        .val_out(val_out));
 endmodule
 `ifndef GLBL
 `define GLBL

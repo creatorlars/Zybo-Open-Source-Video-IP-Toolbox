@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
---Date        : Thu May 25 21:05:15 2017
+--Date        : Thu Jun 01 11:34:27 2017
 --Host        : GILAMONSTER running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -173,15 +173,6 @@ architecture STRUCTURE of system is
     rgb_888 : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component system_rgb565_to_rgb888_1_0;
-  component system_vga_split_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    rgb_in_0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    rgb_in_1 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    x_addr : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    rgb_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
-  );
-  end component system_vga_split_0_0;
   component system_ov7670_controller_1_0 is
   port (
     clk : in STD_LOGIC;
@@ -231,6 +222,14 @@ architecture STRUCTURE of system is
     rgb : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component system_ov7670_vga_1_0;
+  component system_vga_overlay_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    rgb_0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    rgb_1 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    rgb : out STD_LOGIC_VECTOR ( 23 downto 0 )
+  );
+  end component system_vga_overlay_0_0;
   signal Net : STD_LOGIC;
   signal Net1 : STD_LOGIC;
   signal Net2 : STD_LOGIC;
@@ -257,9 +256,9 @@ architecture STRUCTURE of system is
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal vga_buffer_0_data_r : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal vga_buffer_1_data_r : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal vga_overlay_0_rgb : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal vga_pll_0_clk_12_6 : STD_LOGIC;
   signal vga_pll_0_clk_25 : STD_LOGIC;
-  signal vga_split_0_rgb_out : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal vga_sync_ref_0_active : STD_LOGIC;
   signal vga_sync_ref_0_start : STD_LOGIC;
   signal vga_sync_ref_0_xaddr : STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -414,6 +413,13 @@ vga_buffer_1: component system_vga_buffer_1_0
       y_addr_r(9 downto 0) => vga_sync_reset_0_yaddr(9 downto 0),
       y_addr_w(9 downto 0) => vga_sync_ref_1_yaddr(9 downto 0)
     );
+vga_overlay_0: component system_vga_overlay_0_0
+     port map (
+      clk => vga_pll_0_clk_25,
+      rgb(23 downto 0) => vga_overlay_0_rgb(23 downto 0),
+      rgb_0(23 downto 0) => vga_buffer_0_data_r(23 downto 0),
+      rgb_1(23 downto 0) => vga_buffer_1_data_r(23 downto 0)
+    );
 vga_pll_0: component system_vga_pll_0_0
      port map (
       clk_100 => clk_100_1,
@@ -421,14 +427,6 @@ vga_pll_0: component system_vga_pll_0_0
       clk_25 => vga_pll_0_clk_25,
       clk_50 => NLW_vga_pll_0_clk_50_UNCONNECTED,
       clk_6_25 => NLW_vga_pll_0_clk_6_25_UNCONNECTED
-    );
-vga_split_0: component system_vga_split_0_0
-     port map (
-      clk => vga_pll_0_clk_12_6,
-      rgb_in_0(23 downto 0) => vga_buffer_0_data_r(23 downto 0),
-      rgb_in_1(23 downto 0) => vga_buffer_1_data_r(23 downto 0),
-      rgb_out(23 downto 0) => vga_split_0_rgb_out(23 downto 0),
-      x_addr(9 downto 0) => vga_sync_reset_0_xaddr(9 downto 0)
     );
 vga_sync_ref_0: component system_vga_sync_ref_0_0
      port map (
@@ -476,7 +474,7 @@ zed_hdmi_0: component system_zed_hdmi_0_0
       hdmi_sda => hdmi_sda,
       hdmi_vsync => zed_hdmi_0_hdmi_vsync,
       hsync => vga_sync_reset_0_hsync,
-      rgb888(23 downto 0) => vga_split_0_rgb_out(23 downto 0),
+      rgb888(23 downto 0) => vga_overlay_0_rgb(23 downto 0),
       vsync => vga_sync_reset_0_vsync
     );
 end STRUCTURE;

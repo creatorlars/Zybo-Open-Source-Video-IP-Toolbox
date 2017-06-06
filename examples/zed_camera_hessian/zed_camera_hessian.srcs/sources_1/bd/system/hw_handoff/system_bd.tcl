@@ -158,6 +158,7 @@ proc create_root_design { parentCell } {
   # Create ports
   set clk_100 [ create_bd_port -dir I clk_100 ]
   set data [ create_bd_port -dir I -from 7 -to 0 data ]
+  set enable_nm [ create_bd_port -dir I enable_nm ]
   set hdmi_clk [ create_bd_port -dir O -type clk hdmi_clk ]
   set hdmi_d [ create_bd_port -dir O -from 15 -to 0 hdmi_d ]
   set hdmi_de [ create_bd_port -dir O hdmi_de ]
@@ -302,6 +303,9 @@ CONFIG.ROW_WIDTH {640} \
 CONFIG.ROW_WIDTH.VALUE_SRC {DEFAULT} \
  ] $vga_hessian_0
 
+  # Create instance: vga_nmsuppression_0, and set properties
+  set vga_nmsuppression_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:vga_nmsuppression:1.0 vga_nmsuppression_0 ]
+
   # Create instance: vga_pll_0, and set properties
   set vga_pll_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:vga_pll:1.0 vga_pll_0 ]
 
@@ -324,7 +328,7 @@ CONFIG.CONST_WIDTH {24} \
   # Create port connections
   connect_bd_net -net Net [get_bd_ports hdmi_sda] [get_bd_pins zed_hdmi_0/hdmi_sda]
   connect_bd_net -net Net1 [get_bd_ports siod] [get_bd_pins ov7670_controller_0/siod]
-  connect_bd_net -net buffer_register_0_val_out [get_bd_pins buffer_register_0/val_out] [get_bd_pins comparator_0/x]
+  connect_bd_net -net buffer_register_0_val_out [get_bd_pins buffer_register_0/val_out] [get_bd_pins vga_nmsuppression_0/hessian_in]
   connect_bd_net -net clk_100_1 [get_bd_ports clk_100] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins clk_wiz_1/clk_in1] [get_bd_pins vga_pll_0/clk_100] [get_bd_pins zed_hdmi_0/clk_100]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports xclk] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins vga_hessian_0/clk_x16]
@@ -332,6 +336,7 @@ CONFIG.CONST_WIDTH {24} \
   connect_bd_net -net comparator_0_z [get_bd_pins comparator_0/z] [get_bd_pins rgb888_mux_2_0/sel]
   connect_bd_net -net data_1 [get_bd_ports data] [get_bd_pins ov7670_vga_0/data]
   connect_bd_net -net debounce_0_o [get_bd_pins debounce_0/signal_out] [get_bd_pins ov7670_controller_0/resend]
+  connect_bd_net -net enable_1 [get_bd_ports enable_nm] [get_bd_pins vga_nmsuppression_0/enable]
   connect_bd_net -net hsync_1 [get_bd_ports hsync] [get_bd_pins vga_sync_ref_0/hsync]
   connect_bd_net -net inverter_0_x_not [get_bd_pins inverter_0/x_not] [get_bd_pins vga_sync_reset_0/rst]
   connect_bd_net -net ov7670_controller_0_config_finished [get_bd_ports ready] [get_bd_pins ov7670_controller_0/config_finished] [get_bd_pins vga_sync_ref_0/rst]
@@ -343,19 +348,21 @@ CONFIG.CONST_WIDTH {24} \
   connect_bd_net -net rgb888_mux_2_0_rgb888 [get_bd_pins rgb888_mux_2_0/rgb888] [get_bd_pins zed_hdmi_0/rgb888]
   connect_bd_net -net rgb888_to_g8_0_g8 [get_bd_pins rgb888_to_g8_0/g8] [get_bd_pins vga_hessian_0/g_in]
   connect_bd_net -net threshold_dout [get_bd_pins comparator_0/y] [get_bd_pins threshold/dout]
+  connect_bd_net -net vdd_dout [get_bd_pins vdd/dout] [get_bd_pins vga_hessian_0/rst]
   connect_bd_net -net vga_buffer_0_data_r [get_bd_pins rgb888_mux_2_0/rgb888_0] [get_bd_pins rgb888_to_g8_0/rgb888] [get_bd_pins vga_buffer_0/data_r]
   connect_bd_net -net vga_hessian_0_hessian_out [get_bd_pins buffer_register_0/val_in] [get_bd_pins vga_hessian_0/hessian_out]
-  connect_bd_net -net vga_pll_0_clk_12_6 [get_bd_pins buffer_register_0/clk] [get_bd_pins rgb888_mux_2_0/clk] [get_bd_pins rgb888_to_g8_0/clk] [get_bd_pins vga_buffer_0/clk_r] [get_bd_pins vga_pll_0/clk_12_5] [get_bd_pins vga_sync_reset_0/clk] [get_bd_pins zed_hdmi_0/clk]
+  connect_bd_net -net vga_nmsuppression_0_hessian_out [get_bd_pins comparator_0/x] [get_bd_pins vga_nmsuppression_0/hessian_out]
+  connect_bd_net -net vga_pll_0_clk_12_6 [get_bd_pins buffer_register_0/clk] [get_bd_pins rgb888_mux_2_0/clk] [get_bd_pins rgb888_to_g8_0/clk] [get_bd_pins vga_buffer_0/clk_r] [get_bd_pins vga_nmsuppression_0/clk] [get_bd_pins vga_pll_0/clk_12_5] [get_bd_pins vga_sync_reset_0/clk] [get_bd_pins zed_hdmi_0/clk]
   connect_bd_net -net vga_pll_0_clk_25 [get_bd_pins debounce_0/clk] [get_bd_pins ov7670_controller_0/clk] [get_bd_pins vga_pll_0/clk_25] [get_bd_pins zed_hdmi_0/clk_x2]
   connect_bd_net -net vga_sync_ref_0_active [get_bd_pins ov7670_vga_0/active] [get_bd_pins vga_buffer_0/wen] [get_bd_pins vga_sync_ref_0/active]
   connect_bd_net -net vga_sync_ref_0_start [get_bd_pins inverter_0/x] [get_bd_pins vga_sync_ref_0/start]
   connect_bd_net -net vga_sync_ref_0_xaddr [get_bd_pins vga_buffer_0/x_addr_w] [get_bd_pins vga_sync_ref_0/xaddr]
   connect_bd_net -net vga_sync_ref_0_yaddr [get_bd_pins vga_buffer_0/y_addr_w] [get_bd_pins vga_sync_ref_0/yaddr]
-  connect_bd_net -net vga_sync_reset_0_active [get_bd_pins vga_hessian_0/active] [get_bd_pins vga_sync_reset_0/active] [get_bd_pins zed_hdmi_0/active]
+  connect_bd_net -net vga_sync_reset_0_active [get_bd_pins vga_hessian_0/active] [get_bd_pins vga_nmsuppression_0/active] [get_bd_pins vga_sync_reset_0/active] [get_bd_pins zed_hdmi_0/active]
   connect_bd_net -net vga_sync_reset_0_hsync [get_bd_pins vga_sync_reset_0/hsync] [get_bd_pins zed_hdmi_0/hsync]
-  connect_bd_net -net vga_sync_reset_0_vsync [get_bd_pins vga_hessian_0/rst] [get_bd_pins vga_sync_reset_0/vsync] [get_bd_pins zed_hdmi_0/vsync]
-  connect_bd_net -net vga_sync_reset_0_xaddr [get_bd_pins vga_buffer_0/x_addr_r] [get_bd_pins vga_hessian_0/x_addr] [get_bd_pins vga_sync_reset_0/xaddr]
-  connect_bd_net -net vga_sync_reset_0_yaddr [get_bd_pins vga_buffer_0/y_addr_r] [get_bd_pins vga_hessian_0/y_addr] [get_bd_pins vga_sync_reset_0/yaddr]
+  connect_bd_net -net vga_sync_reset_0_vsync [get_bd_pins vga_sync_reset_0/vsync] [get_bd_pins zed_hdmi_0/vsync]
+  connect_bd_net -net vga_sync_reset_0_xaddr [get_bd_pins vga_buffer_0/x_addr_r] [get_bd_pins vga_hessian_0/x_addr] [get_bd_pins vga_nmsuppression_0/x_addr_in] [get_bd_pins vga_sync_reset_0/xaddr]
+  connect_bd_net -net vga_sync_reset_0_yaddr [get_bd_pins vga_buffer_0/y_addr_r] [get_bd_pins vga_hessian_0/y_addr] [get_bd_pins vga_nmsuppression_0/y_addr_in] [get_bd_pins vga_sync_reset_0/yaddr]
   connect_bd_net -net vsync_1 [get_bd_ports vsync] [get_bd_pins clock_splitter_0/latch_edge] [get_bd_pins vga_sync_ref_0/vsync]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins rgb888_mux_2_0/rgb888_1] [get_bd_pins white/dout]
   connect_bd_net -net zed_hdmi_0_hdmi_clk [get_bd_ports hdmi_clk] [get_bd_pins zed_hdmi_0/hdmi_clk]
@@ -371,87 +378,92 @@ CONFIG.CONST_WIDTH {24} \
   regenerate_bd_layout -layout_string {
    guistr: "# # String gsaved with Nlview 6.6.5b  2016-09-06 bk=1.3687 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port vsync -pg 1 -y 500 -defaultsOSRD
-preplace port hdmi_de -pg 1 -y 270 -defaultsOSRD
-preplace port xclk -pg 1 -y 60 -defaultsOSRD
-preplace port hdmi_scl -pg 1 -y 290 -defaultsOSRD
-preplace port hdmi_vsync -pg 1 -y 230 -defaultsOSRD
-preplace port hdmi_hsync -pg 1 -y 210 -defaultsOSRD
-preplace port hsync -pg 1 -y 480 -defaultsOSRD
-preplace port sioc -pg 1 -y 410 -defaultsOSRD
-preplace port siod -pg 1 -y 430 -defaultsOSRD
-preplace port ready -pg 1 -y 690 -defaultsOSRD
-preplace port hdmi_clk -pg 1 -y 190 -defaultsOSRD
-preplace port clk_100 -pg 1 -y 10 -defaultsOSRD
-preplace port pclk -pg 1 -y 270 -defaultsOSRD
-preplace port reset -pg 1 -y 350 -defaultsOSRD
-preplace port hdmi_sda -pg 1 -y 310 -defaultsOSRD
-preplace portBus hdmi_d -pg 1 -y 250 -defaultsOSRD
-preplace portBus data -pg 1 -y 310 -defaultsOSRD
-preplace inst vdd -pg 1 -lvl 1 -y 70 -defaultsOSRD
-preplace inst vga_sync_reset_0 -pg 1 -lvl 4 -y 230 -defaultsOSRD
-preplace inst zed_hdmi_0 -pg 1 -lvl 11 -y 250 -defaultsOSRD
-preplace inst vga_pll_0 -pg 1 -lvl 3 -y 450 -defaultsOSRD
-preplace inst comparator_0 -pg 1 -lvl 9 -y 150 -defaultsOSRD
-preplace inst white -pg 1 -lvl 9 -y 330 -defaultsOSRD
-preplace inst vga_sync_ref_0 -pg 1 -lvl 2 -y 470 -defaultsOSRD
-preplace inst ov7670_controller_0 -pg 1 -lvl 11 -y 440 -defaultsOSRD
-preplace inst inverter_0 -pg 1 -lvl 3 -y 190 -defaultsOSRD
-preplace inst clock_splitter_0 -pg 1 -lvl 1 -y 420 -defaultsOSRD
-preplace inst buffer_register_0 -pg 1 -lvl 8 -y 280 -defaultsOSRD
-preplace inst rgb888_to_g8_0 -pg 1 -lvl 6 -y 330 -defaultsOSRD
-preplace inst debounce_0 -pg 1 -lvl 10 -y 450 -defaultsOSRD
-preplace inst rgb888_mux_2_0 -pg 1 -lvl 10 -y 300 -defaultsOSRD
-preplace inst vga_buffer_0 -pg 1 -lvl 5 -y 570 -defaultsOSRD
-preplace inst ov7670_vga_0 -pg 1 -lvl 3 -y 290 -defaultsOSRD
-preplace inst vga_hessian_0 -pg 1 -lvl 7 -y 110 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 11 -y 70 -defaultsOSRD
-preplace inst rgb565_to_rgb888_0 -pg 1 -lvl 4 -y 360 -defaultsOSRD
-preplace inst clk_wiz_1 -pg 1 -lvl 6 -y 70 -defaultsOSRD
-preplace inst threshold -pg 1 -lvl 8 -y 160 -defaultsOSRD
-preplace netloc clock_splitter_0_clk_out 1 1 4 200 360 NJ 360 600 430 850J
-preplace netloc zed_hdmi_0_hdmi_scl 1 11 1 NJ
-preplace netloc threshold_dout 1 8 1 NJ
-preplace netloc buffer_register_0_val_out 1 8 1 1840
-preplace netloc rgb888_to_g8_0_g8 1 6 1 1340
-preplace netloc zed_hdmi_0_hdmi_d 1 11 1 NJ
-preplace netloc vga_sync_ref_0_start 1 2 1 360
-preplace netloc vga_sync_reset_0_active 1 4 7 890 210 NJ 210 1330 210 NJ 210 NJ 210 NJ 210 2300J
-preplace netloc zed_hdmi_0_hdmi_clk 1 11 1 NJ
-preplace netloc comparator_0_z 1 9 1 2030
-preplace netloc vga_buffer_0_data_r 1 5 5 1140 570 NJ 570 NJ 570 NJ 570 2030
-preplace netloc vga_sync_ref_0_active 1 2 3 390 540 NJ 540 N
-preplace netloc zed_hdmi_0_hdmi_hsync 1 11 1 NJ
-preplace netloc inverter_0_x_not 1 3 1 590J
-preplace netloc vga_sync_ref_0_yaddr 1 2 3 360J 580 NJ 580 N
-preplace netloc ov7670_vga_0_rgb 1 3 1 590
-preplace netloc ov7670_controller_0_config_finished 1 1 11 200 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 2540
-preplace netloc zed_hdmi_0_hdmi_vsync 1 11 1 NJ
-preplace netloc clk_100_1 1 0 11 20J 0 NJ 0 380 0 NJ 0 NJ 0 1130 0 NJ 0 NJ 0 NJ 0 NJ 0 2320
-preplace netloc xlconstant_0_dout 1 9 1 NJ
-preplace netloc clk_wiz_1_clk_out1 1 6 1 NJ
-preplace netloc debounce_0_o 1 10 1 N
-preplace netloc vga_sync_ref_0_xaddr 1 2 3 370J 560 NJ 560 N
-preplace netloc clk_wiz_0_clk_out1 1 11 1 NJ
-preplace netloc vga_pll_0_clk_12_6 1 3 8 580 140 860 270 1130 520 NJ 520 1610 520 NJ 520 2020 520 2290J
-preplace netloc vga_sync_reset_0_xaddr 1 4 3 870 250 NJ 250 1320J
-preplace netloc data_1 1 0 3 NJ 310 NJ 310 NJ
-preplace netloc zed_hdmi_0_hdmi_de 1 11 1 NJ
-preplace netloc pclk_1 1 0 3 20 270 NJ 270 NJ
-preplace netloc hsync_1 1 0 2 NJ 480 NJ
-preplace netloc vga_sync_reset_0_hsync 1 4 7 850J 220 NJ 220 NJ 220 NJ 220 NJ 220 NJ 220 2270
-preplace netloc vga_pll_0_clk_25 1 3 8 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 NJ 440 2010 510 2310
-preplace netloc Net1 1 11 1 NJ
-preplace netloc Net 1 11 1 NJ
-preplace netloc vga_hessian_0_hessian_out 1 7 1 1600
-preplace netloc rgb565_to_rgb888_0_rgb_888 1 4 1 840
-preplace netloc reset_1 1 0 10 NJ 350 NJ 350 370J 370 570J 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 2000J
-preplace netloc vga_sync_reset_0_vsync 1 4 7 840J 10 NJ 10 1320 10 NJ 10 NJ 10 NJ 10 2280J
-preplace netloc vga_sync_reset_0_yaddr 1 4 3 880 140 NJ 140 N
-preplace netloc ov7670_controller_0_sioc 1 11 1 NJ
-preplace netloc rgb888_mux_2_0_rgb888 1 10 1 2270
-preplace netloc vsync_1 1 0 2 20 500 NJ
-levelinfo -pg 1 0 110 280 480 720 1020 1230 1480 1730 1920 2150 2430 2560 -top -10 -bot 710
+preplace port vsync -pg 1 -y 340 -defaultsOSRD
+preplace port hdmi_de -pg 1 -y 220 -defaultsOSRD
+preplace port xclk -pg 1 -y 670 -defaultsOSRD
+preplace port hdmi_scl -pg 1 -y 240 -defaultsOSRD
+preplace port hdmi_vsync -pg 1 -y 180 -defaultsOSRD
+preplace port hdmi_hsync -pg 1 -y 160 -defaultsOSRD
+preplace port hsync -pg 1 -y 320 -defaultsOSRD
+preplace port sioc -pg 1 -y 510 -defaultsOSRD
+preplace port siod -pg 1 -y 530 -defaultsOSRD
+preplace port ready -pg 1 -y 440 -defaultsOSRD
+preplace port hdmi_clk -pg 1 -y 140 -defaultsOSRD
+preplace port clk_100 -pg 1 -y 680 -defaultsOSRD
+preplace port enable_nm -pg 1 -y 390 -defaultsOSRD
+preplace port pclk -pg 1 -y 80 -defaultsOSRD
+preplace port reset -pg 1 -y 570 -defaultsOSRD
+preplace port hdmi_sda -pg 1 -y 260 -defaultsOSRD
+preplace portBus hdmi_d -pg 1 -y 200 -defaultsOSRD
+preplace portBus data -pg 1 -y 120 -defaultsOSRD
+preplace inst vdd -pg 1 -lvl 6 -y 70 -defaultsOSRD
+preplace inst vga_sync_reset_0 -pg 1 -lvl 4 -y 330 -defaultsOSRD
+preplace inst zed_hdmi_0 -pg 1 -lvl 12 -y 200 -defaultsOSRD
+preplace inst vga_pll_0 -pg 1 -lvl 3 -y 470 -defaultsOSRD
+preplace inst comparator_0 -pg 1 -lvl 10 -y 350 -defaultsOSRD
+preplace inst white -pg 1 -lvl 10 -y 260 -defaultsOSRD
+preplace inst vga_sync_ref_0 -pg 1 -lvl 2 -y 310 -defaultsOSRD
+preplace inst ov7670_controller_0 -pg 1 -lvl 12 -y 540 -defaultsOSRD
+preplace inst inverter_0 -pg 1 -lvl 3 -y 340 -defaultsOSRD
+preplace inst clock_splitter_0 -pg 1 -lvl 1 -y 230 -defaultsOSRD
+preplace inst buffer_register_0 -pg 1 -lvl 8 -y 160 -defaultsOSRD
+preplace inst rgb888_to_g8_0 -pg 1 -lvl 6 -y 190 -defaultsOSRD
+preplace inst debounce_0 -pg 1 -lvl 11 -y 550 -defaultsOSRD
+preplace inst rgb888_mux_2_0 -pg 1 -lvl 11 -y 290 -defaultsOSRD
+preplace inst vga_nmsuppression_0 -pg 1 -lvl 9 -y 90 -defaultsOSRD
+preplace inst vga_buffer_0 -pg 1 -lvl 5 -y 210 -defaultsOSRD
+preplace inst ov7670_vga_0 -pg 1 -lvl 3 -y 100 -defaultsOSRD
+preplace inst vga_hessian_0 -pg 1 -lvl 7 -y 120 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 12 -y 680 -defaultsOSRD
+preplace inst rgb565_to_rgb888_0 -pg 1 -lvl 4 -y 480 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 6 -y 290 -defaultsOSRD
+preplace inst threshold -pg 1 -lvl 9 -y 360 -defaultsOSRD
+preplace netloc clock_splitter_0_clk_out 1 1 4 200 230 NJ 230 610 230 890J
+preplace netloc zed_hdmi_0_hdmi_scl 1 12 1 NJ
+preplace netloc threshold_dout 1 9 1 NJ
+preplace netloc buffer_register_0_val_out 1 8 1 1900
+preplace netloc rgb888_to_g8_0_g8 1 6 1 1390
+preplace netloc zed_hdmi_0_hdmi_d 1 12 1 NJ
+preplace netloc vga_sync_ref_0_start 1 2 1 390
+preplace netloc vga_sync_reset_0_active 1 4 8 920J 330 1140J 130 1360 230 NJ 230 1880 200 NJ 200 NJ 200 NJ
+preplace netloc zed_hdmi_0_hdmi_clk 1 12 1 NJ
+preplace netloc comparator_0_z 1 10 1 2400
+preplace netloc vga_buffer_0_data_r 1 5 6 1160 370 NJ 370 NJ 370 1940J 190 NJ 190 2430J
+preplace netloc vga_sync_ref_0_active 1 2 3 360 180 NJ 180 NJ
+preplace netloc zed_hdmi_0_hdmi_hsync 1 12 1 NJ
+preplace netloc vga_nmsuppression_0_hessian_out 1 9 1 2220
+preplace netloc inverter_0_x_not 1 3 1 NJ
+preplace netloc vga_sync_ref_0_yaddr 1 2 3 380 220 NJ 220 NJ
+preplace netloc ov7670_vga_0_rgb 1 3 1 580
+preplace netloc ov7670_controller_0_config_finished 1 1 12 200 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 2430J 440 NJ 440 2950
+preplace netloc zed_hdmi_0_hdmi_vsync 1 12 1 NJ
+preplace netloc clk_100_1 1 0 12 NJ 680 NJ 680 370 680 NJ 680 NJ 680 1170 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 2720
+preplace netloc xlconstant_0_dout 1 10 1 2410J
+preplace netloc vdd_dout 1 6 1 1370J
+preplace netloc clk_wiz_1_clk_out1 1 6 1 1380J
+preplace netloc debounce_0_o 1 11 1 N
+preplace netloc vga_sync_ref_0_xaddr 1 2 3 370 200 NJ 200 NJ
+preplace netloc clk_wiz_0_clk_out1 1 12 1 NJ
+preplace netloc vga_pll_0_clk_12_6 1 3 9 590 160 910 480 1150 480 NJ 480 1650 480 1910 480 NJ 480 2420 480 2680J
+preplace netloc vga_sync_reset_0_xaddr 1 4 5 880 90 1140J 120 1370 220 NJ 220 1890
+preplace netloc data_1 1 0 3 NJ 120 NJ 120 NJ
+preplace netloc zed_hdmi_0_hdmi_de 1 12 1 NJ
+preplace netloc pclk_1 1 0 3 20 80 NJ 80 NJ
+preplace netloc hsync_1 1 0 2 NJ 320 NJ
+preplace netloc vga_sync_reset_0_hsync 1 4 8 900 350 NJ 350 NJ 350 NJ 350 1930J 210 NJ 210 NJ 210 2690J
+preplace netloc vga_pll_0_clk_25 1 3 9 570 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 2440 490 2710
+preplace netloc Net1 1 12 1 NJ
+preplace netloc Net 1 12 1 NJ
+preplace netloc vga_hessian_0_hessian_out 1 7 1 1640
+preplace netloc rgb565_to_rgb888_0_rgb_888 1 4 1 890
+preplace netloc reset_1 1 0 11 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 2440J
+preplace netloc vga_sync_reset_0_vsync 1 4 8 860J 360 NJ 360 NJ 360 NJ 360 1950J 280 2230J 170 NJ 170 2700
+preplace netloc vga_sync_reset_0_yaddr 1 4 5 870 20 NJ 20 1390 20 NJ 20 1900
+preplace netloc ov7670_controller_0_sioc 1 12 1 NJ
+preplace netloc enable_1 1 0 9 NJ 390 NJ 390 NJ 390 600J 420 NJ 420 NJ 420 NJ 420 NJ 420 1920J
+preplace netloc rgb888_mux_2_0_rgb888 1 11 1 2690
+preplace netloc vsync_1 1 0 2 20 340 NJ
+levelinfo -pg 1 0 110 280 480 740 1030 1270 1520 1770 2090 2320 2560 2840 2970 -top 0 -bot 740
 ",
 }
 

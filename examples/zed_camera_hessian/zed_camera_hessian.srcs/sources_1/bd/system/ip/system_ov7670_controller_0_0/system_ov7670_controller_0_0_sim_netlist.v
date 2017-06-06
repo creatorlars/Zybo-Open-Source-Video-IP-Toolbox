@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 // Date        : Sun May 28 18:34:36 2017
 // Host        : GILAMONSTER running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_ov7670_controller_0_0/system_ov7670_controller_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top system_ov7670_controller_0_0 -prefix
+//               system_ov7670_controller_0_0_ system_ov7670_controller_0_0_sim_netlist.v
 // Design      : system_ov7670_controller_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,49 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_ov7670_controller_0_0,ov7670_controller,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "ov7670_controller,Vivado 2016.4" *) 
-(* NotValidForBitStream *)
-module system_ov7670_controller_0_0
-   (clk,
-    resend,
-    config_finished,
-    sioc,
-    siod,
-    reset,
-    pwdn,
-    xclk);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) input clk;
-  input resend;
-  output config_finished;
-  output sioc;
-  inout siod;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) output reset;
-  output pwdn;
-  output xclk;
-
-  wire \<const0> ;
-  wire \<const1> ;
-  wire clk;
-  wire config_finished;
-  wire resend;
-  wire sioc;
-  wire siod;
-
-  assign pwdn = \<const0> ;
-  assign reset = \<const1> ;
-  GND GND
-       (.G(\<const0> ));
-  system_ov7670_controller_0_0_ov7670_controller U0
-       (.clk(clk),
-        .config_finished(config_finished),
-        .resend(resend),
-        .sioc(sioc),
-        .siod(siod));
-  VCC VCC
-       (.P(\<const1> ));
-endmodule
-
-(* ORIG_REF_NAME = "i2c_sender" *) 
 module system_ov7670_controller_0_0_i2c_sender
    (E,
     sioc,
@@ -1358,7 +1315,6 @@ module system_ov7670_controller_0_0_i2c_sender
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "ov7670_controller" *) 
 module system_ov7670_controller_0_0_ov7670_controller
    (config_finished,
     siod,
@@ -1408,7 +1364,6 @@ module system_ov7670_controller_0_0_ov7670_controller
         .taken_reg(Inst_ov7670_registers_n_18));
 endmodule
 
-(* ORIG_REF_NAME = "ov7670_registers" *) 
 module system_ov7670_controller_0_0_ov7670_registers
    (DOADO,
     \divider_reg[7] ,
@@ -1872,6 +1827,48 @@ module system_ov7670_controller_0_0_ov7670_registers
         .I4(config_finished_INST_0_i_4_n_0),
         .I5(\divider_reg[2] ),
         .O(taken_reg));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "system_ov7670_controller_0_0,ov7670_controller,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "ov7670_controller,Vivado 2016.4" *) 
+(* NotValidForBitStream *)
+module system_ov7670_controller_0_0
+   (clk,
+    resend,
+    config_finished,
+    sioc,
+    siod,
+    reset,
+    pwdn,
+    xclk);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) input clk;
+  input resend;
+  output config_finished;
+  output sioc;
+  inout siod;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) output reset;
+  output pwdn;
+  output xclk;
+
+  wire \<const0> ;
+  wire \<const1> ;
+  wire clk;
+  wire config_finished;
+  wire resend;
+  wire sioc;
+  wire siod;
+
+  assign pwdn = \<const0> ;
+  assign reset = \<const1> ;
+  GND GND
+       (.G(\<const0> ));
+  system_ov7670_controller_0_0_ov7670_controller U0
+       (.clk(clk),
+        .config_finished(config_finished),
+        .resend(resend),
+        .sioc(sioc),
+        .siod(siod));
+  VCC VCC
+       (.P(\<const1> ));
 endmodule
 `ifndef GLBL
 `define GLBL

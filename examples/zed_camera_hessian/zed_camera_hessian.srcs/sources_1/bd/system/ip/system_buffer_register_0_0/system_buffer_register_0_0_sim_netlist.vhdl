@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 -- Date        : Mon May 29 20:15:21 2017
 -- Host        : GILAMONSTER running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_buffer_register_0_0/system_buffer_register_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_buffer_register_0_0 -prefix
+--               system_buffer_register_0_0_ system_buffer_register_0_0_sim_netlist.vhdl
 -- Design      : system_buffer_register_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity system_buffer_register_0_0_buffer_register is
     val_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
     clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_buffer_register_0_0_buffer_register : entity is "buffer_register";
 end system_buffer_register_0_0_buffer_register;
 
 architecture STRUCTURE of system_buffer_register_0_0_buffer_register is

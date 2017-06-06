@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May 25 21:05:15 2017" VIVADOVERSION="2016.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jun 01 11:34:27 2017" VIVADOVERSION="2016.4">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.3" DEVICE="7z020" NAME="system" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -84,12 +84,12 @@
         <CONNECTION INSTANCE="clock_splitter_0" PORT="latch_edge"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="xclk_1" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
+    <PORT DIR="O" NAME="xclk_0" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="xclk_0" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
+    <PORT DIR="O" NAME="xclk_1" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out1">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
       </CONNECTIONS>
@@ -718,8 +718,8 @@
         </PORT>
         <PORT CLKFREQUENCY="11900000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="xclk_0"/>
             <CONNECTION INSTANCE="External_Ports" PORT="xclk_1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="xclk_0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef"/>
@@ -1067,7 +1067,7 @@
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="data_r" RIGHT="0" SIGIS="undef" SIGNAME="vga_buffer_0_data_r">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_split_0" PORT="rgb_in_0"/>
+            <CONNECTION INSTANCE="vga_overlay_0" PORT="rgb_0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1123,7 +1123,37 @@
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="data_r" RIGHT="0" SIGIS="undef" SIGNAME="vga_buffer_1_data_r">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_split_0" PORT="rgb_in_1"/>
+            <CONNECTION INSTANCE="vga_overlay_0" PORT="rgb_1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/vga_overlay_0" HWVERSION="1.0" INSTANCE="vga_overlay_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="vga_overlay" VLNV="xilinx.com:user:vga_overlay:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="system_vga_overlay_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="vga_pll_0_clk_25">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="vga_pll_0" PORT="clk_25"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="rgb_0" RIGHT="0" SIGIS="undef" SIGNAME="vga_buffer_0_data_r">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="vga_buffer_0" PORT="data_r"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="rgb_1" RIGHT="0" SIGIS="undef" SIGNAME="vga_buffer_1_data_r">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="vga_buffer_1" PORT="data_r"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="rgb" RIGHT="0" SIGIS="undef" SIGNAME="vga_overlay_0_rgb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="zed_hdmi_0" PORT="rgb888"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1147,6 +1177,7 @@
             <CONNECTION INSTANCE="zed_hdmi_0" PORT="clk_x2"/>
             <CONNECTION INSTANCE="ov7670_controller_0" PORT="clk"/>
             <CONNECTION INSTANCE="ov7670_controller_1" PORT="clk"/>
+            <CONNECTION INSTANCE="vga_overlay_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="clk_12_5" SIGIS="undef" SIGNAME="vga_pll_0_clk_12_5">
@@ -1155,46 +1186,9 @@
             <CONNECTION INSTANCE="vga_buffer_0" PORT="clk_r"/>
             <CONNECTION INSTANCE="vga_sync_reset_0" PORT="clk"/>
             <CONNECTION INSTANCE="vga_buffer_1" PORT="clk_r"/>
-            <CONNECTION INSTANCE="vga_split_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="clk_6_25" SIGIS="undef"/>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE FULLNAME="/vga_split_0" HWVERSION="1.0" INSTANCE="vga_split_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="vga_split" VLNV="xilinx.com:user:vga_split:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="WIDTH" VALUE="640"/>
-        <PARAMETER NAME="Component_Name" VALUE="system_vga_split_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="vga_pll_0_clk_12_5">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_pll_0" PORT="clk_12_5"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="rgb_in_0" RIGHT="0" SIGIS="undef" SIGNAME="vga_buffer_0_data_r">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_buffer_0" PORT="data_r"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="rgb_in_1" RIGHT="0" SIGIS="undef" SIGNAME="vga_buffer_1_data_r">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_buffer_1" PORT="data_r"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="9" NAME="x_addr" RIGHT="0" SIGIS="undef" SIGNAME="vga_sync_reset_0_xaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_sync_reset_0" PORT="xaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="23" NAME="rgb_out" RIGHT="0" SIGIS="undef" SIGNAME="vga_split_0_rgb_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="zed_hdmi_0" PORT="rgb888"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -1348,7 +1342,6 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="vga_buffer_0" PORT="x_addr_r"/>
             <CONNECTION INSTANCE="vga_buffer_1" PORT="x_addr_r"/>
-            <CONNECTION INSTANCE="vga_split_0" PORT="x_addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="9" NAME="yaddr" RIGHT="0" SIGIS="undef" SIGNAME="vga_sync_reset_0_yaddr">
@@ -1397,9 +1390,9 @@
             <CONNECTION INSTANCE="vga_sync_reset_0" PORT="vsync"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="23" NAME="rgb888" RIGHT="0" SIGIS="undef" SIGNAME="vga_split_0_rgb_out">
+        <PORT DIR="I" LEFT="23" NAME="rgb888" RIGHT="0" SIGIS="undef" SIGNAME="vga_overlay_0_rgb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_split_0" PORT="rgb_out"/>
+            <CONNECTION INSTANCE="vga_overlay_0" PORT="rgb"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="hdmi_clk" SIGIS="clk" SIGNAME="zed_hdmi_0_hdmi_clk">

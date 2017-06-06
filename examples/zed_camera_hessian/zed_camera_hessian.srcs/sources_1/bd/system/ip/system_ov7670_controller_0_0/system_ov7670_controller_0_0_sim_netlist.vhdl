@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 -- Date        : Sun May 28 18:34:36 2017
 -- Host        : GILAMONSTER running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_ov7670_controller_0_0/system_ov7670_controller_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_ov7670_controller_0_0 -prefix
+--               system_ov7670_controller_0_0_ system_ov7670_controller_0_0_sim_netlist.vhdl
 -- Design      : system_ov7670_controller_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,8 +27,6 @@ entity system_ov7670_controller_0_0_i2c_sender is
     DOADO : in STD_LOGIC_VECTOR ( 15 downto 0 );
     \busy_sr_reg[31]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_ov7670_controller_0_0_i2c_sender : entity is "i2c_sender";
 end system_ov7670_controller_0_0_i2c_sender;
 
 architecture STRUCTURE of system_ov7670_controller_0_0_i2c_sender is
@@ -1757,8 +1755,6 @@ entity system_ov7670_controller_0_0_ov7670_registers is
     resend : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_ov7670_controller_0_0_ov7670_registers : entity is "ov7670_registers";
 end system_ov7670_controller_0_0_ov7670_registers;
 
 architecture STRUCTURE of system_ov7670_controller_0_0_ov7670_registers is
@@ -2323,8 +2319,6 @@ entity system_ov7670_controller_0_0_ov7670_controller is
     resend : in STD_LOGIC;
     clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_ov7670_controller_0_0_ov7670_controller : entity is "ov7670_controller";
 end system_ov7670_controller_0_0_ov7670_controller;
 
 architecture STRUCTURE of system_ov7670_controller_0_0_ov7670_controller is

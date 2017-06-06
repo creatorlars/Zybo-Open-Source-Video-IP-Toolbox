@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 -- Date        : Sun May 28 18:34:36 2017
 -- Host        : GILAMONSTER running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               C:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_ov7670_controller_0_0/system_ov7670_controller_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_ov7670_controller_0_0 -prefix
+--               system_ov7670_controller_0_0_ system_ov7670_controller_0_0_stub.vhdl
 -- Design      : system_ov7670_controller_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

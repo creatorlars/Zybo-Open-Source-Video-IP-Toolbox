@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
---Date        : Thu May 25 21:05:15 2017
+--Date        : Thu Jun 01 11:34:27 2017
 --Host        : GILAMONSTER running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -59,8 +59,8 @@ architecture STRUCTURE of system_wrapper is
     pclk_0 : in STD_LOGIC;
     hsync_0 : in STD_LOGIC;
     vsync_0 : in STD_LOGIC;
-    xclk_1 : out STD_LOGIC;
     xclk_0 : out STD_LOGIC;
+    xclk_1 : out STD_LOGIC;
     data_1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     hsync_1 : in STD_LOGIC;
     vsync_1 : in STD_LOGIC;

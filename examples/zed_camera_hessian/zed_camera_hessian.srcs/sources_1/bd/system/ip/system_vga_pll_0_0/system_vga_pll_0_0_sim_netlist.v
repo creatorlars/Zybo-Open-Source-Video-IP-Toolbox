@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-// Date        : Sun May 28 18:55:40 2017
+// Date        : Mon Jun 05 01:41:24 2017
 // Host        : GILAMONSTER running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top system_vga_pll_0_0 -prefix
-//               system_vga_pll_0_0_ system_vga_pll_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               C:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_vga_pll_0_0/system_vga_pll_0_0_sim_netlist.v
 // Design      : system_vga_pll_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,11 +20,11 @@ module system_vga_pll_0_0
     clk_25,
     clk_12_5,
     clk_6_25);
-  input clk_100;
-  output clk_50;
-  output clk_25;
-  output clk_12_5;
-  output clk_6_25;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_100 CLK" *) input clk_100;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_50 CLK" *) output clk_50;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_25 CLK" *) output clk_25;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_12_5 CLK" *) output clk_12_5;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_6_25 CLK" *) output clk_6_25;
 
   wire clk_100;
   wire clk_12_5;
@@ -40,6 +40,7 @@ module system_vga_pll_0_0
         .clk_6_25(clk_6_25));
 endmodule
 
+(* ORIG_REF_NAME = "vga_pll" *) 
 module system_vga_pll_0_0_vga_pll
    (clk_50,
     clk_25,

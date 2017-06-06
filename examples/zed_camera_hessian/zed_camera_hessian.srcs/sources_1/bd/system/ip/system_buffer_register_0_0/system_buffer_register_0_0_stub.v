@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 // Date        : Mon May 29 20:15:21 2017
 // Host        : GILAMONSTER running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_buffer_register_0_0/system_buffer_register_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top system_buffer_register_0_0 -prefix
+//               system_buffer_register_0_0_ system_buffer_register_0_0_stub.v
 // Design      : system_buffer_register_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

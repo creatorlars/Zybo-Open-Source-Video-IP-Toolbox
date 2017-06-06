@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
 -- Date        : Sun May 28 18:34:35 2017
 -- Host        : GILAMONSTER running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/ZyboIP/examples/zed_camera_hessian/zed_camera_hessian.srcs/sources_1/bd/system/ip/system_vga_sync_reset_0_0/system_vga_sync_reset_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_vga_sync_reset_0_0 -prefix
+--               system_vga_sync_reset_0_0_ system_vga_sync_reset_0_0_sim_netlist.vhdl
 -- Design      : system_vga_sync_reset_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,8 +24,6 @@ entity system_vga_sync_reset_0_0_vga_sync_reset is
     clk : in STD_LOGIC;
     rst : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_vga_sync_reset_0_0_vga_sync_reset : entity is "vga_sync_reset";
 end system_vga_sync_reset_0_0_vga_sync_reset;
 
 architecture STRUCTURE of system_vga_sync_reset_0_0_vga_sync_reset is

@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
---Date        : Mon May 29 22:10:05 2017
+--Date        : Mon Jun 05 08:32:55 2017
 --Host        : GILAMONSTER running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -15,6 +15,7 @@ entity system is
   port (
     clk_100 : in STD_LOGIC;
     data : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    enable_nm : in STD_LOGIC;
     hdmi_clk : out STD_LOGIC;
     hdmi_d : out STD_LOGIC_VECTOR ( 15 downto 0 );
     hdmi_de : out STD_LOGIC;
@@ -32,7 +33,7 @@ entity system is
     xclk : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=21,numReposBlks=21,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=22,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -173,15 +174,6 @@ architecture STRUCTURE of system is
     locked : out STD_LOGIC
   );
   end component system_clk_wiz_0_0;
-  component system_vga_pll_0_0 is
-  port (
-    clk_100 : in STD_LOGIC;
-    clk_50 : out STD_LOGIC;
-    clk_25 : out STD_LOGIC;
-    clk_12_5 : out STD_LOGIC;
-    clk_6_25 : out STD_LOGIC
-  );
-  end component system_vga_pll_0_0;
   component system_clk_wiz_1_0 is
   port (
     clk_in1 : in STD_LOGIC;
@@ -218,6 +210,28 @@ architecture STRUCTURE of system is
     hessian_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component system_vga_hessian_0_0;
+  component system_vga_nmsuppression_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    enable : in STD_LOGIC;
+    active : in STD_LOGIC;
+    x_addr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    y_addr_in : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    hessian_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    x_addr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    y_addr_out : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    hessian_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component system_vga_nmsuppression_0_0;
+  component system_vga_pll_0_0 is
+  port (
+    clk_100 : in STD_LOGIC;
+    clk_50 : out STD_LOGIC;
+    clk_25 : out STD_LOGIC;
+    clk_12_5 : out STD_LOGIC;
+    clk_6_25 : out STD_LOGIC
+  );
+  end component system_vga_pll_0_0;
   signal Net : STD_LOGIC;
   signal Net1 : STD_LOGIC;
   signal buffer_register_0_val_out : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -228,6 +242,7 @@ architecture STRUCTURE of system is
   signal comparator_0_z : STD_LOGIC;
   signal data_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal debounce_0_o : STD_LOGIC;
+  signal enable_1 : STD_LOGIC;
   signal hsync_1 : STD_LOGIC;
   signal inverter_0_x_not : STD_LOGIC;
   signal ov7670_controller_0_config_finished : STD_LOGIC;
@@ -239,8 +254,10 @@ architecture STRUCTURE of system is
   signal rgb888_mux_2_0_rgb888 : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal rgb888_to_g8_0_g8 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal threshold_dout : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal vdd_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal vga_buffer_0_data_r : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal vga_hessian_0_hessian_out : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal vga_nmsuppression_0_hessian_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal vga_pll_0_clk_12_6 : STD_LOGIC;
   signal vga_pll_0_clk_25 : STD_LOGIC;
   signal vga_sync_ref_0_active : STD_LOGIC;
@@ -265,12 +282,14 @@ architecture STRUCTURE of system is
   signal NLW_ov7670_controller_0_pwdn_UNCONNECTED : STD_LOGIC;
   signal NLW_ov7670_controller_0_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_ov7670_controller_0_xclk_UNCONNECTED : STD_LOGIC;
-  signal NLW_vdd_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_vga_nmsuppression_0_x_addr_out_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal NLW_vga_nmsuppression_0_y_addr_out_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal NLW_vga_pll_0_clk_50_UNCONNECTED : STD_LOGIC;
   signal NLW_vga_pll_0_clk_6_25_UNCONNECTED : STD_LOGIC;
 begin
   clk_100_1 <= clk_100;
   data_1(7 downto 0) <= data(7 downto 0);
+  enable_1 <= enable_nm;
   hdmi_clk <= zed_hdmi_0_hdmi_clk;
   hdmi_d(15 downto 0) <= zed_hdmi_0_hdmi_d(15 downto 0);
   hdmi_de <= zed_hdmi_0_hdmi_de;
@@ -310,7 +329,7 @@ clock_splitter_0: component system_clock_splitter_0_0
     );
 comparator_0: component system_comparator_0_0
      port map (
-      x(31 downto 0) => buffer_register_0_val_out(31 downto 0),
+      x(31 downto 0) => vga_nmsuppression_0_hessian_out(31 downto 0),
       y(31 downto 0) => threshold_dout(31 downto 0),
       z => comparator_0_z
     );
@@ -369,7 +388,7 @@ threshold: component system_xlconstant_0_1
     );
 vdd: component system_xlconstant_0_2
      port map (
-      dout(0) => NLW_vdd_dout_UNCONNECTED(0)
+      dout(0) => vdd_dout(0)
     );
 vga_buffer_0: component system_vga_buffer_0_0
      port map (
@@ -389,9 +408,21 @@ vga_hessian_0: component system_vga_hessian_0_0
       clk_x16 => clk_wiz_1_clk_out1,
       g_in(7 downto 0) => rgb888_to_g8_0_g8(7 downto 0),
       hessian_out(31 downto 0) => vga_hessian_0_hessian_out(31 downto 0),
-      rst => vga_sync_reset_0_vsync,
+      rst => vdd_dout(0),
       x_addr(9 downto 0) => vga_sync_reset_0_xaddr(9 downto 0),
       y_addr(9 downto 0) => vga_sync_reset_0_yaddr(9 downto 0)
+    );
+vga_nmsuppression_0: component system_vga_nmsuppression_0_0
+     port map (
+      active => vga_sync_reset_0_active,
+      clk => vga_pll_0_clk_12_6,
+      enable => enable_1,
+      hessian_in(31 downto 0) => buffer_register_0_val_out(31 downto 0),
+      hessian_out(31 downto 0) => vga_nmsuppression_0_hessian_out(31 downto 0),
+      x_addr_in(9 downto 0) => vga_sync_reset_0_xaddr(9 downto 0),
+      x_addr_out(9 downto 0) => NLW_vga_nmsuppression_0_x_addr_out_UNCONNECTED(9 downto 0),
+      y_addr_in(9 downto 0) => vga_sync_reset_0_yaddr(9 downto 0),
+      y_addr_out(9 downto 0) => NLW_vga_nmsuppression_0_y_addr_out_UNCONNECTED(9 downto 0)
     );
 vga_pll_0: component system_vga_pll_0_0
      port map (

@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
---Date        : Mon May 29 22:10:05 2017
+--Date        : Mon Jun 05 08:32:55 2017
 --Host        : GILAMONSTER running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -15,6 +15,7 @@ entity system_wrapper is
   port (
     clk_100 : in STD_LOGIC;
     data : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    enable_nm : in STD_LOGIC;
     hdmi_clk : out STD_LOGIC;
     hdmi_d : out STD_LOGIC_VECTOR ( 15 downto 0 );
     hdmi_de : out STD_LOGIC;
@@ -52,7 +53,8 @@ architecture STRUCTURE of system_wrapper is
     xclk : out STD_LOGIC;
     reset : in STD_LOGIC;
     pclk : in STD_LOGIC;
-    clk_100 : in STD_LOGIC
+    clk_100 : in STD_LOGIC;
+    enable_nm : in STD_LOGIC
   );
   end component system;
 begin
@@ -60,6 +62,7 @@ system_i: component system
      port map (
       clk_100 => clk_100,
       data(7 downto 0) => data(7 downto 0),
+      enable_nm => enable_nm,
       hdmi_clk => hdmi_clk,
       hdmi_d(15 downto 0) => hdmi_d(15 downto 0),
       hdmi_de => hdmi_de,
